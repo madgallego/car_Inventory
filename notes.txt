@@ -1,0 +1,39 @@
+E-PARADA 2.0 (JAVA) NOTES
+
+Data Structures
+ - Lack of structs in Java. Instead we implement classes
+ - Classes are then stored in an ArrayList depending on what it is (Sales, UI, etc)
+ 
+ SUPER CLASSES
+ 1. Universal Car Class
+ -contains basic info such as car price, car weight, etc.
+ - all other car types and brands inherits from this class
+ 2. Utils Class
+ - contains static methods for calculations and such
+
+ 3. Universal UI Class
+ - contains basic GUI info such as dimensions, RGBA, kung ano man needed for UI
+ 
+ 4. Data Class (Unsure)
+ - contains monthly sales info. Fields are filled up by calculating the sales for different cars using the utils
+ - graphing should utilize whatever is in here
+ 
+ 
+ FLOW
+ When Buying
+ 1. Select car model
+ 2. DO some payment processing
+ 3. Car ID is stored in the data class or file. ID represents branding, car type,  as well as a value that is unique
+ 4. Cross reference car ID with whats in the arrayList. Delete that member of the arraylist
+ 5. After a "month", create the points for the graphing
+
+When analyzing
+1. Select what to graph
+2. retrieve the correct data for our grah
+3. Present the graph to the screen
+
+
+
+
+ 
+ 
