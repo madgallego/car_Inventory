@@ -1,14 +1,18 @@
 E-PARADA 2.0 (JAVA) NOTES
 
+
 Data Structures
  - Lack of structs in Java. Instead we implement classes
  - Classes are then stored in an ArrayList depending on what it is (Sales, UI, etc)
- 
+
+
+/////////////////////////////////////////////////////////////// 
  SUPER CLASSES
  1. Universal Car Class
  -contains basic info such as car price, car weight, etc.
  - all other car types and brands inherits from this class
- 2. Utils Class
+ 
+2. Utils Class
  - contains static methods for calculations and such
 
  3. Universal UI Class
@@ -18,7 +22,55 @@ Data Structures
  - contains monthly sales info. Fields are filled up by calculating the sales for different cars using the utils
  - graphing should utilize whatever is in here
  
- 
+///////////////////////////////////////////////
+
+
+DATA MANAGEMENT
+
+To store our different cars, the most effective way is through an ArrayList (which is linked list ng Java)
+We create an ArrayList for each car brand, then store all the ArrayLists to an array. So para syang 2D array,
+pero in reality its like an array of linked lists. Drop nyo muna mga old concepts ng linked list implementation kasi malilito talaga kayo
+
+It will look like this
+
+	Array
+		BMW = BMW1, BMW2, BMW3, etc etc
+		SUZUKI = SUZUKI1, SUZUKI2, SUZUKI3, etc etc
+		TESLA = TESLA1, TESLA2, TESLA3, etc etc
+		... 
+
+Since we are using an arrayList, it is resizable and the size will change during run time if may bibili or if maga restock
+We have to take note of the number of cars within each arraylist so that we can implement sorting algorithms for faster searching
+
+Since in the Superclass of the car, meron tayong ID, the ID must specify the following
+
+Brand name, Vehicle type, Vehicle model, then some unique number 
+
+So kunwari merong tesla car na truck and cybertruck sya, tas may lima tayong ganun, parang ganto sya
+
+TESLA-TRUCK-CYBERTRUCK-000
+TESLA-TRUCK-CYBERTRUCK-001
+TESLA-TRUCK-CYBERTRUCK-002
+TESLA-TRUCK-CYBERTRUCK-003
+TESLA-TRUCK-CYBERTRUCK-004
+
+**We can just turn the model and type to a number representation para mas madali**
+The purpose of this is so that we can use sorting to easily sort the cars per brand by their ID.
+
+So in actuality pwede syang ganto. Kunwari Tesla = TS, Truck = 5, Cybertruck = 1,
+magigi syang
+TS5100
+TS5101
+TS5102
+...
+
+So dyan palang, pwede natin i-sort sya by model and then by their unique ID. makaka binary search tayo dito pag maga purchase kunwari
+Also, since arrayList sya, lets say maga restock tayo ng bagong cars of a certain model, mainsert na lang sya dun since ArrayList man sya,
+and yung ID nya maga base dun na lang sa last car sa model na yun
+
+
+
+//////////////////////////////////////////////////////////
  FLOW
  When Buying
  1. Select car model
@@ -29,9 +81,9 @@ Data Structures
 
 When analyzing
 1. Select what to graph
-2. retrieve the correct data for our grah
+2. retrieve the correct data for our graph
 3. Present the graph to the screen
-
+////////////////////////////////////////////////////////////
 
 
 
