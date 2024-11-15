@@ -28,16 +28,15 @@ Data Structures
 DATA MANAGEMENT
 
 To store our different cars, the most effective way is through an ArrayList (which is linked list ng Java)
-We create an ArrayList for each car brand, then store all the ArrayLists to an array. So para syang 2D array,
+We create an ArrayList for each car type, then store all the ArrayLists to an array. So para syang 2D array,
 pero in reality its like an array of linked lists. Drop nyo muna mga old concepts ng linked list implementation kasi malilito talaga kayo
 
 It will look like this
 
 	Array
-		BMW = BMW1, BMW2, BMW3, etc etc
-		SUZUKI = SUZUKI1, SUZUKI2, SUZUKI3, etc etc
-		TESLA = TESLA1, TESLA2, TESLA3, etc etc
-		... 
+			SEDAN = BMW1, BMW2, BMW3, etc etc, SUZUKI1, SUZUKI2, SUZUKI3, etc etc, ESLA1, TESLA2, TESLA3, etc etc
+			ELECTRIC = BMW1, BMW2, BMW3, etc etc, SUZUKI1, SUZUKI2, SUZUKI3, etc etc, ESLA1, TESLA2, TESLA3, etc etc
+		
 
 Since we are using an arrayList, it is resizable and the size will change during run time if may bibili or if maga restock
 We have to take note of the number of cars within each arraylist so that we can implement sorting algorithms for faster searching
@@ -83,7 +82,12 @@ When analyzing
 1. Select what to graph
 2. retrieve the correct data for our graph
 3. Present the graph to the screen
+
 ////////////////////////////////////////////////////////////
+FUTURE FAVORS (Other functions optional)
+1. PRE ORDER FUNCTION
+	- if the searched vehicle type under a vehicle brand is not present, this may opt out to be appended in the list of to be ordered form sources
+	- this will only be executed if the customer wants to pre order their wishe vehicle instead.
 
 
 
