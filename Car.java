@@ -1,16 +1,16 @@
 package oop.car;
 
 public class Car{
-	private int carID;
+	private String carID;
 	private double x; //dimension of the car
 	private double y;
 	private double price;
 	
-	Car(int carID){
+	Car(String carID){
 		this.carID = carID; //always needed so the car is within the dat base
 	}
 
-	public int getCarID(){
+	public String getCarID(){
 		return carID;
 	}
 	
