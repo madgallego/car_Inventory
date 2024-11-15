@@ -1,0 +1,60 @@
+READ FROM FILE
+
+Read all the properties
+Instantiate a car depending on the said properties
+Store the properties within the car object
+
+per type
+
+SUV			JEEP		SEDAN			Pickup		Sports
+
+
+Read the ID and instantiate each car
+Give correct properties based on car ID
+
+
+
+
+EXAMPLE PURCHASE
+
+bibili ako ng suv tas brand is Subaru model is Subaru ascent
+Step1
+	go to the index of the suv
+Step2
+	BinarySearch in terms of models
+Step3 
+	BinarySearch at the starting index of that model to the end index of that model until we find the correct product
+Step4
+	Remove the product
+	
+problem is transaction shit
+Save the transaction date using Java's time shit idk
+
+we have an array
+
+Type
+	Brand
+		Model
+
+
+therefore 3d
+
+in configuration
+
+	{transac1, transac2, transac3...}}, arranged by date
+	
+for graphing shit, we can limit to whatever we want to graph. kung total, ireread nya lahat ng transaction sa 3d array and then do some 2d graphics shit to get the pixel idk idk
+
+
+|
+|		_
+|		_
+|	_	_
+|	_	_
+|	_	_
+|	_	_
+|	_	_
+____________________________ .. smthn like that
+
+saving transaction records
+separate file? one file?
