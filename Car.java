@@ -5,9 +5,12 @@ public class Car{
 	private double x; //dimension of the car
 	private double y;
 	private double price;
+	private static carTotal = 0;
+	
 	
 	Car(String carID){
 		this.carID = carID; //always needed so the car is within the dat base
+		this.carTotal++;
 	}
 
 	public String getCarID(){
