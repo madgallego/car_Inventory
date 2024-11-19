@@ -2,6 +2,7 @@ import oop.ui.Renderer;
 import oop.car.Car;
 import oop.utils.CarLoader;
 import java.util.ArrayList;
+import oop.car.SUV;
 
 public class Main{
 
@@ -9,9 +10,9 @@ public class Main{
 		Renderer window = new Renderer();
 		window.display();
 
-		ArrayList<Car> SUV = new ArrayList<Car>();
+		ArrayList<SUV> SUV = new ArrayList<SUV>();
 		try{
-			SUV = CarLoader.load("SUV.txt");
+			SUV = CarLoader.SUVload("SUV.txt");
 		}
 		catch(Exception e){
 			System.out.println("File not found");
@@ -19,7 +20,7 @@ public class Main{
 
 		for(int i = 0; i < SUV.size(); i++){
 			System.out.println(SUV.get(i).getCarID());
-		
+			System.out.println(SUV.get(i).getOffRoad());
 		}
 		
 	}
