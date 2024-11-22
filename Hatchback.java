@@ -14,7 +14,20 @@ public class Hatchback extends Car{
     public boolean isThreeDoor(){
         return threeDoor;
     }
+    public String isThreeDoorString(){  //returns door layout as string
+        if(threeDoor)
+            return "Three-door";
+        return "Five-door";
+    }
     public int getBoxDesign(){
         return boxDesign;
+    }
+    public String getBoxDesignString(){
+        if(boxDesign == 1)
+            return "Estate";
+        else if(boxDesign == 2)
+            return "Liftback";
+        else
+            return "Notchback";
     }
 }
