@@ -13,4 +13,11 @@ public class Minivan extends Car{
     public boolean isMini(){
         return mini;
     }
+    public String getVanType(){
+        if(mini){
+            return "Mini";
+        }
+        else
+            return "Compact";
+    }
 }
