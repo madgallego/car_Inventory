@@ -9,8 +9,9 @@ public class Car{
 	private String model;
 	private int type;
 	private double price;
+	private int capacity;	//number of persons it can contain
 	private int count;
-	private static int carTotal = 0;
+	public static int carTotal = 0;
 	
 	
 	public Car(String carID){
@@ -60,5 +61,8 @@ public class Car{
 	}
 	public int getCount(){
 		return count;
+	}
+	public int getCap(){
+		return capacity;
 	}
 }
