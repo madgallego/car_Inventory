@@ -3,7 +3,7 @@ package oop.car;
 import oop.car.Car;
 
 public class Sedan extends Car{
-    public String style;    
+    private String style;    
     public static int count = 0;
 
     public Sedan(String ID){
