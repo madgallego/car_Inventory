@@ -10,7 +10,7 @@ public class Car{
 	private int type;
 	private double price;
 	private int capacity;	//number of persons it can contain
-	private int count;
+	private int num;
 	public static int carTotal = 0;
 	
 	
@@ -19,7 +19,7 @@ public class Car{
 		this.brand = carID.substring(0,3);
 		this.type = Integer.parseInt(carID.substring(3, 5));
 		this.model = carID.substring(5, 8);
-		this.count = Integer.parseInt(carID.substring(8,10));
+		this.num = Integer.parseInt(carID.substring(8,10));
 		this.price = Integer.parseInt((this.carID.substring(10, 14))) * Math.pow(10, Integer.parseInt(this.carID.substring(14,15))); 
 
 
@@ -59,8 +59,8 @@ public class Car{
 	public int getType(){
 		return type;
 	}
-	public int getCount(){
-		return count;
+	public int getNum(){
+		return num;
 	}
 	public int getCap(){
 		return capacity;
