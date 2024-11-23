@@ -7,6 +7,8 @@ public class Car{
 	private double weight;
 	private String brand;
 	private String model;
+	private String engine;
+	private int horsepower;
 	private int type;
 	private double price;
 	private int capacity;	//number of persons it can contain
@@ -64,5 +66,11 @@ public class Car{
 	}
 	public int getCap(){
 		return capacity;
+	}
+	public String getEngine(){
+		return engine;
+	}
+	public int getHorsepower(){
+		return horsepower;
 	}
 }
