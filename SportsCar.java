@@ -4,7 +4,6 @@ import oop.car.Car;
 
 public class SportsCar extends Car{
     private char seatLayout;  //a for roadster, b for 2+2
-    private char engineLayout; //a for FR, b for MR, c for FF, d for MF
     public static int count = 0;
 
     public SportsCar(String ID){
@@ -20,21 +19,5 @@ public class SportsCar extends Car{
         }
         return "2+2";
     }
-    public char getEngineLayout(){
-        return engineLayout;
-    }
-    public String getEngineLayoutStr(){
-        switch(engineLayout){
-            case 'a':
-                return "FR";
-            case 'b':
-                return "MR";
-            case 'c':
-                return "FR";
-            case 'd':
-                return "MF";
-            default:
-                return "null";
-        }
-    }
+   
 }

@@ -13,6 +13,7 @@ public class Car{
 	private double price;
 	private int capacity;	//number of persons it can contain
 	private int num;
+	private char engineLayout; //a for FR, b for MR, c for FF, d for MF
 	public static int carTotal = 0;
 	
 	
@@ -73,4 +74,21 @@ public class Car{
 	public int getHorsepower(){
 		return horsepower;
 	}
+	 public char getEngineLayout(){
+        return engineLayout;
+    }
+    public String getEngineLayoutStr(){
+        switch(engineLayout){
+            case 'a':
+                return "FR";
+            case 'b':
+                return "MR";
+            case 'c':
+                return "FR";
+            case 'd':
+                return "MF";
+            default:
+                return "null";
+        }
+    }
 }
