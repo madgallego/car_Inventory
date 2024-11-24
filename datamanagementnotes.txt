@@ -58,3 +58,17 @@ ____________________________ .. smthn like that
 
 saving transaction records
 separate file? one file?
+
+DURING RUNTIME
+
+All cars are first initialized as basic CARS!!!
+When trying to see the details of the cars like the features it has, we instantiate the class for the cars type
+and fill in the info based on what the model is. 
+
+So its like
+Type
+	Brand
+		Model
+			Honda SUV randomModel //still a basic car
+We look at the contents of that car
+Instantiate an SUV with that model then display the SUV's contents

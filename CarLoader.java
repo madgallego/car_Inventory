@@ -25,18 +25,6 @@ public class CarLoader{
 		return cars;
 	}
 
-	public static ArrayList<SUV> SUVload(String file_name) throws FileNotFoundException {	//returns an arraylist containing all cars within the object
-		f = new File(file_name);
-		scan = new Scanner(f);
-		ArrayList<SUV> cars = new ArrayList<SUV>();
-		
-		while(scan.hasNextLine()){
-			SUV car = new SUV(scan.nextLine());
-			cars.add(car);
-		}
-		
-		return cars;
-	}
 
 
 
