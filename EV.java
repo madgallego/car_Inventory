@@ -15,6 +15,15 @@ public class EV extends Car{
     public int getRange(){
         return range;
     }
+    public void setRange(int range){
+        this.range = range;
+    }
+    public void setConnector(char connector){
+        this.connector = connector;
+    }
+    public void setBatteryLife(int batteryLife){
+        this.batteryLife = batteryLife;
+    }
     public int getRangeKMS(){
         return (int) ((float) range * 1.6);
     }

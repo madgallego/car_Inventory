@@ -12,4 +12,7 @@ public class Convertible extends Car{
     public int getRoofType(){
         return roofType;
     }
+    public void setRoofType(int roofType){
+        this.roofType = roofType;
+    }
 }

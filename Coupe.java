@@ -16,11 +16,19 @@ public class Coupe extends Car{
     public boolean getRear(){
         return rear;
     }
+    public void setRear(boolean rear){
+        this.rear = rear;
+    }
     public int getDoors(){
         return doors;
+    }
+    public void setDoors(int doors){
+        this.doors = doors;
     }
     public String getStyle(){
         return style;
     }
-    
+    public void setStyle(String style){
+        this.style = style; 
+    }
 }

@@ -10,6 +10,9 @@ public class SUV extends Car{
         super(ID);
         count++;
     }
+    public void setOffRoad(boolean offroad){
+        this.offroad = offroad;
+    }
     public boolean getOffRoad(){
         return this.offroad;
     }

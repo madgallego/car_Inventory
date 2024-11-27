@@ -11,6 +11,13 @@ public class Hatchback extends Car{
         super(ID);
         count++;
     }
+    public void setThreeDoor(boolean threeDoor){
+        this.threeDoor = threeDoor;
+    }
+    public void setBoxDesign(int boxDesign){
+        this.boxDesign = boxDesign;
+    }
+    
     public boolean isThreeDoor(){
         return threeDoor;
     }

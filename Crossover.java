@@ -14,6 +14,12 @@ public class Crossover extends Car{
     public int getSize(){
         return size;
     }
+    public void setSize(int size){
+        this.size = size;
+    }
+    public void setStyle(int style){
+        this.style = style;
+    }
     public String getSizeStr(){ //return size as string
         switch(size){
             case 1:

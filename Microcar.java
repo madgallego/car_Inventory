@@ -10,6 +10,9 @@ public class Microcar extends Car{
         super(ID);
         count++;
     }
+    public void setWheels(int wheels){
+        this.wheels = wheels;
+    }
     public int getWheels(){
         return wheels;
     }

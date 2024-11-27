@@ -12,6 +12,12 @@ public class Truck extends Car{
         count++;
     }   
 
+    public void setStyle(boolean style){
+        this.style = style;
+    }
+    public void setSize(int size){
+        this.size = size;
+    }
     public boolean getStyle(){
         return style;
     }
