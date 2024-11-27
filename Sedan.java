@@ -10,6 +10,9 @@ public class Sedan extends Car{
         super(ID);
         count++;
     }
+    public void setStyle(String style){
+        this.style = style;
+    }
     public String getStyle(){
         return style;
     }

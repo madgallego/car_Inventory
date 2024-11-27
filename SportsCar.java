@@ -10,6 +10,9 @@ public class SportsCar extends Car{
         super(ID);
         count++;
     }
+    public void setSeatLayout(char seatLayout){
+        this.seatLayout = seatLayout;
+    }
     public char getSeatLayout(){
         return seatLayout;
     }

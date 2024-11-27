@@ -13,6 +13,9 @@ public class Minivan extends Car{
     public boolean isMini(){
         return mini;
     }
+    public void setMini(boolean mini){
+        this.mini = mini;
+    }
     public String getVanType(){
         if(mini){
             return "Mini";

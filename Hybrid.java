@@ -13,6 +13,18 @@ public class Hybrid extends Car{
         super(ID);
         count++;
     }
+    public void setConfig(char config){
+        this.config = config;
+    }
+     public void setRange(int range){
+        this.range = range;
+    }
+    public void setConnector(char connector){
+        this.connector = connector;
+    }
+    public void setBatteryLife(int batteryLife){
+        this.batteryLife = batteryLife;
+    }
     public int getRange(){
         return range;
     }

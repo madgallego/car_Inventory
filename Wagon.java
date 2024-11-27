@@ -10,6 +10,9 @@ public class Wagon extends Car{
         super(ID);
         count++;
     }
+    public void setTailgate(String tailgate){
+        this.tailgate = tailgate;
+    }
     public String getTailgate(){
         return tailgate;
     }
