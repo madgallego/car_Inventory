@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class Luxury extends Car{
     private char category;  //a for compact executive, b for executive, c for Luxury saloon, d for ultra luxury, e for grand tourer
     //f for luxury suv, g for luxury mpv

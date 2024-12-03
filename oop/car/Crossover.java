@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class Crossover extends Car{
     private int size;   //1 for city car, 2 for subcompact, 3 for compact, 4 for mid size, 5 for full size
     private int style;  //1 for three-door, 2 for coupe, 3 for convertible

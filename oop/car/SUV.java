@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class SUV extends Car{
     private boolean offroad;
     private String style;

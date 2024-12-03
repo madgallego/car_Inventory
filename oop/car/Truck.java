@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class Truck extends Car{
     private boolean style;  //bed style. true for stepside, false for fleetside
     private int size;   //1 for kei, 2 for compact, 3 for mid-size, 4 for full-size

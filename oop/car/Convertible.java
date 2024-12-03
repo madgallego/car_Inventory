@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class Convertible extends Car{
     private int roofType;   //0 for textile, 1 for detachable hardtop, 2 for retractable hardtop
     private static int count = 0;
