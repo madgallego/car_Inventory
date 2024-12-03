@@ -1,15 +1,13 @@
-import oop.ui.Renderer;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import oop.car.Car;
 import oop.utils.CarLoader;
-import java.util.ArrayList;
-import oop.car.SUV;
-import java.io.FileNotFoundException;
 
 public class Main{
 
 	public static void main(String args[]){
-		Renderer window = new Renderer();
-		window.display();
+		//Renderer window = new Renderer();
+		//window.display();
 
 		ArrayList<Car> SUV = new ArrayList<Car>();
 		try{
@@ -25,7 +23,7 @@ public class Main{
 			System.out.println(SUV.get(i).getBrand());
 			System.out.println(SUV.get(i).getType());
 			System.out.println(SUV.get(i).getModel());
-			System.out.println(SUV.get(i).getCount());
+			//System.out.println(SUV.get(i).getCount());
 		}
 		
 	}
