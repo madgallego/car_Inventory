@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class EV extends Car{
     private int range;  //mileage before out of battery
     private char connector; //a for type 1, b for type 2, c for wireless

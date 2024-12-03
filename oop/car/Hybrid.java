@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class Hybrid extends Car{
     private char config;    //a for parallel, b for mild parallel, c for power-split, d for series, e for plug-in
     private int range;  //mileage before out of battery

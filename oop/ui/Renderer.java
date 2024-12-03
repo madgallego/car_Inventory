@@ -1,7 +1,7 @@
 package oop.ui;
 
-import javax.swing.JFrame;
 import java.awt.Canvas;
+import javax.swing.JFrame;
 
 //renderer class. all ui shall be sent here for rendering
 public class Renderer extends Canvas{

@@ -1,7 +1,5 @@
 package oop.car;
 
-import oop.car.Car;
-
 public class Coupe extends Car{
     private boolean rear;   //if it has seats at the back
     private int doors;  //specifies door count, typically 2
