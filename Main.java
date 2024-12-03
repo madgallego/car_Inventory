@@ -11,7 +11,7 @@ public class Main{
 
 		ArrayList<Car> SUV = new ArrayList<Car>();
 		try{
-			SUV = CarLoader.load("SUV.txt");
+			SUV = CarLoader.load("C:\\Users\\Test\\Documents\\My Java Programs\\car_Inventory\\oop\\database\\SUV.txt");
 		}
 		catch(FileNotFoundException e){
 			System.out.println("File not found");
