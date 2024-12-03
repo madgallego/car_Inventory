@@ -8,10 +8,13 @@ public class Main{
 	public static void main(String args[]){
 		//Renderer window = new Renderer();
 		//window.display();
+		
+		String filepath = "oop\\database\\SUV.txt";
+		//will be creating an object fetcher that can modify file path for better accesibility
 
 		ArrayList<Car> SUV = new ArrayList<Car>();
 		try{
-			SUV = CarLoader.load("C:\\Users\\Test\\Documents\\My Java Programs\\car_Inventory\\oop\\database\\SUV.txt");
+			SUV = CarLoader.load(filepath);
 		}
 		catch(FileNotFoundException e){
 			System.out.println("File not found");
