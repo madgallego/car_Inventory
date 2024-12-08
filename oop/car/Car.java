@@ -4,7 +4,8 @@ public class Car{
 	private String carID;
 	private double x; //dimension of the car
 	private double y;
-	private double weight;
+	private double z;
+	private String transmission;
 	private String brand;
 	private String model;
 	private String engine;
@@ -31,9 +32,10 @@ public class Car{
 		return carID;
 	}
 	
-	public void setDimension(double x, double y){
+	public void setDimension(double x, double y, double z){
 		this.x = x;
 		this.y = y;
+		this.z = z;
 	}
 	
 	public double getCarX(){
@@ -42,17 +44,20 @@ public class Car{
 	public double getCarY(){
 		return y;
 	}
+	public double getCarZ(){
+		return z;
+	}
 	public double getPrice(){
 		return price;
 	}
 	public void setPrice(double price){
 		this.price = price;
 	}
-	public double getWeight(){
-		return weight;
+	public String getTransmission(){
+		return transmission;
 	}
-	public void setWeight(double weight){
-		this.weight = weight;
+	public void setTransmission(String transmission){
+		this.transmission = transmission;
 	}
 	public String getBrand(){
 		return brand;
