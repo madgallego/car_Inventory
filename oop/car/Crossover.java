@@ -2,7 +2,7 @@ package oop.car;
 
 public class Crossover extends Car{
     private int size;   //1 for city car, 2 for subcompact, 3 for compact, 4 for mid size, 5 for full size
-    private int style;  //1 for three-door, 2 for coupe, 3 for convertible
+    private int style;  //0 for default, 1 for three-door, 2 for coupe, 3 for convertible
     public static int count = 0;
     
     public Crossover(String ID){
@@ -39,6 +39,8 @@ public class Crossover extends Car{
     }
     public String getStyleStr(){
         switch(style){
+            case 0:
+                return "Default";
             case 1:
                 return "Three-door";
             case 2:
