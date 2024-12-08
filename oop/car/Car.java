@@ -4,7 +4,8 @@ public class Car{
 	private String carID;
 	private double x; //dimension of the car
 	private double y;
-	private double weight;
+	private double z;
+	private String transmission;
 	private String brand;
 	private String model;
 	private String engine;
@@ -13,7 +14,7 @@ public class Car{
 	private double price;
 	private int capacity;	//number of persons it can contain
 	private int num;
-	private char engineLayout; //a for FR, b for MR, c for FF, d for MF
+	private char fuel; //a gas, b diesel, c biodiesel, d cng, e ethanol, f electric
 	public static int carTotal = 0;
 	
 	
@@ -31,9 +32,10 @@ public class Car{
 		return carID;
 	}
 	
-	public void setDimension(double x, double y){
+	public void setDimension(double x, double y, double z){
 		this.x = x;
 		this.y = y;
+		this.z = z;
 	}
 	
 	public double getCarX(){
@@ -42,17 +44,20 @@ public class Car{
 	public double getCarY(){
 		return y;
 	}
+	public double getCarZ(){
+		return z;
+	}
 	public double getPrice(){
 		return price;
 	}
 	public void setPrice(double price){
 		this.price = price;
 	}
-	public double getWeight(){
-		return weight;
+	public String getTransmission(){
+		return transmission;
 	}
-	public void setWeight(double weight){
-		this.weight = weight;
+	public void setTransmission(String transmission){
+		this.transmission = transmission;
 	}
 	public String getBrand(){
 		return brand;
@@ -96,22 +101,27 @@ public class Car{
 	public void setHorsepower(int horsepower){
 		this.horsepower = horsepower;
 	}
-	 public char getEngineLayout(){
-        return engineLayout;
+	 public char getFuel(){
+        return fuel;
     }
-	public void setEngineLayout(char engineLayout){
-		this.engineLayout = engineLayout;
+	public void setFuel(char fuel){
+		this.fuel = fuel;
 	}
-    public String getEngineLayoutStr(){
-        switch(engineLayout){
+    public String getFueltr(){
+        switch(fuel){
             case 'a':
-                return "FR";
+                return "Gasoline";
             case 'b':
-                return "MR";
+                return "Diesel";
             case 'c':
-                return "FR";
+                return "Biodiesel";
             case 'd':
-                return "MF";
+                return "CNG";
+			case 'e':
+				return "Ethanol";
+			case 'f':
+				return "Battery-Electric";
+
             default:
                 return "null";
         }
