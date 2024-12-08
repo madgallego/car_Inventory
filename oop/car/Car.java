@@ -13,7 +13,7 @@ public class Car{
 	private double price;
 	private int capacity;	//number of persons it can contain
 	private int num;
-	private char engineLayout; //a for FR, b for MR, c for FF, d for MF
+	private char fuel; //a gas, b diesel, c biodiesel, d cng, e ethanol, f electric
 	public static int carTotal = 0;
 	
 	
@@ -96,22 +96,27 @@ public class Car{
 	public void setHorsepower(int horsepower){
 		this.horsepower = horsepower;
 	}
-	 public char getEngineLayout(){
-        return engineLayout;
+	 public char getFuel(){
+        return fuel;
     }
-	public void setEngineLayout(char engineLayout){
-		this.engineLayout = engineLayout;
+	public void setFuel(char fuel){
+		this.fuel = fuel;
 	}
-    public String getEngineLayoutStr(){
-        switch(engineLayout){
+    public String getFueltr(){
+        switch(fuel){
             case 'a':
-                return "FR";
+                return "Gasoline";
             case 'b':
-                return "MR";
+                return "Diesel";
             case 'c':
-                return "FR";
+                return "Biodiesel";
             case 'd':
-                return "MF";
+                return "CNG";
+			case 'e':
+				return "Ethanol";
+			case 'f':
+				return "Battery-Electric";
+
             default:
                 return "null";
         }
