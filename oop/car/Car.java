@@ -77,6 +77,43 @@ public class Car{
 	public void setType(int type){
 		this.type = type;
 	}
+	//returns type as string. very useful for file builder
+	public String getTypeStr(){
+		switch(type){
+			case 0:
+				return "Sedan";
+			case 1:
+				return "SUV";
+			case 2:
+				return "Coupe";
+			case 3:
+				return "Convertible";
+			case 4:
+				return "Hatchback";
+			case 5:
+				return "Wagon";
+			case 6:
+				return "Minivan";
+			case 7:
+				return "Truck";
+			case 8:
+				return "Crossover";
+			case 9:
+				return "SportsCar";
+			case 10:
+				return "EV";
+			case 11:
+				return "Hybrid";	//remove if not needed anymore
+			case 12:
+				return "Luxury";
+			case 13:
+				return "Microcar";
+			default:
+				return null;
+		}
+	}
+
+
 	public int getNum(){
 		return num;
 	}
