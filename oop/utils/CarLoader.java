@@ -18,7 +18,7 @@ public class CarLoader{
 		ArrayList<Car> cars = new ArrayList<Car>();
 		
 		while(scan.hasNextLine()){
-			SUV car = new SUV(scan.nextLine());
+			Car car = new Car(scan.nextLine());
 			cars.add(car);
 		}
 		
