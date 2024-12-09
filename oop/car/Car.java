@@ -1,5 +1,4 @@
 package oop.car;
-
 public class Car{
 	private String carID;
 	private double x; //dimension of the car
