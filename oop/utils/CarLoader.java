@@ -103,6 +103,7 @@ public class CarLoader{
 
 		for(int i = 0; i < list.size(); i++){
 			file.write(list.get(i).getCarID() + "\n");	//print id in file
+			list.get(i).save(getFile(car));	//print the rest of infos regardless of type
 		}
 
 		file.close(); //might cause bugs if files work like magic in java
