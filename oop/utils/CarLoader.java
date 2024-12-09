@@ -103,6 +103,15 @@ public class CarLoader{
 
 		for(int i = 0; i < list.size(); i++){
 			file.write(list.get(i).getCarID() + "\n");	//print id in file
+			file.write(list.get(i).getCarX() + "\n");	//print x
+			file.write(list.get(i).getCarY() + "\n");	//y
+			file.write(list.get(i).getCarZ() + "\n");	//z
+			file.write(list.get(i).getTransmission() + "\n");	//transmission
+			file.write(list.get(i).getEngine() + "\n");	//engine
+			file.write(list.get(i).getHorsepower() + "\n");	//hp
+			file.write(list.get(i).getCap() + "\n");	//cap
+			file.write(list.get(i).getFuel() + "\n");	//fuel
+
 			list.get(i).save(getFile(car));	//print the rest of infos regardless of type
 		}
 
