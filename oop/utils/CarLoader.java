@@ -25,6 +25,50 @@ public class CarLoader{
 		return cars;
 	}
 
+	//via id
+	public static Car searchID(ArrayList<Car> list, String carID){
+		for(int i = 0; i < list.size(); i++){
+			if(list.get(i).getCarID() == carID)
+				return list.get(i);	//car found
+		}
+		return null; //car not found
+	}
+
+	//via transmission
+	public static Car searchTrans(ArrayList<Car> list, String transmission){
+		for(int i = 0; i < list.size(); i++){
+			if(list.get(i).getTransmission() == transmission)
+				return list.get(i);	//car found
+		}
+		return null; //car not found
+	}
+	//via transmission but all occurrences
+	public static ArrayList<Car> searchTransAll(ArrayList<Car> list, String transmission){
+		ArrayList<Car> found = new ArrayList<Car>();
+		or(int i = 0; i < list.size(); i++){
+			if(list.get(i).getTransmission() == transmission)
+				found.add(list.get(i));	//car found
+		}
+		return found;
+	}
+
+	//via brand
+	public static Car searchBrand(ArrayList<Car> list, String brand){
+		for(int i = 0; i < list.size(); i++){
+			if(list.get(i).getBrand() == brand)
+				return list.get(i);	//car found
+		}
+		return null; //car not found
+	}
+	//via brand but all occurrences
+	public static ArrayList<Car> searchBrandAll(ArrayList<Car> list, String brand){
+		ArrayList<Car> found = new ArrayList<Car>();
+		or(int i = 0; i < list.size(); i++){
+			if(list.get(i).getBrand() == brand)
+				found.add(list.get(i));	//car found
+		}
+		return found;
+	}
 
 
 
