@@ -4,8 +4,11 @@ import oop.car.Car;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.io.IOException;
 import java.util.ArrayList;
 import oop.car.SUV;
+import oop.utils.PathBuilder;
+import java.io.FileWriter;
 
 
 public class CarLoader{
@@ -18,7 +21,7 @@ public class CarLoader{
 		ArrayList<Car> cars = new ArrayList<Car>();
 		
 		while(scan.hasNextLine()){
-			SUV car = new SUV(scan.nextLine());
+			Car car = new Car(scan.nextLine());
 			cars.add(car);
 		}
 		
@@ -88,8 +91,23 @@ public class CarLoader{
 		return found;
 	}
 	
+	//finds the file where the car is stored
+	public static File getFile(Car car){	
+		PathBuilder path = new PathBuilder(car.getTypeStr(), car.getBrand());
+		File file = new File(path.getPath());
+		return file;
+	}
+	//pass the list of cars of that brand and of that type plz
+	public static void removeCarFromFile(ArrayList<Car> list, Car car) throws IOException{
+		FileWriter file = new FileWriter(getFile(car));
 
+		for(int i = 0; i < list.size(); i++){
+			file.write(list.get(i).getCarID() + "\n");	//print id in file
+		}
 
+		file.close(); //might cause bugs if files work like magic in java
+
+	}
 
 
 
