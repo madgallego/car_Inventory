@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Transaction {
-    private ArrayList<Car> carList; // Current collection of cars
+    private ArrayList<Car> carList;
 
-    // Constructor initializes the list
+//allows passing filePath for transactions on diff car type database
+    
     public Transaction(String filePath) throws FileNotFoundException {
         carList = CarLoader.load(filePath); // Load cars from file using CarLoader
     }
@@ -25,13 +26,13 @@ public class Transaction {
         while (iterator.hasNext()) {
             Car car = iterator.next();
             if (car.getCarID().equals(carID)) {
-                iterator.remove(); // Safe removal during iteration
+                iterator.remove(); 
                 System.out.println("\nCar removed: " + carID);
                 return true; // Car successfully removed
             }
         }
         System.out.println("\nCar not found: " + carID);
-        return false; // Car not found
+        return false; 
     }
 
     // Method to traverse and display all cars
@@ -51,7 +52,7 @@ public class Transaction {
         }
     }
 
-    // Getter for the car list
+    // Accessor for the car list
     public ArrayList<Car> getCarList() {
         return carList;
     }
