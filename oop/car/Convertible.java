@@ -33,7 +33,7 @@ public class Convertible extends Car{
     //saves remainder of the info
     public void save(File file) throws IOException{    
         FileWriter f = new FileWriter(file, true);  //append mode
-        f.write(this.getRoofType());
+        f.write(this.getRoofType() + "\n");
     }
     public int getRoofType(){
         return roofType;
