@@ -1,5 +1,7 @@
 package oop.car;
-
+import java.io.*;
+import java.util.*;
+import oop.utils.PathBuilder;
 public class EV extends Car{
     private int range;  //mileage before out of battery
     private char connector; //a for type 1, b for type 2, c for wireless
@@ -9,6 +11,34 @@ public class EV extends Car{
     public EV(String ID){
         super(ID);
         count++;
+    }
+
+    public void build() throws IOException{
+        PathBuilder path = new PathBuilder(this.getTypeStr(), this.getBrand());
+        File file = new File(path.getPath());
+
+        Scanner scan = new Scanner(path.getPath());
+
+        while(scan.next() != this.getCarID()){
+            this.setDimension(scan.nextInt(), scan.nextInt(), scan.nextInt());
+            this.setTransmission(scan.nextLine());
+            this.setEngine(scan.nextLine());
+            this.setHorsepower(scan.nextInt());
+            this.setCap(scan.nextInt());
+            this.setFuel(scan.next().charAt(0));
+
+            this.range = scan.nextInt();
+            this.connector = scan.nextLine().charAt(0);
+            this.batteryLife = scan.nextInt();
+        }
+
+    }
+    //saves remainder of the info
+    public void save(File file) throws IOException{    
+        FileWriter f = new FileWriter(file, true);  //append mode
+        f.write(this.getRange() + "\n");
+        f.write(this.getConnector() + "\n");
+        f.write(this.getBatteryLife() + "\n");
     }
     public int getRange(){
         return range;

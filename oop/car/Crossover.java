@@ -1,5 +1,7 @@
 package oop.car;
-
+import java.io.*;
+import java.util.*;
+import oop.utils.PathBuilder;
 public class Crossover extends Car{
     private int size;   //1 for city car, 2 for subcompact, 3 for compact, 4 for mid size, 5 for full size
     private int style;  //0 for default, 1 for three-door, 2 for coupe, 3 for convertible
@@ -9,6 +11,32 @@ public class Crossover extends Car{
         super(ID);
         count++;
     }
+    public void build() throws IOException{
+        PathBuilder path = new PathBuilder(this.getTypeStr(), this.getBrand());
+        File file = new File(path.getPath());
+
+        Scanner scan = new Scanner(path.getPath());
+
+        while(scan.next() != this.getCarID()){
+            this.setDimension(scan.nextInt(), scan.nextInt(), scan.nextInt());
+            this.setTransmission(scan.nextLine());
+            this.setEngine(scan.nextLine());
+            this.setHorsepower(scan.nextInt());
+            this.setCap(scan.nextInt());
+            this.setFuel(scan.next().charAt(0));
+
+            this.size = scan.nextInt();
+            this.style = scan.nextInt();
+        }
+
+    }
+    //saves remainder of the info
+    public void save(File file) throws IOException{    
+        FileWriter f = new FileWriter(file, true);  //append mode
+        f.write(this.getSize() + "\n");
+        f.write(this.getStyle() + "\n");
+    }
+
     public int getSize(){
         return size;
     }
