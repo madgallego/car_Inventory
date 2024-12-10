@@ -1,5 +1,7 @@
 package oop.car;
 
+import java.io.File;
+import java.io.IOException;
 public class Car{
 	private String carID;
 	private double x; //dimension of the car
@@ -163,4 +165,8 @@ public class Car{
                 return "null";
         }
     }
+
+	public void build() throws IOException{};	//overridable
+
+	public void save(File file) throws IOException{}	//overridable
 }
