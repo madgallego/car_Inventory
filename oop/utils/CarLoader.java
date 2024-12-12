@@ -9,13 +9,16 @@ import java.util.ArrayList;
 import oop.car.SUV;
 import oop.utils.PathBuilder;
 import java.io.FileWriter;
+import java.util.Iterator;
 
 
 public class CarLoader{
 
 	private static File f;
 	private static Scanner scan;
-	public static ArrayList<Car> load(String file_name) throws FileNotFoundException {	//returns an arraylist containing all cars within the object
+
+	//returns an arraylist containing all cars within the object
+	public static ArrayList<Car> load(String file_name) throws FileNotFoundException {	
 		f = new File(file_name);
 		scan = new Scanner(f);
 		ArrayList<Car> cars = new ArrayList<Car>();
@@ -26,6 +29,16 @@ public class CarLoader{
 		}
 		
 		return cars;
+	}
+
+	// saves ArrayList of cars back into the file (used after transactions on the carList for safer adding or removal of car objects)
+	public static void save(String file_name, ArrayList<Car> list) {	
+		f = new File(file_name);
+		Iterator<Car> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Car car = iterator.next();
+			file.write(car.getCarID() + "\n");	//print id in file
+        }
 	}
 
 	//via id

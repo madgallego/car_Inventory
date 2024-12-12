@@ -4,6 +4,7 @@ public class PathBuilder {
 		private static String path = "oop\\database\\"; 
 		String carType;
 		String carBrand;
+		
 	public PathBuilder(String carType, String carBrand) {
 		this.carType=carType;
 		this.carBrand=carBrand;
