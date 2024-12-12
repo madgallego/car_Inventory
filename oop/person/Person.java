@@ -1,14 +1,15 @@
-package person;
+package oop.person;
 
 public class Person{
 
-    //Atributes
+    //Attributes
     private String name;
     private String email;
     private String address;
     private int[] phone = new int[11];
 
     //Constructor
+    public Person() { } //
 
     //Mutators
     public void setName(String name) {
@@ -43,8 +44,4 @@ public class Person{
     public int[] getPhone() {
         return phone;
     }
-
-    //Methods
-
-
 }
