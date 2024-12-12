@@ -41,7 +41,7 @@ therefore 3d
 
 in configuration
 
-	{transac1, transac2, transac3...}}, arranged by date
+	{transac1, transac2, transac3...}, arranged by date
 	
 for graphing shit, we can limit to whatever we want to graph. kung total, ireread nya lahat ng transaction sa 3d array and then do some 2d graphics shit to get the pixel idk idk
 
