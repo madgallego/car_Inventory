@@ -1,23 +1,38 @@
 package oop.person;
 
-public class Person{
+import java.util.Arrays;
 
-    //Attributes
+public class Person {
+
+    // Attributes
     private String name;
     private String email;
     private String address;
-    private int[] phone = new int[11];
+    private int[] phone;
 
-    //Constructor
-    public Person() { } //
+    // Default Constructor
+    public Person() {}
 
-    //Mutators
+    // Parameterized Constructor
+    public Person(String name, String email, String address, int[] phone) {
+        setName(name);
+        setEmail(email);
+        setAddress(address);
+        setPhone(phone); // Use setter for validation
+    }
+
+    // Mutators
     public void setName(String name) {
         this.name = name;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (email != null && (email.contains("@gmail.com") || email.contains("@yahoo.com") || 
+                              email.contains("@outlook.com") || email.contains("@bicol-u.edu.ph"))) {
+            this.email = email;
+        } else {
+            throw new IllegalArgumentException("Invalid email address.");
+        }
     }
 
     public void setAddress(String address) {
@@ -25,10 +40,19 @@ public class Person{
     }
 
     public void setPhone(int[] phone) {
-        this.phone = phone;
+        if (phone != null && phone.length == 11) {
+            for (int digit : phone) {
+                if (digit < 0 || digit > 9) { // Ensure all elements are valid digits
+                    throw new IllegalArgumentException("Phone number must contain only digits (0-9).");
+                }
+            }
+            this.phone = Arrays.copyOf(phone, phone.length); // Copy to ensure encapsulation
+        } else {
+            throw new IllegalArgumentException("Phone number must have exactly 11 digits.");
+        }
     }
 
-    //Accessors
+    // Accessors
     public String getName() {
         return name;
     }
@@ -42,6 +66,17 @@ public class Person{
     }
 
     public int[] getPhone() {
-        return phone;
+        return phone != null ? Arrays.copyOf(phone, phone.length) : null; // Return a copy for safety
+    }
+
+    // toString Method
+    @Override
+    public String toString() {
+        return "Person { " +
+               "name = '" + name + '\'' +
+               ", email = '" + email + '\'' +
+               ", address = '" + address + '\'' +
+               ", phone = " + (phone != null ? Arrays.toString(phone) : "N/A") +
+               " }";
     }
 }

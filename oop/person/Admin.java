@@ -1,24 +1,49 @@
 package oop.person;
 
 public class Admin extends Person {
-    //Attributes
-    private static int adminCount = 0;
+    // Attributes
+    private static int count = 0;
     private String adminID;
     private String password;
 
-    //Constructor
+    // Constructor
     public Admin() {
-        adminCount++;
+        count++;
     }
 
-    //Mutator methods
+    // Mutator methods
     public void setAdminID(String adminID) {
         this.adminID = adminID;
     }
 
     public void setPassword(String password) {
-        this.password = passwor;
+        this.password = password;
     }
 
-    //Accessor method
+    // Accessor methods
+    public String getAdminID() {
+        return adminID;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    // toString Method
+    @Override
+    public String toString() {
+        return "Admin {" +
+               "name = '" + getName() + '\'' +
+               ", email = '" + getEmail() + '\'' +
+               ", address = '" + getAddress() + '\'' +
+               ", phone = " + getPhone() +
+               ", adminID = '" + adminID + '\'' +
+               ", password = '" + password + '\'' +
+               ", total admins = " + count +
+               '}';
+    }
 }
