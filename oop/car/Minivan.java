@@ -1,11 +1,16 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
+
 public class Minivan extends Car{
     private boolean mini;   //if true, its mini mpv, if false, then its compact mpv
     public static int count = 0;
     
-    public Minivan(String ID){
-        super(ID);
+    public Minivan(ArrayList<String> attribs){
+        super(attribs);
+        attribCount = 9;
+        setMini(Boolean.parseBoolean(attribs.get(8)));
         count++;
     }
     public boolean isMini(){

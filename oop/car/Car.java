@@ -1,6 +1,9 @@
 package oop.car;
 
+import java.util.ArrayList;
 public class Car{
+	private ArrayList<String> attribs;
+	public int attribCount = 8;
 	private String carID;
 	private double x; //dimension of the car
 	private double y;
@@ -18,13 +21,20 @@ public class Car{
 	public static int carTotal = 0;
 	
 	
-	public Car(String carID){
-		this.carID = carID; //always needed so the car is within the dat base
+	public Car(ArrayList<String> attribs){
+		this.attribs = attribs;
+		this.carID = attribs.get(0); //always needed so the car is within the dat base
 		this.brand = carID.substring(0,3);
 		this.type = Integer.parseInt(carID.substring(3, 5));
 		this.model = carID.substring(5, 8);
 		this.num = Integer.parseInt(carID.substring(8,10));
-		this.price = Integer.parseInt((this.carID.substring(10, 14))) * Math.pow(10, Integer.parseInt(this.carID.substring(14,15))); 
+		this.price = Integer.parseInt((this.carID.substring(10, 14))) * Math.pow(10, Integer.parseInt(this.carID.substring(14,15)));
+
+		setDimension(Double.parseDouble(attribs.get(1)), Double.parseDouble(attribs.get(2)), Double.parseDouble(attribs.get(3)));
+		setEngine(attribs.get(4));
+		setHorsepower(Integer.parseInt(attribs.get(5)));
+		setCap(Integer.parseInt(attribs.get(6)));
+		setFuel(attribs.get(7).charAt(0));
 		this.carTotal++;
 	}
 
@@ -38,13 +48,13 @@ public class Car{
 		this.z = z;
 	}
 	
-	public double getCarX(){
+	public double getCarX(){	//length
 		return x;
 	}
-	public double getCarY(){
+	public double getCarY(){ //height
 		return y;
 	}
-	public double getCarZ(){
+	public double getCarZ(){ //width
 		return z;
 	}
 	public double getPrice(){
@@ -163,4 +173,6 @@ public class Car{
                 return "null";
         }
     }
+
+
 }

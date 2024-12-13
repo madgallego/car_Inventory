@@ -1,12 +1,18 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
+
 public class Truck extends Car{
     private boolean style;  //bed style. true for stepside, false for fleetside
     private int size;   //1 for kei, 2 for compact, 3 for mid-size, 4 for full-size
     public static int count = 0;
 
-    public Truck(String ID){
-        super(ID);
+    public Truck(ArrayList<String> attribs){
+        super(attribs);
+        attribCount = 10;
+        setStyle(Boolean.parseBoolean(attribs.get(8)));
+        setSize(Integer.parseInt(attribs.get(9)));
         count++;
     }   
 
