@@ -1,7 +1,10 @@
 package oop.utils;
 
+import oop.car.Car;
+import java.io.File;
+import java.io.IOException;
 public class PathBuilder {
-		private static String path = "oop\\database\\"; 
+		private static String path = "././oop/database/"; 
 		String carType;
 		String carBrand;
 		
@@ -12,17 +15,29 @@ public class PathBuilder {
 	}
 	
 	private void setPath (){
-		path = path+carType+"\\"+ carBrand +".txt";
+		path = path+carType+"/"+ carBrand +".txt";
 	}
 	
 	public String getPath() {
 		return path;
 	}
 
+	public static File makeFile(String path) throws IOException{
+		File file = new File(path);
+		return file;
+	}
+
 	//finds the file where the car is stored
-	public static File getFile(Car car){	
-		PathBuilder path = new PathBuilder(car.getTypeStr(), car.getBrand());
-		File file = new File(path.getPath());
+	public static File getFile(String type, String brand){	
+		PathBuilder path = new PathBuilder(type, brand);
+		File file;
+		try{
+			file = makeFile(path.path);
+		}
+		catch(IOException e){
+			System.err.println("File Not Found");
+			return null;
+		}
 		return file;
 	}
 	
