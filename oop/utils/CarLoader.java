@@ -307,30 +307,23 @@ public class CarLoader{
 
 
 	// saves ArrayList of cars back into the file (used after transactions on the carList for safer adding or removal of car objects)
-	public static void save(ArrayList<Car> list, String type, String brand){	
+	public static void save(ArrayList<Car> list){	
 		try{
-			FileWriter file = new FileWriter(PathBuilder.getFile(type, brand));
+			FileWriter file = new FileWriter(PathBuilder.getFile(list.get(0).getTypeStr(), list.get(0).getBrand()));
 			Iterator<Car> iterator = list.iterator();
 			while (iterator.hasNext()) {
 				Car car = iterator.next();
-				file.write(car.getCarID() + "\n");	//print id in file
-				//print all other atributes (ikaw na here lester ;D )
+				for(int i = 0; i < car.attribs.size(); i++)
+					file.write(car.attribs.get(i) + "\n");	
 			}
 		}catch(IOException e){
 			System.err.println("File Not Found");
 		}
 	}
 	
-	//pass the list of cars of that brand and of that type plz
-	public static void removeCarFromFile(ArrayList<Car> list, Car car) throws IOException{
-		FileWriter file = new FileWriter(PathBuilder.getFile(car.getTypeStr(), car.getBrand()));
-
-		for(int i = 0; i < list.size(); i++){
-			file.write(list.get(i).getCarID() + "\n");	//print id in file
-		}
-
-		file.close(); //might cause bugs if files work like magic in java
-
+	public static void addCar(ArrayList<Car> list, Car car){
+		list.add(car);
+		save(list);
 	}
 
 
