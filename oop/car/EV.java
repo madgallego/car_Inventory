@@ -1,13 +1,20 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
 public class EV extends Car{
     private int range;  //mileage before out of battery
     private char connector; //a for type 1, b for type 2, c for wireless
     private int batteryLife;    //battery life before it needs to be swapped/replaced
+    public static int attribCount = 11;
     public static int count = 0;
 
-    public EV(String ID){
-        super(ID);
+    public EV(ArrayList<String> attribs){
+        super(attribs);
+
+        setRange(Integer.parseInt(attribs.get(8)));
+        setConnector(attribs.get(9).charAt(0));
+        setBatteryLife(Integer.parseInt(attribs.get(10)));
         count++;
     }
     public int getRange(){

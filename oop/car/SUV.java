@@ -1,10 +1,16 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
+
 public class SUV extends Car{
     private char style; //a crossover/ b mini/ c compact/ d mid/ e full/ f extended/ g coupe
+    public static int attribCount = 9;
     public static int count = 0;
-    public SUV(String ID){
-        super(ID);
+    public SUV(ArrayList<String> attribs){
+        super(attribs);
+        
+        setStyle(attribs.get(8).charAt(0));
         count++;
     }
     public char getStyle(){

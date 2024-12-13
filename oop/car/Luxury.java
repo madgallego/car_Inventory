@@ -1,12 +1,17 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
 public class Luxury extends Car{
     private char category;  //a for compact executive, b for executive, c for Luxury saloon, d for ultra luxury, e for grand tourer
     //f for luxury suv, g for luxury mpv
+    public static int attribCount = 9;
     public static int count = 0;
 
-    public Luxury(String ID){
-        super(ID);
+    public Luxury(ArrayList<String> attribs){
+        super(attribs);
+
+        setCategory(attribs.get(8).charAt(0));
         count++;
     }
     public void setCategory(char category){

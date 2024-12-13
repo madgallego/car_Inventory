@@ -1,12 +1,17 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
 public class Crossover extends Car{
     private int size;   //1 for city car, 2 for subcompact, 3 for compact, 4 for mid size, 5 for full size
     private int style;  //0 for default, 1 for three-door, 2 for coupe, 3 for convertible
+    public static int attribCount = 10;
     public static int count = 0;
     
-    public Crossover(String ID){
-        super(ID);
+    public Crossover(ArrayList<String> attribs){
+        super(attribs);
+        setSize(Integer.parseInt(attribs.get(8)));
+        setStyle(Integer.parseInt(attribs.get(9)));
         count++;
     }
     public int getSize(){

@@ -1,33 +1,24 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import oop.car.Car;
+import oop.car.*;
 import oop.utils.CarLoader;
 
 public class Main{
 
 	public static void main(String args[]){
-		//Renderer window = new Renderer();
-		//window.display();
-		
-		String filepath = "oop\\database\\SUV.txt";
-		//will be creating an object fetcher that can modify file path for better accesibility
-
-		ArrayList<Car> SUV = new ArrayList<Car>();
-		try{
-			SUV = CarLoader.load(filepath);
-		}
-		catch(FileNotFoundException e){
-			System.out.println("File not found");
-		}
-
-		for(int i = 0; i < SUV.size(); i++){
-			System.out.println(SUV.get(i).getCarID());
-			System.out.println(SUV.get(i).getPrice());
-			System.out.println(SUV.get(i).getBrand());
-			System.out.println(SUV.get(i).getType());
-			System.out.println(SUV.get(i).getModel());
-			//System.out.println(SUV.get(i).getCount());
-		}
+		ArrayList<Convertible> c = CarLoader.loadConvertible("PAF");
+        for(int i = 0; i < Convertible.count; i++){
+            System.out.println(c.get(i).getCarID());
+            System.out.println(c.get(i).getCarX());
+            System.out.println(c.get(i).getCarY());
+            System.out.println(c.get(i).getCarZ());
+            System.out.println(c.get(i).getEngine());
+            System.out.println(c.get(i).getHorsepower());
+            System.out.println(c.get(i).getCap());
+            System.out.println(c.get(i).getFueltr());
+            System.out.println(c.get(i).getTypeStr());
+            
+        }
 		
 	}
 

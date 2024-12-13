@@ -1,11 +1,16 @@
 package oop.car;
 
+import java.util.ArrayList;
+import oop.car.Car;
 public class SportsCar extends Car{
     private char seatLayout;  //a for roadster, b for 2+2
+    public static int attribCount = 9;
     public static int count = 0;
 
-    public SportsCar(String ID){
-        super(ID);
+    public SportsCar(ArrayList<String> attribs){
+        super(attribs);
+
+        setSeatLayout(attribs.get(8).charAt(0));
         count++;
     }
     public void setSeatLayout(char seatLayout){
