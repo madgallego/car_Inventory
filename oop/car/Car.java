@@ -3,7 +3,7 @@ package oop.car;
 import java.util.ArrayList;
 public class Car{
 	private ArrayList<String> attribs;
-	public int attribCount = 8;
+	public static int attribCount = 8;
 	private String carID;
 	private double x; //dimension of the car
 	private double y;

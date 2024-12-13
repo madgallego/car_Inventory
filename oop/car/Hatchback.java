@@ -4,11 +4,12 @@ import oop.car.Car;
 public class Hatchback extends Car{
     private boolean threeDoor;  //if its false, then it is automatically a five door hatchback
     private int boxDesign;    //1 for estate, 2 for liftback, 3 for notchback
+    public static int attribCount = 10;
     public static int count = 0;
 
     public Hatchback(ArrayList<String> attribs){
         super(attribs);
-        attribCount = 10;
+
         setThreeDoor(Boolean.parseBoolean(attribs.get(8)));
         setBoxDesign(Integer.parseInt(attribs.get(9)));
         count++;

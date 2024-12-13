@@ -5,11 +5,12 @@ import oop.car.Car;
 public class Luxury extends Car{
     private char category;  //a for compact executive, b for executive, c for Luxury saloon, d for ultra luxury, e for grand tourer
     //f for luxury suv, g for luxury mpv
+    public static int attribCount = 9;
     public static int count = 0;
 
     public Luxury(ArrayList<String> attribs){
         super(attribs);
-        attribCount = 9;
+
         setCategory(attribs.get(8).charAt(0));
         count++;
     }

@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import oop.car.Car;
 public class SportsCar extends Car{
     private char seatLayout;  //a for roadster, b for 2+2
+    public static int attribCount = 9;
     public static int count = 0;
 
     public SportsCar(ArrayList<String> attribs){
         super(attribs);
-        attribCount = 9;
+
         setSeatLayout(attribs.get(8).charAt(0));
         count++;
     }
