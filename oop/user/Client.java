@@ -1,8 +1,8 @@
 package oop.user;
 
-import oop.car.Car;
-import java.util.Date; // Import for Date class
-import java.util.Arrays; // Import for formatting arrays
+import java.util.Date;
+import oop.car.Car; // Import for Date class
+import oop.user.*;
 
 public class Client extends Person {
     // Attributes
@@ -71,7 +71,7 @@ public class Client extends Person {
                "name = '" + getName() + '\'' +
                ", email = '" + getEmail() + '\'' +
                ", address = '" + getAddress() + '\'' +
-               ", phone = " + Arrays.toString(getPhone()) +
+               //", phone = " + Arrays.toString(getPhone()) +
                ", car bought = " + (bought != null ? bought.toString() : "None") +
                ", payment method = '" + payMethod + '\'' +
                ", bank/check num = " + bankCheck +
