@@ -1,4 +1,6 @@
-package oop.person;
+package oop.user;
+
+import java.io.*;
 
 public class Admin extends Person {
     // Attributes

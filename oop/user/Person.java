@@ -1,4 +1,4 @@
-package oop.person;
+package oop.user;
 
 import java.util.Arrays;
 
@@ -8,13 +8,13 @@ public class Person {
     private String name;
     private String email;
     private String address;
-    private int[] phone;
+    private String phone;
 
     // Default Constructor
     public Person() {}
 
     // Parameterized Constructor
-    public Person(String name, String email, String address, int[] phone) {
+    public Person(String name, String email, String address, char[] phone) {
         setName(name);
         setEmail(email);
         setAddress(address);
@@ -39,18 +39,19 @@ public class Person {
         this.address = address;
     }
 
-    public void setPhone(int[] phone) {
+    public void setPhone(char[] phone) { 
         if (phone != null && phone.length == 11) {
-            for (int digit : phone) {
-                if (digit < 0 || digit > 9) { // Ensure all elements are valid digits
+            for (int i = 0; i < phone.length; i++) { // Iterate over each character in the array
+                if (!Character.isDigit(i)) { // Ensure each character is a digit
                     throw new IllegalArgumentException("Phone number must contain only digits (0-9).");
                 }
             }
-            this.phone = Arrays.copyOf(phone, phone.length); // Copy to ensure encapsulation
+            this.phone = new String(phone); // Convert char[] to String and store
         } else {
             throw new IllegalArgumentException("Phone number must have exactly 11 digits.");
         }
     }
+
 
     // Accessors
     public String getName() {
@@ -65,8 +66,8 @@ public class Person {
         return address;
     }
 
-    public int[] getPhone() {
-        return phone != null ? Arrays.copyOf(phone, phone.length) : null; // Return a copy for safety
+    public String getPhone() {
+        return phone;
     }
 
     // toString Method
@@ -76,7 +77,7 @@ public class Person {
                "name = '" + name + '\'' +
                ", email = '" + email + '\'' +
                ", address = '" + address + '\'' +
-               ", phone = " + (phone != null ? Arrays.toString(phone) : "N/A") +
+               ", phone = " + phone +
                " }";
     }
 }

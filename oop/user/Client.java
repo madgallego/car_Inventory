@@ -1,6 +1,6 @@
-package oop.person;
+package oop.user;
 
-import oop.car.Car; // Correct import
+import oop.car.Car;
 import java.util.Date; // Import for Date class
 import java.util.Arrays; // Import for formatting arrays
 
@@ -32,7 +32,7 @@ public class Client extends Person {
     }
 
     public void setDate(Date date) {
-        this.date = date; // Allow external date setting
+        this.date = date; // External date setting; real date and time
     }
 
     public void setAdmin(Admin admin) {
