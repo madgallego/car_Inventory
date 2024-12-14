@@ -13,7 +13,7 @@ public class Test {
         Client client = new Client();
 
         // Input Admin Details
-        System.out.println("Enter Admin Details:");
+        System.out.println("\nEnter Admin Details:");
         System.out.print("Admin Name: ");
         admin.setName(s.nextLine());
         System.out.print("Admin Email: ");
@@ -40,7 +40,9 @@ public class Test {
         System.out.print("Client Payment Method: ");
         client.setPaymentMethod(s.nextLine());
         System.out.print("Client Bank/Check Number: ");
-        client.setBankCheck(s.nextInt());
+        client.setBankCheck(s.nextLine().toCharArray());
+
+        System.out.print("Press Enter.");
         s.nextLine();
 
         // Display Admin and Client Details
