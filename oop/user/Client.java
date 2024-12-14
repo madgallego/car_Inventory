@@ -3,6 +3,7 @@ package oop.user;
 import oop.car.Car;
 import java.util.Date; // Import for Date class
 import java.util.Arrays; // Import for formatting arrays
+import java.util.ArrayList;
 
 public class Client extends Person {
     // Attributes
@@ -23,15 +24,15 @@ public class Client extends Person {
         this.bought = bought;
     }
 
-    public void setPaymentMethod(int payMethod) {
-        switch() {
-            case 1: this.payMethod = ;
-            case 2: this.payMethod = ;
-            case 3: this.payMethod = ;
-            case 4: this.payMethod = ;
-        }
-
-        
+    public void setPaymentMethod(int num) {
+        switch(num) {
+            case 1: payMethod = "Cash";
+            case 2: payMethod = "Credit/Debit Card";
+            case 3: payMethod = "Bank Transfer";
+            case 4: payMethod = "Cheque";
+            case 5: payMethod = "Digital Wallet";
+            default: return;
+        }        
     }
 
     public void setBankCheck(char[] bankCheck) {
@@ -45,17 +46,19 @@ public class Client extends Person {
         }
     }
 
-    public void setDate(Date date) {
-        this.date = date; // External date setting; real date and time
-    }
+
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
 
+    public void setDate() {
+        date = new Date();
+    }
+
     // Accessor Methods
-    public Car getCarBought() {
-        return bought;
+    public ArrayList<String> getCarBought() {
+        return bought.attribs;
     }
 
     public String getPaymentMethod() {
@@ -81,17 +84,16 @@ public class Client extends Person {
     // toString Method
     @Override
     public String toString() {
-        return "Client {" +
-               "name = '" + getName() + '\'' +
-               ", email = '" + getEmail() + '\'' +
-               ", address = '" + getAddress() + '\'' +
-               ", phone = " + getPhone() +
-               //", car bought = " + (bought != null ? bought.toString() : "None") +
-               ", payment method = '" + payMethod + '\'' +
-               ", bank/check num = " + bankCheck +
-               ", date = " + (date != null ? date.toString() : "None") +
-               //", admin = " + (admin != null ? admin.toString() : "None") +
-               ", total clients = " + count +
-               '}';
+        return "Client :" +
+               "name = " + getName() + "\n" +
+               "email = " + getEmail() + "\n" +
+               "address = " + getAddress() + "\n" +
+               "phone = " + getPhone() + "\n" +
+               "car bought = " + (bought != null ? bought.attribs : "None") + "\n" +
+               "payment method = " + payMethod + "\n" +
+               "bank/check num = " + bankCheck + "\n" +
+               "date = " + (date != null ? date.toString() : "None") + "\n" +
+               "admin = " + (admin != null ? admin.toString() : "None") + "\n" +
+               "total clients = " + count;
     }
 }

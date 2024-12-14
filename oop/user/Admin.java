@@ -39,14 +39,13 @@ public class Admin extends Person {
     // toString Method
     @Override
     public String toString() {
-        return "Admin {" +
-               "name = '" + getName() + '\'' +
-               ", email = '" + getEmail() + '\'' +
-               ", address = '" + getAddress() + '\'' +
+        return "Admin :" +
+               "name = " + getName() +
+               ", email = " + getEmail() +
+               ", address = " + getAddress() +
                ", phone = " + getPhone() +
-               ", adminID = '" + adminID + '\'' +
-               ", password = '" + password + '\'' +
-               ", total admins = " + count +
-               '}';
+               ", adminID = " + adminID +
+               ", password = " + password +
+               ", total admins = " + count;
     }
 }
