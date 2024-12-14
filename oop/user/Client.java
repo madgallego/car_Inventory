@@ -8,8 +8,8 @@ public class Client extends Person {
     // Attributes
     private static int count = 0;
     private Car bought;
-    private String payMethod = "default";
-    private int bankCheck;
+    private String payMethod = "Default";
+    private String bankCheck = "None";
     private Date date; // Date of transaction
     private Admin admin; // Admin responsible for the transaction
 
@@ -27,8 +27,15 @@ public class Client extends Person {
         this.payMethod = payMethod;
     }
 
-    public void setBankCheck(int bankCheck) {
-        this.bankCheck = bankCheck;
+    public void setBankCheck(char[] bankCheck) {
+        if (bankCheck != null) {
+            for (int i = 0; i < bankCheck.length; i++) { // Iterate over each character in the array
+                if (!Character.isDigit(bankCheck[i])) { // Ensure each character is a digit
+                    throw new IllegalArgumentException("Check track number must contain only digits (0-9).");
+                }
+            }
+            this.bankCheck = new String(bankCheck); // Convert char[] to String and store
+        }
     }
 
     public void setDate(Date date) {
@@ -48,7 +55,7 @@ public class Client extends Person {
         return payMethod;
     }
 
-    public int getBankCheck() {
+    public String getBankCheck() {
         return bankCheck;
     }
 
@@ -71,12 +78,12 @@ public class Client extends Person {
                "name = '" + getName() + '\'' +
                ", email = '" + getEmail() + '\'' +
                ", address = '" + getAddress() + '\'' +
-               ", phone = " + Arrays.toString(getPhone()) +
-               ", car bought = " + (bought != null ? bought.toString() : "None") +
+               ", phone = " + getPhone() +
+               //", car bought = " + (bought != null ? bought.toString() : "None") +
                ", payment method = '" + payMethod + '\'' +
                ", bank/check num = " + bankCheck +
                ", date = " + (date != null ? date.toString() : "None") +
-               ", admin = " + (admin != null ? admin.toString() : "None") +
+               //", admin = " + (admin != null ? admin.toString() : "None") +
                ", total clients = " + count +
                '}';
     }
