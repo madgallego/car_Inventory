@@ -1,4 +1,4 @@
-package oop.person;
+package oop.people;
 
 import oop.car.Car;
 import java.util.Date; // Import for Date class

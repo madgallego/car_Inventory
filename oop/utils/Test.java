@@ -1,5 +1,8 @@
-import oop.person.*;
+package oop.utils;
+
+import oop.people.*;
 import java.util.Scanner;
+import java.io.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -16,7 +19,7 @@ public class Test {
         System.out.print("Admin Address: ");
         admin.setAddress(s.nextLine());
         System.out.print("Admin Phone Number: ");
-        admin.setPhone(new String[]{s.nextLine()});
+        admin.setPhone(s.nextLine().toCharArray());
         System.out.print("Admin ID: ");
         admin.setAdminID(s.nextLine());
         System.out.print("Admin Password: ");
@@ -31,7 +34,7 @@ public class Test {
         System.out.print("Client Address: ");
         client.setAddress(s.nextLine());
         System.out.print("Client Phone Number: ");
-        client.setPhone(new String[]{s.nextLine()});
+        client.setPhone(s.nextLine().toCharArray());
         System.out.print("Client Payment Method: ");
         client.setPaymentMethod(s.nextLine());
         System.out.print("Client Bank/Check Number: ");
