@@ -65,7 +65,7 @@ public class Client extends Person {
     }
 
     // toString Method
-    @Override
+    /*@Override
     public String toString() {
         return "Client {" +
                "name = '" + getName() + '\'' +
@@ -79,5 +79,5 @@ public class Client extends Person {
                ", admin = " + (admin != null ? admin.toString() : "None") +
                ", total clients = " + count +
                '}';
-    }
+    }*/
 }

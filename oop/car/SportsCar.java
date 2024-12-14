@@ -3,26 +3,21 @@ package oop.car;
 import java.util.ArrayList;
 import oop.car.Car;
 public class SportsCar extends Car{
-    private char seatLayout;  //a for roadster, b for 2+2
-    public static int attribCount = 9;
+    private String seatLayout;  //a for roadster, b for 2+2
+    public static int attribCount = 11;
 
 
     public SportsCar(ArrayList<String> attribs){
         super(attribs);
 
-        setSeatLayout(attribs.get(8).charAt(0));
+        setSeatLayout(attribs.get(10));
     }
-    public void setSeatLayout(char seatLayout){
+    public void setSeatLayout(String seatLayout){
         this.seatLayout = seatLayout;
     }
-    public char getSeatLayout(){
+    public String getSeatLayout(){
         return seatLayout;
     }
-    public String getSeatLayoutStr(){   //return seat layout as string
-        if(seatLayout == 'a'){
-            return "Roadster";
-        }
-        return "2+2";
-    }
+
    
 }
