@@ -316,8 +316,9 @@ public class CarLoader{
 				for(int i = 0; i < car.attribs.size(); i++)
 					file.write(car.attribs.get(i) + "\n");	
 			}
+			file.close();
 		}catch(IOException e){
-			System.err.println("File Not Found");
+			System.err.println("File Not Foundx");
 		}
 	}
 	

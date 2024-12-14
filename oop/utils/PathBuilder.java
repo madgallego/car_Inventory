@@ -4,13 +4,14 @@ import oop.car.Car;
 import java.io.File;
 import java.io.IOException;
 public class PathBuilder {
-		private static String path = "././oop/database/"; 
+		private static String path; 
 		String carType;
 		String carBrand;
 		
 	public PathBuilder(String carType, String carBrand) {
 		this.carType=carType;
 		this.carBrand=carBrand;
+		path = "././oop/database/";
 		setPath();
 	}
 	
@@ -30,9 +31,11 @@ public class PathBuilder {
 	//finds the file where the car is stored
 	public static File getFile(String type, String brand){	
 		PathBuilder path = new PathBuilder(type, brand);
+		System.out.println(path.path);
 		File file;
 		try{
 			file = makeFile(path.path);
+			System.out.println("x");
 		}
 		catch(IOException e){
 			System.err.println("File Not Found");

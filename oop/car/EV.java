@@ -6,14 +6,14 @@ public class EV extends Car{
     private int range;  //mileage before out of battery
     private String connector; //a for type 1, b for type 2, c for wireless
     private int batteryLife;    //battery life before it needs to be swapped/replaced
-    public static int attribCount = 13;
+    public static int attribCount = 14;
 
     public EV(ArrayList<String> attribs){
         super(attribs);
 
-        setRange(Integer.parseInt(attribs.get(10)));
-        setConnector(attribs.get(11));
-        setBatteryLife(Integer.parseInt(attribs.get(12)));
+        setRange(Integer.parseInt(attribs.get(11)));
+        setConnector(attribs.get(12));
+        setBatteryLife(Integer.parseInt(attribs.get(13)));
     }
     public int getRange(){
         return range;

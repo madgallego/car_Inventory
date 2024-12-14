@@ -8,6 +8,7 @@ FORTUNER GR-S 4X4 2.8 AT
 224
 7
 Diesel
+SUV
 Mid
 JT301VLZ0012717
 Toyota
@@ -19,4 +20,5 @@ VELOZ 1.5 V CVT
 106
 7
 Gasoline
+SUV
 Crossover
