@@ -309,7 +309,7 @@ public class CarLoader{
 	// saves ArrayList of cars back into the file (used after transactions on the carList for safer adding or removal of car objects)
 	public static void save(ArrayList<Car> list){	
 		try{
-			FileWriter file = new FileWriter(PathBuilder.getFile(list.get(0).getTypeStr(), list.get(0).getBrand()));
+			FileWriter file = new FileWriter(PathBuilder.getFile(list.get(0).getType(), list.get(0).getBrand()));
 			Iterator<Car> iterator = list.iterator();
 			while (iterator.hasNext()) {
 				Car car = iterator.next();
@@ -321,6 +321,7 @@ public class CarLoader{
 		}
 	}
 	
+
 
 
 

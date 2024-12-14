@@ -42,7 +42,7 @@ public class Person {
     public void setPhone(char[] phone) { 
         if (phone != null && phone.length == 11) {
             for (int i = 0; i < phone.length; i++) { // Iterate over each character in the array
-                if (!Character.isDigit(i)) { // Ensure each character is a digit
+                if (!Character.isDigit(phone[i])) { // Ensure each character is a digit
                     throw new IllegalArgumentException("Phone number must contain only digits (0-9).");
                 }
             }

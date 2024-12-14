@@ -4,39 +4,20 @@ import java.util.ArrayList;
 import oop.car.Car;
 
 public class SUV extends Car{
-    private char style; //a crossover/ b mini/ c compact/ d mid/ e full/ f extended/ g coupe
-    public static int attribCount = 9;
+    private String style; //a crossover/ b mini/ c compact/ d mid/ e full/ f extended/ g coupe
+    public static int attribCount = 11;
     public SUV(ArrayList<String> attribs){
         super(attribs);
         
-        setStyle(attribs.get(8).charAt(0));
+        setStyle(attribs.get(10));
 
     }
-    public char getStyle(){
+    public String getStyle(){
         return this.style;
     }
-    public void setStyle(char style){
+    public void setStyle(String style){
         this.style = style;
     }
-    public String getStyleStr(){
-        switch(style){
-            case 'a':
-                return "Crossover";
-            case 'b':
-                return "Mini";
-            case 'c':
-                return "Compact";
-            case 'd':
-                return "Mid";
-            case 'e':
-                return "Full";
-            case 'f':
-                return "Extended-lenght";
-            case 'g':
-                return "Coupe";
-            default:
-                return "null";
-        }
-    }
+
 
 }
