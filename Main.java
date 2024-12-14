@@ -1,25 +1,24 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import oop.utils.Transaction;
 import oop.car.*;
 import oop.utils.CarLoader;
 
 public class Main{
 
-	public static void main(String args[]){
-		ArrayList<Convertible> c = CarLoader.loadConvertible("PAF");
-        for(int i = 0; i < Convertible.count; i++){
-            System.out.println(c.get(i).getCarID());
-            System.out.println(c.get(i).getCarX());
-            System.out.println(c.get(i).getCarY());
-            System.out.println(c.get(i).getCarZ());
-            System.out.println(c.get(i).getEngine());
-            System.out.println(c.get(i).getHorsepower());
-            System.out.println(c.get(i).getCap());
-            System.out.println(c.get(i).getFueltr());
-            System.out.println(c.get(i).getTypeStr());
-            
+	public static void main(String args[]) throws FileNotFoundException{
+		ArrayList<SUV> c = CarLoader.loadSUV("JT3");
+        Transaction.restock(c.get(0));
+        ArrayList<Car> cars = new ArrayList<Car>();
+
+        for(int i = 0; i < c.size(); i++){
+            cars.add(c.get(i));
         }
-		
+        for(int i = 0; i < cars.size(); i++){
+            for(int j = 0; j < cars.get(i).attribs.size(); j++){
+                System.out.println(cars.get(i).attribs.get(j));
+            }
+        }
 	}
 
 

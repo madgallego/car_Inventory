@@ -321,10 +321,6 @@ public class CarLoader{
 		}
 	}
 	
-	public static void addCar(ArrayList<Car> list, Car car){
-		list.add(car);
-		save(list);
-	}
 
 
 

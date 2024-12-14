@@ -16,9 +16,8 @@ public class Car{
 	private int type;
 	private double price;
 	private int capacity;	//number of persons it can contain
-	private int num;
+	private static int num;
 	private char fuel; //a gas, b diesel, c biodiesel, d cng, e ethanol, f electric
-	public static int carTotal = 0;
 	
 	
 	public Car(ArrayList<String> attribs){
@@ -35,11 +34,25 @@ public class Car{
 		setHorsepower(Integer.parseInt(attribs.get(5)));
 		setCap(Integer.parseInt(attribs.get(6)));
 		setFuel(attribs.get(7).charAt(0));
-		this.carTotal++;
 	}
 
 	public String getCarID(){
 		return carID;
+	}
+	//updates id based on any changes
+	public void setID(){
+		String temp = carID.substring(0,8);
+		String pow;
+		if(num < 10)
+			pow = "0" + num;
+		else
+			pow = "" + num;
+		temp += pow;
+		temp += carID.substring(10,15);
+		carID = temp;
+	}
+	public void update(){
+		attribs.set(0, carID);
 	}
 	
 	public void setDimension(double x, double y, double z){
