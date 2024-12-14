@@ -15,7 +15,7 @@ public class Transaction {
     public Transaction(ArrayList<Car> carList) throws FileNotFoundException {
         this.carList = carList;
 
-		PathBuilder path = new PathBuilder(carList.get(0).getTypeStr(), carList.get(0).getBrand());
+		PathBuilder path = new PathBuilder(carList.get(0).getType(), carList.get(0).getBrand());
         this.filePath = path.getPath(); 
     }
 

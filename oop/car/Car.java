@@ -3,7 +3,7 @@ package oop.car;
 import java.util.ArrayList;
 public class Car{
 	public ArrayList<String> attribs;
-	public static int attribCount = 8;
+	public static int attribCount = 10;
 	private String carID;
 	private double x; //dimension of the car
 	private double y;
@@ -13,27 +13,27 @@ public class Car{
 	private String model;
 	private String engine;
 	private int horsepower;
-	private int type;
+	private String type;
 	private double price;
 	private int capacity;	//number of persons it can contain
 	private static int num;
-	private char fuel; //a gas, b diesel, c biodiesel, d cng, e ethanol, f electric
+	private String fuel; //a gas, b diesel, c biodiesel, d cng, e ethanol, f electric
 	
 	
 	public Car(ArrayList<String> attribs){
 		this.attribs = attribs;
 		this.carID = attribs.get(0); //always needed so the car is within the dat base
-		this.brand = carID.substring(0,3);
-		this.type = Integer.parseInt(carID.substring(3, 5));
-		this.model = carID.substring(5, 8);
+		this.type = carID.substring(3, 5);
 		this.num = Integer.parseInt(carID.substring(8,10));
 		this.price = Integer.parseInt((this.carID.substring(10, 14))) * Math.pow(10, Integer.parseInt(this.carID.substring(14,15)));
 
-		setDimension(Double.parseDouble(attribs.get(1)), Double.parseDouble(attribs.get(2)), Double.parseDouble(attribs.get(3)));
-		setEngine(attribs.get(4));
-		setHorsepower(Integer.parseInt(attribs.get(5)));
-		setCap(Integer.parseInt(attribs.get(6)));
-		setFuel(attribs.get(7).charAt(0));
+		setBrand(attribs.get(1));
+		setModel(attribs.get(2));
+		setDimension(Double.parseDouble(attribs.get(3)), Double.parseDouble(attribs.get(4)), Double.parseDouble(attribs.get(5)));
+		setEngine(attribs.get(6));
+		setHorsepower(Integer.parseInt(attribs.get(7)));
+		setCap(Integer.parseInt(attribs.get(8)));
+		setFuel(attribs.get(9));
 	}
 
 	public String getCarID(){
@@ -94,47 +94,13 @@ public class Car{
 	public void setModel(String model){
 		this.model = model;
 	}
-	public int getType(){
+	public String getType(){
 		return type;
 	}
-	public void setType(int type){
+	public void setType(String type){
 		this.type = type;
 	}
-	//returns type as string. very useful for file builder
-	public String getTypeStr(){
-		switch(type){
-			case 0:
-				return "Sedan";
-			case 1:
-				return "SUV";
-			case 2:
-				return "Coupe";
-			case 3:
-				return "Convertible";
-			case 4:
-				return "Hatchback";
-			case 5:
-				return "Wagon";
-			case 6:
-				return "Minivan";
-			case 7:
-				return "Truck";
-			case 8:
-				return "Crossover";
-			case 9:
-				return "SportsCar";
-			case 10:
-				return "EV";
-			case 11:
-				return "Hybrid";	//remove if not needed anymore
-			case 12:
-				return "Luxury";
-			case 13:
-				return "Microcar";
-			default:
-				return null;
-		}
-	}
+	
 
 
 	public int getNum(){
@@ -161,31 +127,13 @@ public class Car{
 	public void setHorsepower(int horsepower){
 		this.horsepower = horsepower;
 	}
-	 public char getFuel(){
+	 public String getFuel(){
         return fuel;
     }
-	public void setFuel(char fuel){
+	public void setFuel(String fuel){
 		this.fuel = fuel;
 	}
-    public String getFueltr(){
-        switch(fuel){
-            case 'a':
-                return "Gasoline";
-            case 'b':
-                return "Diesel";
-            case 'c':
-                return "Biodiesel";
-            case 'd':
-                return "CNG";
-			case 'e':
-				return "Ethanol";
-			case 'f':
-				return "Battery-Electric";
-
-            default:
-                return "null";
-        }
-    }
+    
 
 
 }

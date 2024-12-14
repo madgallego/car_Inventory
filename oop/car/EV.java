@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import oop.car.Car;
 public class EV extends Car{
     private int range;  //mileage before out of battery
-    private char connector; //a for type 1, b for type 2, c for wireless
+    private String connector; //a for type 1, b for type 2, c for wireless
     private int batteryLife;    //battery life before it needs to be swapped/replaced
-    public static int attribCount = 11;
+    public static int attribCount = 13;
 
     public EV(ArrayList<String> attribs){
         super(attribs);
 
-        setRange(Integer.parseInt(attribs.get(8)));
-        setConnector(attribs.get(9).charAt(0));
-        setBatteryLife(Integer.parseInt(attribs.get(10)));
+        setRange(Integer.parseInt(attribs.get(10)));
+        setConnector(attribs.get(11));
+        setBatteryLife(Integer.parseInt(attribs.get(12)));
     }
     public int getRange(){
         return range;
@@ -21,7 +21,7 @@ public class EV extends Car{
     public void setRange(int range){
         this.range = range;
     }
-    public void setConnector(char connector){
+    public void setConnector(String connector){
         this.connector = connector;
     }
     public void setBatteryLife(int batteryLife){
@@ -30,21 +30,8 @@ public class EV extends Car{
     public int getRangeKMS(){
         return (int) ((float) range * 1.6);
     }
-    public char getConnector(){
+    public String getConnector(){
         return connector;
-    }
-    public String getConnectorStr(){
-        switch(connector){
-            case 'a':
-                return "Type 1";
-            case 'b':
-                return "Type 2";
-            case 'c':
-                return "Wireless/Electric Road";
-            default:
-                return "null";
-
-        }
     }
     public int getBatteryLife(){
         return batteryLife;
