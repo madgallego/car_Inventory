@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import oop.car.Car;
 public class Hatchback extends Car{
     private String boxDesign;    //1 for estate, 2 for liftback, 3 for notchback
-    public static int attribCount = 12;
+    public static int attribCount = 13;
 
 
     public Hatchback(ArrayList<String> attribs){
         super(attribs);
 
-        setBoxDesign(attribs.get(11));
+        setBoxDesign(attribs.get(12));
 
     }
 
