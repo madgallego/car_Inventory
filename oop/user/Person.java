@@ -1,4 +1,4 @@
-package oop.people;
+package oop.user;
 
 import java.util.Arrays;
 

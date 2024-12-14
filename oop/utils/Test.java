@@ -1,7 +1,9 @@
 package oop.utils;
 
-import oop.people.*;
 import java.util.Scanner;
+
+import oop.user.*;
+
 import java.io.*;
 
 public class Test {
