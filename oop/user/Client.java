@@ -23,8 +23,15 @@ public class Client extends Person {
         this.bought = bought;
     }
 
-    public void setPaymentMethod(String payMethod) {
-        this.payMethod = payMethod;
+    public void setPaymentMethod(int payMethod) {
+        switch() {
+            case 1: this.payMethod = ;
+            case 2: this.payMethod = ;
+            case 3: this.payMethod = ;
+            case 4: this.payMethod = ;
+        }
+
+        
     }
 
     public void setBankCheck(char[] bankCheck) {
