@@ -5,13 +5,13 @@ import oop.car.Car;
 
 public class Minivan extends Car{
     private boolean mini;   //if true, its mini mpv, if false, then its compact mpv
-    public static int attribCount = 11;
+    public static int attribCount = 12;
 
     
     public Minivan(ArrayList<String> attribs){
         super(attribs);
 
-        setMini(Boolean.parseBoolean(attribs.get(10)));
+        setMini(Boolean.parseBoolean(attribs.get(11)));
 
     }
     public boolean isMini(){

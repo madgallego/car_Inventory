@@ -19,6 +19,8 @@ public class Main{
                 System.out.println(cars.get(i).attribs.get(j));
             }
         }
+        CarLoader.save(cars);
+
 	}
 
 

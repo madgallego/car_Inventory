@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import oop.car.Car;
 public class Wagon extends Car{
     private String tailgate;
-    public static int attribCount = 11;
+    public static int attribCount = 12;
 
     
     public Wagon(ArrayList<String> attribs){
         super(attribs);
 
-        setTailgate(attribs.get(10));
+        setTailgate(attribs.get(11));
     }
     public void setTailgate(String tailgate){
         this.tailgate = tailgate;
