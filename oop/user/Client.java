@@ -1,8 +1,7 @@
 package oop.user;
 
-import oop.car.Car;
-import java.util.Date; // Import for Date class
-import java.util.Arrays; // Import for formatting arrays
+import java.util.Date;
+import oop.car.Car; // Import for Date class
 
 public class Client extends Person {
     // Attributes
@@ -24,11 +23,15 @@ public class Client extends Person {
     }
 
     public void setPaymentMethod(int payMethod) {
-        switch() {
-            case 1: this.payMethod = ;
-            case 2: this.payMethod = ;
-            case 3: this.payMethod = ;
-            case 4: this.payMethod = ;
+        switch(payMethod) {
+            case 1: this.payMethod = "Cash/On-Hand" ;
+                break;
+            case 2: this.payMethod = "Cash/Installment";
+                break;
+            case 3: this.payMethod = "Card/Debit";
+                break;
+            case 4: this.payMethod = " Card/Credit";
+                break;
         }
 
         
