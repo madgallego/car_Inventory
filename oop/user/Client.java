@@ -7,7 +7,9 @@ import java.util.ArrayList;
 
 public class Client extends Person {
     // Attributes
-    private static int count = 0;
+    private static int count = 0;    
+    private final int clientCount;
+    public ArrayList<String> attribs;
     private Car bought;
     private String payMethod = "Default";
     private String bankCheck = "None";
@@ -17,6 +19,26 @@ public class Client extends Person {
     // Constructor
     public Client() {
         count++; // Increment counter when an object is instantiated
+        clientCount = count;
+    }
+
+    public Client(ArrayList<String> attribs, Car car, Date date, Admin admin) {
+        if (attribs == null || attribs.size() < 7) {
+            throw new IllegalArgumentException("Attributes list is invalid or incomplete.");
+        }
+        this.attribs = attribs;
+        count++;
+        setClientCount(Integer.parsInt(attribs.get(0)));
+        setName(attribs.get(1));
+        setEmail(attribs.get(2));
+        setAddress(attribs.get(3));
+        setPhone(attribs.get(4).toCharArray());
+        setCarBought(car); //attribs(5)
+        payMethod = attribs.get(6);
+        bankCheck = attribs.get(7);
+        setDate(date);
+        setAdmin(admin);
+
     }
 
     // Mutator methods
@@ -26,12 +48,12 @@ public class Client extends Person {
 
     public void setPaymentMethod(int num) {
         switch(num) {
-            case 1: payMethod = "Cash";
-            case 2: payMethod = "Credit/Debit Card";
-            case 3: payMethod = "Bank Transfer";
-            case 4: payMethod = "Cheque";
-            case 5: payMethod = "Digital Wallet";
-            default: return;
+            case 1: payMethod = "Cash"; break;
+            case 2: payMethod = "Credit/Debit Card"; break;
+            case 3: payMethod = "Bank Transfer"; break;
+            case 4: payMethod = "Cheque"; break;
+            case 5: payMethod = "Digital Wallet"; break;
+            default: break;
         }        
     }
 
@@ -46,16 +68,22 @@ public class Client extends Person {
         }
     }
 
+    public void setDate() {
+        date = new Date();
+    }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
 
-    public void setDate() {
-        date = new Date();
+    private void setClientCount(int clientCount) {
+        this.clientCount = clientCount;
     }
-
+  
     // Accessor Methods
     public ArrayList<String> getCarBought() {
         return bought.attribs;
@@ -81,10 +109,14 @@ public class Client extends Person {
         return count;
     }
 
+    public int getClientCount() {
+        return clientCount;
+    }
+
     // toString Method
     @Override
     public String toString() {
-        return "Client :" +
+        return "Client " + clientCount +
                "name = " + getName() + "\n" +
                "email = " + getEmail() + "\n" +
                "address = " + getAddress() + "\n" +
