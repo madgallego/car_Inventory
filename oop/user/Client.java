@@ -1,11 +1,15 @@
 package oop.user;
 
-import java.util.Date;
-import oop.car.Car; // Import for Date class
+import oop.car.Car;
+import java.util.Date; // Import for Date class
+import java.util.Arrays; // Import for formatting arrays
+import java.util.ArrayList;
 
 public class Client extends Person {
     // Attributes
-    private static int count = 0;
+    private static int count = 0;    
+    private final int clientCount;
+    public ArrayList<String> attribs;
     private Car bought;
     private String payMethod = "Default";
     private String bankCheck = "None";
@@ -15,6 +19,26 @@ public class Client extends Person {
     // Constructor
     public Client() {
         count++; // Increment counter when an object is instantiated
+        clientCount = count;
+    }
+
+    public Client(ArrayList<String> attribs, Car car, Date date, Admin admin) {
+        if (attribs == null || attribs.size() < 7) {
+            throw new IllegalArgumentException("Attributes list is invalid or incomplete.");
+        }
+        this.attribs = attribs;
+        count++;
+        setClientCount(Integer.parsInt(attribs.get(0)));
+        setName(attribs.get(1));
+        setEmail(attribs.get(2));
+        setAddress(attribs.get(3));
+        setPhone(attribs.get(4).toCharArray());
+        setCarBought(car); //attribs(5)
+        payMethod = attribs.get(6);
+        bankCheck = attribs.get(7);
+        setDate(date);
+        setAdmin(admin);
+
     }
 
     // Mutator methods
@@ -22,19 +46,15 @@ public class Client extends Person {
         this.bought = bought;
     }
 
-    public void setPaymentMethod(int payMethod) {
-        switch(payMethod) {
-            case 1: this.payMethod = "Cash/On-Hand" ;
-                break;
-            case 2: this.payMethod = "Cash/Installment";
-                break;
-            case 3: this.payMethod = "Card/Debit";
-                break;
-            case 4: this.payMethod = " Card/Credit";
-                break;
-        }
-
-        
+    public void setPaymentMethod(int num) {
+        switch(num) {
+            case 1: payMethod = "Cash"; break;
+            case 2: payMethod = "Credit/Debit Card"; break;
+            case 3: payMethod = "Bank Transfer"; break;
+            case 4: payMethod = "Cheque"; break;
+            case 5: payMethod = "Digital Wallet"; break;
+            default: break;
+        }        
     }
 
     public void setBankCheck(char[] bankCheck) {
@@ -48,17 +68,25 @@ public class Client extends Person {
         }
     }
 
+    public void setDate() {
+        date = new Date();
+    }
+
     public void setDate(Date date) {
-        this.date = date; // External date setting; real date and time
+        this.date = date;
     }
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
 
+    private void setClientCount(int clientCount) {
+        this.clientCount = clientCount;
+    }
+  
     // Accessor Methods
-    public Car getCarBought() {
-        return bought;
+    public ArrayList<String> getCarBought() {
+        return bought.attribs;
     }
 
     public String getPaymentMethod() {
@@ -81,20 +109,23 @@ public class Client extends Person {
         return count;
     }
 
+    public int getClientCount() {
+        return clientCount;
+    }
+
     // toString Method
     @Override
     public String toString() {
-        return "Client {" +
-               "name = '" + getName() + '\'' +
-               ", email = '" + getEmail() + '\'' +
-               ", address = '" + getAddress() + '\'' +
-               ", phone = " + getPhone() +
-               //", car bought = " + (bought != null ? bought.toString() : "None") +
-               ", payment method = '" + payMethod + '\'' +
-               ", bank/check num = " + bankCheck +
-               ", date = " + (date != null ? date.toString() : "None") +
-               //", admin = " + (admin != null ? admin.toString() : "None") +
-               ", total clients = " + count +
-               '}';
+        return "Client " + clientCount +
+               "name = " + getName() + "\n" +
+               "email = " + getEmail() + "\n" +
+               "address = " + getAddress() + "\n" +
+               "phone = " + getPhone() + "\n" +
+               "car bought = " + (bought != null ? bought.attribs : "None") + "\n" +
+               "payment method = " + payMethod + "\n" +
+               "bank/check num = " + bankCheck + "\n" +
+               "date = " + (date != null ? date.toString() : "None") + "\n" +
+               "admin = " + (admin != null ? admin.toString() : "None") + "\n" +
+               "total clients = " + count;
     }
 }
