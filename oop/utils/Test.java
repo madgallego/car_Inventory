@@ -1,16 +1,16 @@
 package oop.utils;
 
-import java.util.Scanner;
-
 import oop.user.*;
-
 import java.io.*;
+import java.util.*;
+import oop.car.*;
 
 public class Test {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Admin admin = new Admin();
         Client client = new Client();
+        ArrayList<SUV> c = CarLoader.loadSUV("Toyota");
 
         // Input Admin Details
         System.out.println("\nEnter Admin Details:");
@@ -37,13 +37,15 @@ public class Test {
         client.setAddress(s.nextLine());
         System.out.print("Client Phone Number: ");
         client.setPhone(s.nextLine().toCharArray());
-        System.out.print("Client Payment Method: 1. Cash\n2. Credit/Debit Card\n3. Bank Transfer\n 4. Cheque\n5. Digital Wallet ");
+        System.out.print("\n1. Cash\n2. Credit/Debit Card\n3. Bank Transfer\n4. Cheque\n5. Digital Wallet\n\nClient Payment Method: ");
         client.setPaymentMethod(s.nextInt());
+        s.nextLine();
         System.out.print("Client Bank/Check Number: ");
         client.setBankCheck(s.nextLine().toCharArray());
 
-        System.out.print("Press Enter.");
-        s.nextLine();
+        client.setAdmin(admin);
+        client.setDate(); //after transaction we get the date  
+        client.setCarBought(c.get(0)); //the first car from the list        
 
         // Display Admin and Client Details
         System.out.println("\n--- Admin Details ---");

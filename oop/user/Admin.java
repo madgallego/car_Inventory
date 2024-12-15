@@ -2,16 +2,32 @@ package oop.user;
 
 import java.io.*;
 import oop.user.*;
+import java.util.*;
 
 public class Admin extends Person {
     // Attributes
     private static int count = 0;
+    public ArrayList<String> attribs;
     private String adminID;
     private String password;
+    private final int adminCount;
 
     // Constructor
     public Admin() {
+        count++;        
+        adminCount = count;
+    }
+
+    public Admin(ArrayList<String> attribs) {
+        this.attribs = attribs;
         count++;
+        setAdminCount(Integer.parsInt(attribs.get(0)));
+        setName(attrigs.get(1));
+        setEmail(attrigs.get(2));
+        setAddress(attrigs.get(3));
+        getPhone(attrigs.get(4).toCharArray());
+        setAdminID(attrigs.get(5));
+        setPassword(attrigs.get(6));
     }
 
     // Mutator methods
@@ -21,6 +37,10 @@ public class Admin extends Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    private void setAdminCount(int adminCount) {
+        this.adminCount = adminCount;
     }
 
     // Accessor methods
@@ -36,17 +56,20 @@ public class Admin extends Person {
         return count;
     }
 
+    public int getAdminCount() {
+        return adminCount;
+    }
+
     // toString Method
     @Override
     public String toString() {
-        return "Admin {" +
-               "name = '" + getName() + '\'' +
-               ", email = '" + getEmail() + '\'' +
-               ", address = '" + getAddress() + '\'' +
-               ", phone = " + getPhone() +
-               ", adminID = '" + adminID + '\'' +
-               ", password = '" + password + '\'' +
-               ", total admins = " + count +
-               '}';
+        return "Admin " + adminCount +
+               "\nname = " + getName() +
+               "\nemail = " + getEmail() +
+               "\naddress = " + getAddress() +
+               "\nphone = " + getPhone() +
+               "\nadminID = " + adminID +
+               "\npassword = " + password +
+               "\ntotal admins = " + count;
     }
 }
