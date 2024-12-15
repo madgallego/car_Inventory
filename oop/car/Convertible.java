@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import oop.car.Car;
 public class Convertible extends Car{
     private String roofType;   
-    public static int attribCount = 12;
+    public static int attribCount = 13;
     public Convertible(ArrayList<String> attribs){
         super(attribs);
-        setRoofType(attribs.get(11));
+        setRoofType(attribs.get(12));
     }
     public String getRoofType(){
         return roofType;
