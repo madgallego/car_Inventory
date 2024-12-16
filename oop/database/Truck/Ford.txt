@@ -1,0 +1,42 @@
+PE106RGW0019403
+Ford
+Ranger 2.0L Bi-Turbo Wildtrak 4x4 AT
+5370
+1918
+1884
+2.0L Diesel Engine, 4 Cylinder 16 Valve
+207
+5
+Diesel
+Truck
+10-Speed AT
+Fleetside
+Midsize
+PE106RPT0023453
+Ford
+Ranger Raptor
+5381
+2028
+1922
+2.0L Diesel Engine, 4 Cylinder 16 Valve
+208
+5
+Diesel
+Truck
+10-Speed AT
+Fleetside
+Midsize
+PE106SPT0015043
+Ford
+Ranger 2.0L Turbo Sport 4x2 AT
+5370
+1918
+1884
+2.0L Diesel Engine, 4 Cylinder 16 Valve
+168
+5
+Diesel
+Truck
+6-Speed AT
+Fleetside
+Midsize
