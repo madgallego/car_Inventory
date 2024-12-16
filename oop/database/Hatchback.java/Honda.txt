@@ -1,0 +1,26 @@
+PAD04BRO0086302
+Honda
+BRIO 1.2 RS Black Top CVT
+3811
+1682
+1487
+In-Line 4 Cylinder SOHC i-VTEC
+66
+5
+Gasoline
+Hatchback
+CVT
+Liftback
+PAD04CTY0011893
+Honda
+CITY HATCHBACK 1.5 RS CVT
+4369
+1748
+1488
+In-Line 4 Cylinder DOHC i-VTEC
+89
+5
+Gasoline
+Hatchback
+CVT
+Liftback
