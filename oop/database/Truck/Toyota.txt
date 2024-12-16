@@ -1,0 +1,42 @@
+JF306TMW0010753
+Toyota
+TAMARAW 2.4 GL Dropside DSL A/T
+5300
+1800
+1800
+2GD-FTV (High)
+150
+2
+Diesel
+Truck
+6AT
+Dropside
+Full-size
+JF306HLX0021923
+Toyota
+HILUX 2.8 GR-S 4x4 A/T
+5320
+2020
+1880
+2.8L Diesel, 4-Cylinder, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler
+224
+5
+Gasoline
+Truck
+6 Speed AT
+Fleetside
+Mid-size
+JF306HXF0011953
+Toyota
+HILUX FLEET 2.4 J 4x4 M/T
+5285
+1800
+1815
+2.4L Diesel, 4-Cylinder, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler
+150
+5
+Diesel
+Truck
+6-Speed M/T
+Fleetside
+Mid-size

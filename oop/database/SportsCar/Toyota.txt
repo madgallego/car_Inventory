@@ -1,9 +1,9 @@
 JF303SPR0055463
 Toyota
 GR SUPRA 3.0L A/T
-4,379
-1,854
-1,294
+4379
+1854
+1294
 6 cylinders, In-line Type, Twin-Scroll Turbocharged
 335
 2
@@ -14,9 +14,9 @@ Roadster
 JF303G860028703
 Toyota
 GR 86 2.4 A/T
-4,265
-1,775
-1,310
+4265
+1775
+1310
 4-Cylinders, Horizontally-Opposed, DOHC, 16-Valve
 237
 4
@@ -27,9 +27,9 @@ SportsCar
 JF303YRS0029403
 Toyota
 GR YARIS 1.6L Turbo MT
-3,995
-1,805
-1,455
+3995
+1805
+1455
 3-Cylinder, In-line, DOHC 4-Valve Roller-rocker
 261
 4
