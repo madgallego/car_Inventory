@@ -1,0 +1,40 @@
+PAD05CRS0011283
+Honda
+CITY 1.5 RS CVT Honda SENSING
+4589
+1748
+1467
+In-Line 4 Cylinder DOHC i-VTEC
+89
+5
+Gasoline
+Sedan
+CVT
+Notchback
+PAD05CVC0017903
+Honda
+CIVIC RS Turbo CVT
+4681
+1802
+1415
+DOHC VTEC Turbo 4-Cylinder, 16-valve
+131
+5
+Gasoline
+Sedan
+CVT
+Notchback
+PAD05CVR0038703
+Honda
+CIVIC TYPE R 2.0 VTEC Turbo Honda SENSING
+4593
+1890
+1407
+16-Valve, DOHC VTEC, Turbo Charged In-Line 4 Cylinder
+235
+4
+Gasoline
+Sedan
+6 Speed Manual Transmission (MT)
+Fastback
+

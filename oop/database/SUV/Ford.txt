@@ -1,0 +1,39 @@
+PE101EXP0034983
+Ford
+Explorer 2024
+5049
+2268
+1783
+2.3L Gasoline Engine, 4 Cylinder 16 Valve
+299
+7
+Gasoline
+SUV
+10-Speed AT
+Medium-size
+PE101TSPT0016253
+Ford
+Territory Sport 2024
+4630
+1935
+1706
+1.5L Gasoline Engine, 4 Cylinder 16 Valve
+160
+5
+Gasoline
+SUV
+7-Speed DC
+Crossover
+PE101ETP0025553
+Ford
+Everest 2.0L Bi-Turbo Titanium Plus 4x4 AT
+4904
+2201
+1884
+2.0L Diesel Engine, 4 Cylinder 16 Valve
+207
+7
+Diesel
+SUV
+10-Speed AT
+Midsize
