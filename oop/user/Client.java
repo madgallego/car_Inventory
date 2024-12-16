@@ -1,14 +1,13 @@
 package oop.user;
 
-import oop.car.Car;
-import java.util.Date; // Import for Date class
-import java.util.Arrays; // Import for formatting arrays
 import java.util.ArrayList;
+import java.util.Date; // Import for Date class
+import oop.car.Car; // Import for formatting arrays
 
 public class Client extends Person {
     // Attributes
     private static int count = 0;    
-    private final int clientCount;
+    private int clientCount;
     public ArrayList<String> attribs;
     private Car bought;
     private String payMethod = "Default";
@@ -28,7 +27,7 @@ public class Client extends Person {
         }
         this.attribs = attribs;
         count++;
-        setClientCount(Integer.parsInt(attribs.get(0)));
+        setClientCount(Integer.parseInt(attribs.get(0)));
         setName(attribs.get(1));
         setEmail(attribs.get(2));
         setAddress(attribs.get(3));

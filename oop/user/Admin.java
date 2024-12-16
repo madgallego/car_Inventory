@@ -10,7 +10,7 @@ public class Admin extends Person {
     public ArrayList<String> attribs;
     private String adminID;
     private String password;
-    private final int adminCount;
+    private int adminCount;
 
     // Constructor
     public Admin() {
@@ -21,13 +21,13 @@ public class Admin extends Person {
     public Admin(ArrayList<String> attribs) {
         this.attribs = attribs;
         count++;
-        setAdminCount(Integer.parsInt(attribs.get(0)));
-        setName(attrigs.get(1));
-        setEmail(attrigs.get(2));
-        setAddress(attrigs.get(3));
-        getPhone(attrigs.get(4).toCharArray());
-        setAdminID(attrigs.get(5));
-        setPassword(attrigs.get(6));
+        setAdminCount(Integer.parseInt(attribs.get(0)));
+        setName(attribs.get(1));
+        setEmail(attribs.get(2));
+        setAddress(attribs.get(3));
+        getPhone(attribs.get(4).toCharArray());
+        setAdminID(attribs.get(5));
+        setPassword(attribs.get(6));
     }
 
     // Mutator methods
