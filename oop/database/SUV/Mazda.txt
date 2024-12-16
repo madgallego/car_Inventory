@@ -1,0 +1,39 @@
+PE301CXN0037803
+Mazda
+CX-90
+5120
+1994
+1745
+e-SKYACTIV-G 3.3L
+284
+8
+Gasoline
+SUV
+8-Speed AT
+Crossover
+PE301CX90027903
+Mazda
+CX-9
+5075
+1960
+1747
+SKYACTIV-G 2.5 Dynamic Pressure Turbo
+231
+7
+Gasoline
+SUV
+6-Speed AT
+Midsize Crossover
+PE301CXS0027903
+Mazda
+CX-60
+4745
+1890
+1680
+e-SKYACTIV-G 3.3L
+284
+5
+Gasoline
+SUV
+8-Speed AT
+Midsize Crossover

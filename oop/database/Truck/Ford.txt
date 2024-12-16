@@ -10,7 +10,7 @@ Ranger 2.0L Bi-Turbo Wildtrak 4x4 AT
 Diesel
 Truck
 10-Speed AT
-Fleetside
+Dual Cab
 Midsize
 PE106RPT0023453
 Ford
@@ -24,7 +24,7 @@ Ranger Raptor
 Diesel
 Truck
 10-Speed AT
-Fleetside
+Dual Cab
 Midsize
 PE106SPT0015043
 Ford
@@ -39,4 +39,4 @@ Diesel
 Truck
 6-Speed AT
 Fleetside
-Midsize
+Dual Cab
