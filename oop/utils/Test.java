@@ -37,7 +37,7 @@ public class Test {
         client.setAddress(s.nextLine());
         System.out.print("Client Phone Number: ");
         client.setPhone(s.nextLine().toCharArray());
-        System.out.print("\n1. Cash\n2. Credit/Debit Card\n3. Bank Transfer\n4. Cheque\n5. Digital Wallet\n\nClient Payment Method: ");
+        System.out.print("\n1. Cash\n2. Cash/Installment\n3. Card/Credit\n4. Card/Debit\n5. Cheque\n6. Digital Wallet\n\nClient Payment Method: ");
         client.setPaymentMethod(s.nextInt());
         s.nextLine();
         System.out.print("Client Bank/Check Number: ");
