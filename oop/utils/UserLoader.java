@@ -36,7 +36,6 @@ public class UserLoader {
         return adminList;
     }
 
-
     // Method for saving changes (like deleting or adding admin objects) into the file
     public static void saveAdmin(String filePath, ArrayList<Admin> adminList) {
         try (BufferedWriter fw = new BufferedWriter(new FileWriter(filePath))) {
@@ -57,6 +56,7 @@ public class UserLoader {
         }
     }
 
+    //Makes and Adds Admin object 
     public static void addAdmin(ArrayList<Admin> adminList, String name,String email, String address, String phone, String id, String password) {
         Admin admin = new Admin();
         
@@ -70,12 +70,24 @@ public class UserLoader {
         addAdmin(adminList, admin);
     }
 
+    //Adds Admin object into list
     public static void addAdmin(ArrayList<Admin> adminList, Admin admin) {
         adminList.add(admin);
         Admin.setCount(adminList.size());
         UserLoader.saveAdmin("./oop/database/User/Admin.txt", adminList);
     }
 
+    /*   //method for loading client attribs to ArrayList<Strings> attribs
+    public ArrayList<Client> loadClient() {
+        ArrayList<Client> clientList = new ArrayList<Client>();
+        ArrayList<String> attribs = new ArrayList<String>();
+
+
+        return clientList;
+    }
+    
+    //method for saving/appending new client object to clientList
+    */
 
  
 }
