@@ -5,11 +5,12 @@ import java.util.ArrayList;
 
 public class Lester{
     public static void main(String [] args){
-        ArrayList<Convertible> c = CarLoader.loadAllConvertible();
+        ArrayList<Coupe> c = CarLoader.loadAllCoupe();
         for(int i = 0; i < c.size(); i++){
-            for(int j = 0; j < Convertible.attribCount; j++)
-                System.out.println(c.get(i).attribs.get(j));
+            System.out.println(c.get(i).getBrand());
         }
+        System.out.print(c.get(0).getBrand().equals(c.get(1).getBrand()));
+        CarLoader.saveCoupe(c);
     }
 }
 
