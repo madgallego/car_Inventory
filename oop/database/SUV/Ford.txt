@@ -1,4 +1,4 @@
-PE101EXP0034983
+PE101EXP0134983
 Ford
 Explorer 2024
 5049
@@ -11,7 +11,7 @@ Gasoline
 SUV
 10-Speed AT
 Medium-size
-PE101TSPT0016253
+PE101TSP0016253
 Ford
 Territory Sport 2024
 4630
