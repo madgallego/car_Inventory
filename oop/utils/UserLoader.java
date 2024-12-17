@@ -1,17 +1,20 @@
 package oop.utils;
 
-import oop.car.*;
-import oop.user.*;
 import java.util.*;
-import java.io.*;
+import oop.user.*;
 
 public class UserLoader {
     public ArrayList<Admin> loadAdmin() {
+        ArrayList<Admin> adminList = new ArrayList<>();
 
+        return adminList;
     }
 
     public ArrayList<Client> loadClient() {
-        
+        ArrayList<Client> clientList = new ArrayList<>();
+
+
+        return clientList;
     }
 
     //method for saving/appending new clients
