@@ -1,13 +1,12 @@
 package oop.user;
 
-import java.io.*;
-import oop.user.*;
 import java.util.*;
 
 public class Admin extends Person {
 	// Attributes
-    public static final int attrbsCount = 7;
+    public static final int attrbsCount = 6;
     private static int count = 0;
+
     public ArrayList<String> attribs;
     private String adminID;
     private String password;
@@ -52,13 +51,29 @@ public class Admin extends Person {
     public String getPassword() {
         return password;
     }
+    
+    public int getAdminCount() {
+        return adminCount;
+    }
 
     public static int getCount() {
         return count;
     }
 
-    public int getAdminCount() {
-        return adminCount;
+    //Method to verify if user input for name, password, or ID match with any admin on the list
+    public static Boolean verify(ArrayList<Admin> adminList, String input) {
+        Iterator<Admin> iterator = adminList.iterator();
+        while (iterator.hasNext()) {
+            Admin admin = iterator.next();
+			if(admin.getName() == input)
+				return true;
+            else if(admin.getPassword() == input)
+                return true;
+            else if(admin.getAdminID() == input)
+                return true;
+		}
+
+        return false;
     }
 
     // toString Method
@@ -70,6 +85,6 @@ public class Admin extends Person {
                "\naddress = " + getAddress() +
                "\nphone = " + getPhone() +
                "\nadminID = " + adminID +
-               "\npassword = " + password
+               "\npassword = " + password;
     }
 }

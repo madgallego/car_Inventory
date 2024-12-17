@@ -12,8 +12,10 @@ public class Test {
         Client client = new Client();
         ArrayList<SUV> c = CarLoader.loadSUV("Toyota");
 
+        ArrayList<Admin> adminList = UserLoader.loadAdmin("./oop/database/User/Admin.txt");
+
         // Input Admin Details
-        System.out.println("\nEnter Admin Details:");
+        System.out.println("\nEnter NEW Admin Details:");
         System.out.print("Admin Name: ");
         admin.setName(s.nextLine());
         System.out.print("Admin Email: ");
@@ -27,7 +29,11 @@ public class Test {
         System.out.print("Admin Password: ");
         admin.setPassword(s.nextLine());
 
-        // Input Client Details
+        adminList.add(admin);
+
+        UserLoader.saveAdmin("./oop/database/User/Admin.txt", adminList);
+
+/*        // Input Client Details
         System.out.println("\nEnter Client Details:");
         System.out.print("Client Name: ");
         client.setName(s.nextLine());
@@ -55,7 +61,27 @@ public class Test {
         System.out.println(admin);
 
         System.out.println("\n--- Client Details ---");
-        System.out.println(client);
+        System.out.println(client); 
+*/
+
+        String name, password;
+        System.out.println("\n\nLog in");
+        System.out.print("\nAdmin (name): ");
+        name = s.nextLine();        
+        System.out.print("\nPassword: ");
+        password = s.nextLine();
+
+        if(Admin.verify(adminList, name)) {
+            System.out.println("Veryfied");
+        }else { 
+            System.out.println("Admin name not found");
+        }
+
+        if(Admin.verify(adminList, password)) {
+            System.out.println("Veryfied");
+        }else { 
+            System.out.println("Admin password not verified");
+        }
 
         s.close();
     }

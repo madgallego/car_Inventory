@@ -225,6 +225,8 @@ public class DashboardUI {
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                
                 //productIDField
                 //priceField
                 //lastNameField
