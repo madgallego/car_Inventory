@@ -3,37 +3,40 @@ package oop.user;
 import java.util.*;
 
 public class Admin extends Person {
-	// Attributes
-    public static final int attrbsCount = 7;
+    // Attributes
+    public static final int attribsCount = 6;
     private static int count = 0;
 
-    public ArrayList<String> attribs;
     private String adminID;
     private String password;
-    private int adminCount;
 
-    // Constructor
-    public Admin() {
-        count++;        
-        adminCount = count;
-    }
+    // Default Constructor
+    public Admin() {}
 
+    // Parameterized Constructor
     public Admin(ArrayList<String> attribs) {
-        if (attribs.size() != attrbsCount) {
-                    throw new IllegalArgumentException("Invalid number of attributes for Admin.");
+        if (attribs.size() != attribsCount) {
+            throw new IllegalArgumentException("Invalid number of attributes for Admin.");
         }
-        this.attribs = attribs;
+        setName(attribs.get(0));
+        setEmail(attribs.get(1));
+        setAddress(attribs.get(2));
+        setPhone(attribs.get(3).toCharArray());
+        setAdminID(attribs.get(4));
+        setPassword(attribs.get(5));
         count++;
-        setAdminCount(Integer.parseInt(attribs.get(0)));
-        setName(attribs.get(1));
-        setEmail(attribs.get(2));
-        setAddress(attribs.get(3));
-        setPhone(attribs.get(4).toCharArray());
-        setAdminID(attribs.get(5));
-        setPassword(attribs.get(6));
     }
 
-    // Mutator methods
+    // Static Methods for Count Management
+    public static void setCount(int temp) {
+        count = temp;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    // Mutator Methods
     public void setAdminID(String adminID) {
         if (adminID != null && !adminID.isEmpty()) {
             this.adminID = adminID;
@@ -43,18 +46,14 @@ public class Admin extends Person {
     }
 
     public void setPassword(String password) {
-        if (password != null && password.length() >= 6) { // Ensure a minimum length
+        if (password != null && password.length() >= 6) {
             this.password = password;
         } else {
             throw new IllegalArgumentException("Password must be at least 6 characters long.");
         }
     }
 
-    private void setAdminCount(int adminCount) {
-        this.adminCount = adminCount;
-    }
-
-    // Accessor methods
+    // Accessor Methods
     public String getAdminID() {
         return adminID;
     }
@@ -62,31 +61,68 @@ public class Admin extends Person {
     public String getPassword() {
         return password;
     }
-    
-    public int getAdminCount() {
-        return adminCount;
-    }
 
-    public static int getCount() {
-        return count;
-    }
+    // Method to verify login using name and password
+    public static boolean authName(ArrayList<Admin> adminList, String name, String password) {
+        if (name == null || password == null) return false;
 
-    //Method to verify if user input for name, password, or ID match with any admin on the list
-    public static Boolean verify(ArrayList<Admin> adminList, String input) {
         Iterator<Admin> iterator = adminList.iterator();
         while (iterator.hasNext()) {
             Admin admin = iterator.next();
-			if(admin.getName().equals(input) || admin.getPassword().equals(input) || admin.getAdminID().equals(input))
+            if (admin.getName().equals(name) && admin.getPassword().equals(password)) {
                 return true;
-		}
-
+            }
+        }
         return false;
     }
+
+    // Method to verify login using email and password
+    public static boolean authEmail(ArrayList<Admin> adminList, String email, String password) {
+        if (email == null || password == null) return false;
+
+        Iterator<Admin> iterator = adminList.iterator();
+        while (iterator.hasNext()) {
+            Admin admin = iterator.next();
+            if (admin.getEmail().equals(email) && admin.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Method to verify login using phone and password
+    public static boolean authPhone(ArrayList<Admin> adminList, String phone, String password) {
+        if (phone == null || password == null) return false;
+
+        Iterator<Admin> iterator = adminList.iterator();
+        while (iterator.hasNext()) {
+            Admin admin = iterator.next();
+            if (admin.getPhone().equals(phone) && admin.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Method to verify login using ID and password
+    public static boolean authID(ArrayList<Admin> adminList, String id, String password) {
+        if (id == null || password == null) return false;
+
+        Iterator<Admin> iterator = adminList.iterator();
+        while (iterator.hasNext()) {
+            Admin admin = iterator.next();
+            if (admin.getAdminID().equals(id) && admin.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     // toString Method
     @Override
     public String toString() {
-        return "Admin " + adminCount +
+        return "Admin " +
                "\nname = " + getName() +
                "\nemail = " + getEmail() +
                "\naddress = " + getAddress() +
