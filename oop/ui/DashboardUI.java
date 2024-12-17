@@ -164,10 +164,17 @@ public class DashboardUI {
 
         String[] carInfoString = {"Brand: ", "Model: ", "Capacity: ", "Engine: ", "Dimension: ", "Transmission: ", "Fuel Type: ", "Horsepower: ", "Car Type: "};
 
-        for(int i = 0; i < 9; i++){
-            infoLabel[i] = new JLabel(carInfoString[i]);
-            infoLabel[i].setFont(new Font("Arial", Font.PLAIN, 27));
-            infoPanel.add(infoLabel[i]);
+        for(int i = 0; i < 14; i++){
+            if(i<9){
+                infoLabel[i] = new JLabel(carInfoString[i]);
+                infoLabel[i].setFont(new Font("Arial", Font.PLAIN, 27));
+                infoPanel.add(infoLabel[i]);
+            }
+            else{
+                infoLabel[i] = new JLabel(" ");
+                infoLabel[i].setFont(new Font("Arial", Font.PLAIN, 27));
+                infoPanel.add(infoLabel[i]);
+            }
         }
 
         buttonPanel = new JPanel(new BorderLayout());
@@ -337,8 +344,8 @@ public class DashboardUI {
                                 infoLabel[6].setText(carInfoString[6] + ListInfo0.get(row).attribs.get(9));
                                 infoLabel[7].setText(carInfoString[7] + ListInfo0.get(row).attribs.get(7));
                                 infoLabel[8].setText(carInfoString[8] + ListInfo0.get(row).attribs.get(10));
-                                //infoLabel[9].setText( + ListInfo0.get(i).attribs.get(1));
-                                //infoLabel[10].setText( + ListInfo0.get(i).attribs.get(1));
+                                infoLabel[9].setText( "Roof type: " + ListInfo0.get(row).attribs.get(12));
+                                infoLabel[10].setText("Product ID: " + ListInfo0.get(row).attribs.get(0));
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                
         
