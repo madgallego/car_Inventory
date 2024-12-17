@@ -1,0 +1,46 @@
+PAF07I700010394
+BMW
+BNW i7
+5391
+1950
+1544
+Fully Electric, Dual Permanent Magnet Synchronous
+544
+4
+Electric
+EV
+Single Speed AT
+388
+Type-2
+100000
+PAF07I500057903
+BMW
+BMW i5
+4963
+2126
+1497
+Fully Electric, Permanent Magnet Synchronous
+340
+5
+Electric
+EV
+Single Speed AT
+362
+Type-2
+100000
+PAF07I400044903
+BMW
+BMW i4
+4783
+1852
+1448
+Fully Electric, Permanent Magnet Synchronous
+286
+5
+Electric
+EV
+Single Speed AT
+300
+Type-2
+100000
+
