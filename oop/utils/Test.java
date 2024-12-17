@@ -37,15 +37,18 @@ public class Test {
         client.setAddress(s.nextLine());
         System.out.print("Client Phone Number: ");
         client.setPhone(s.nextLine().toCharArray());
+        client.setCarBought(c.get(0)); //the first car from the list      
         System.out.print("\n1. Cash\n2. Cash/Installment\n3. Card/Credit\n4. Card/Debit\n5. Cheque\n6. Digital Wallet\n\nClient Payment Method: ");
-        client.setPaymentMethod(s.nextInt());
-        s.nextLine();
-        System.out.print("Client Bank/Check Number: ");
-        client.setBankCheck(s.nextLine().toCharArray());
-
+        int ch = s.nextInt(); s.nextLine();
+        client.setPaymentMethod(ch);
+        switch(ch) {
+            case 5: System.out.print("Client Bank/Cheque Number (optional): ");
+                    client.setBankCheck(s.nextLine().toCharArray());
+                    break;
+            default : break;
+        }      
         client.setAdmin(admin);
-        client.setDate(); //after transaction we get the date  
-        client.setCarBought(c.get(0)); //the first car from the list        
+        client.setDate(); //after transaction we get the date    
 
         // Display Admin and Client Details
         System.out.println("\n--- Admin Details ---");
