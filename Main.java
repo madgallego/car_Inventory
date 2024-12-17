@@ -1,11 +1,10 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 import oop.car.Car;
+import oop.car.Convertible;
 import oop.car.SUV;
 import oop.ui.DashboardUI;
 import oop.utils.CarLoader;
@@ -33,7 +32,7 @@ public class Main{
         });
 		
 		 
-		ArrayList<SUV> c = CarLoader.loadSUV("Honda");
+		ArrayList<Convertible> c = CarLoader.loadConvertible("BMW");
         //Transaction.restock(c.get(0));
         ArrayList<Car> cars = new ArrayList<Car>();
 
