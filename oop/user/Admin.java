@@ -62,7 +62,7 @@ public class Admin extends Person {
 
     //Method to verify if user input for name, password, or ID match with any admin on the list
     public static Boolean verify(ArrayList<Admin> adminList, String input) {
-        Iterator<Car> iterator = adminList.iterator();
+        Iterator<Admin> iterator = adminList.iterator();
         while (iterator.hasNext()) {
             Admin admin = iterator.next();
 			if(admin.getName() == input)

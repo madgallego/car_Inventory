@@ -27,9 +27,9 @@ public class UserLoader {
         }
 
         return adminList;
-    }
+    }   
 
-   
+   //Method for saving changes i.e. deleting or adding admin objects into the file
     public static void saveAdmin(String filePath, ArrayList<Admin> adminList) {
         try{
 			FileWriter f = new FileWriter(filePath);
@@ -45,7 +45,7 @@ public class UserLoader {
 		}
     }    
 
-    //method for loading client attribs to ArrayList<Strings> attribs
+ /*   //method for loading client attribs to ArrayList<Strings> attribs
     public ArrayList<Client> loadClient() {
         ArrayList<Client> clientList = new ArrayList<Client>();
         ArrayList<String> attribs = new ArrayList<String>();
@@ -55,5 +55,5 @@ public class UserLoader {
     }
     
     //method for saving/appending new client object to clientList
-
+    */
 }
