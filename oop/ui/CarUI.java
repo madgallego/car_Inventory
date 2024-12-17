@@ -12,7 +12,7 @@ public class CarUI {
         frame.setTitle("SASACIAN");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(900, 450);
-        frame.setLayout(null);
+        frame.setLayout(new BorderLayout());
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

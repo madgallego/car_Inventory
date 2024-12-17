@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class StartUI implements ActionListener {
-	private JFrame frame;
+    private JFrame frame;
     private JPanel switchPanel;
     private JPanel startPanel;
     private JPanel userConfigPanel;
