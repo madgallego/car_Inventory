@@ -36,7 +36,7 @@ public class UserLoader {
 			Iterator<Admin> iterator = adminList.iterator();
 			while (iterator.hasNext()) {
 				Admin admin = iterator.next();
-				for(int i = 0; i < Admin.attribsCount; i++) {
+				for(int i = 0; i < Admin.attrbsCount; i++) {
                     f.write(admin.getAdminCount() + "\n");
                     f.write(admin.getName() + "\n");
                     f.write(admin.getEmail() + "\n");
