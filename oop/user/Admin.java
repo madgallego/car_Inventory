@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Admin extends Person {
 	// Attributes
-    public static final int attrbsCount = 6;
+    public static final int attrbsCount = 7;
     private static int count = 0;
 
     public ArrayList<String> attribs;
@@ -65,11 +65,11 @@ public class Admin extends Person {
         Iterator<Admin> iterator = adminList.iterator();
         while (iterator.hasNext()) {
             Admin admin = iterator.next();
-			if(admin.getName() == input)
+			if(admin.getName().equals(input))
 				return true;
-            else if(admin.getPassword() == input)
+            else if(admin.getPassword().equals(input))
                 return true;
-            else if(admin.getAdminID() == input)
+            else if(admin.getAdminID().equals(input))
                 return true;
 		}
 
