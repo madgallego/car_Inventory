@@ -25,7 +25,7 @@ public class Admin extends Person {
         setName(attribs.get(1));
         setEmail(attribs.get(2));
         setAddress(attribs.get(3));
-        getPhone(attribs.get(4).toCharArray());
+        setPhone(attribs.get(4).toCharArray());
         setAdminID(attribs.get(5));
         setPassword(attribs.get(6));
     }
