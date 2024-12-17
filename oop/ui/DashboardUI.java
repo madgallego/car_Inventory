@@ -1,11 +1,11 @@
 package oop.ui;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.*;
 
 public class DashboardUI {
 
@@ -67,7 +67,7 @@ public class DashboardUI {
         switchPanel3 = new JPanel(switchLayout3);
         switchPanel3.setBackground(Color.WHITE);
 
-        infoPanel = new JPanel(new GridLayout(6,2));
+        infoPanel = new JPanel(new GridLayout(8,2));
         infoPanel.setBackground(Color.WHITE);
 
         transactionPanel = new JPanel(new GridLayout(3,2));
@@ -147,8 +147,7 @@ public class DashboardUI {
 
         infoLabel = new JLabel[12];
 
-        String[] carInfoString = {"Product: ","Dimension: ","Size: ","Product ID: ","Weight: ","Style: ",
-                "Brand: ","Capacity: ","Model: ","Engine: ","Type: ","Horsepower: "};
+        String[] carInfoString = {"Brand: ", "Model: ", "Capacity: "};
 
         for(int i = 0; i < 12; i++){
             infoLabel[i] = new JLabel(carInfoString[i]);
@@ -214,6 +213,7 @@ public class DashboardUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
+                new CarOptionUI();
             }
         });
 
@@ -225,8 +225,8 @@ public class DashboardUI {
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                
+                frame.dispose();
+                new ReceiptUI();
                 //productIDField
                 //priceField
                 //lastNameField
