@@ -1,13 +1,14 @@
 package oop.utils;
 
 import oop.user.*;
+import oop.car.*;
 import java.io.*;
 import java.util.*;
 
-public class Test {
+/*public class Test {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        ArrayList<Admin> adminList = UserLoader.loadAdmin("./oop/database/User/Admin.txt");
+        ArrayList<Admin> adminList = UserLoader.loadAdmin(UserLoader.ADMIN_FILE);
 
         // Test login verification
         System.out.println("\nLOG IN");
@@ -114,14 +115,18 @@ public class Test {
             System.out.println("Invalid ID or password.");
         }
     }
-}
+}*/
 
-
-/*
 public class Test {
     public static void main(String[] args) {
+        ArrayList<Client> clientList = UserLoader.loadClient();
+
+        for (Client clnt : clientList) {
+            System.out.println(clnt);
+        }     
+
         Scanner s = new Scanner(System.in);
-        ArrayList<Admin> adminList = UserLoader.loadAdmin("./oop/database/User/Admin.txt");
+        ArrayList<Admin> adminList = UserLoader.loadAdmin();
 
         // Test login verification
         String user, pw;
@@ -138,6 +143,8 @@ public class Test {
             System.out.println("Invalid name or password.");
         }
 
+        Admin admin = Admin.loggedIn(adminList, user, pw);
+
         ArrayList<SUV> c = CarLoader.loadSUV("Toyota");
         Client client = new Client();
 
@@ -151,21 +158,23 @@ public class Test {
         client.setAddress(s.nextLine());
         System.out.print("Client Phone Number: ");
         client.setPhone(s.nextLine().toCharArray());
-        client.setCarBought(c.get(0)); //the first car from the list      
+        client.setProduct(c.get(0)); //the first car from the list      
+        
         System.out.print("\n1. Cash\n2. Cash/Installment\n3. Card/Credit\n4. Card/Debit\n5. Cheque\n6. Digital Wallet\n\nClient Payment Method: ");
         int ch = s.nextInt();
         s.nextLine();
         client.setPaymentMethod(ch);
-        switch(ch) {
-            case 5: System.out.print("Client Bank/Cheque Number (optional): ");
-                    client.setBankCheck(s.nextLine().toCharArray());
-                    break;
-            default : break;
-        }      
-        client.setAdmin(admin);
-        client.setDate(); //after transaction we get the date    
+        if(ch == 3 || ch == 4 || ch == 5 || ch == 6) {
+            System.out.print("Transaction reference number (digits only): ");
+            client.setRefNum(s.nextLine().toCharArray());
+        }
 
-        System.out.println("\n--- Client Details ---");
+        client.setAdmin(admin);
+        client.setDate(); //after transaction we get the date  
+
+        UserLoader.saveClient(client);  //on file
+
+        System.out.println("\n--- Client Details ---"); //on screen
         System.out.println(client); 
     }
-}*/
+}
