@@ -67,20 +67,20 @@ public class Test {
         String name, password;
         System.out.println("\n\nLog in");
         System.out.print("\nAdmin (name): ");
-        input = s.nextLine();        
+        name = s.nextLine();        
         System.out.print("\nPassword: ");
         password = s.nextLine();
 
-        if(Admin.verify(input)) {
+        if(Admin.verify(adminList, name)) {
             System.out.println("Veryfied");
         }else { 
             System.out.println("Admin name not found");
         }
 
-        if(Admin.verify(input)) {
+        if(Admin.verify(adminList, password)) {
             System.out.println("Veryfied");
         }else { 
-            System.out.println("Admin name not found");
+            System.out.println("Admin password not verified");
         }
 
         s.close();

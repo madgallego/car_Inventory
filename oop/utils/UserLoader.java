@@ -33,13 +33,13 @@ public class UserLoader {
     public static void saveAdmin(String filePath, ArrayList<Admin> adminList) {
         try{
 			FileWriter f = new FileWriter(filePath);
-			Iterator<Car> iterator = adminList.iterator();
+			Iterator<Admin> iterator = adminList.iterator();
 			while (iterator.hasNext()) {
 				Admin admin = iterator.next();
 				for(int i = 0; i < admin.attribs.size(); i++)
-					file.write(admin.attribs.get(i) + "\n");	
+					f.write(admin.attribs.get(i) + "\n");	
 			}
-			file.close();
+			f.close();
 		}catch(IOException e){
 			System.err.println("File Not Found.");
 		}
