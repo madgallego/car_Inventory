@@ -27,25 +27,25 @@ public class UserLoader {
         }
 
         return adminList;
-    }
+    }   
 
-   
+   //Method for saving changes i.e. deleting or adding admin objects into the file
     public static void saveAdmin(String filePath, ArrayList<Admin> adminList) {
         try{
 			FileWriter f = new FileWriter(filePath);
-			Iterator<Car> iterator = adminList.iterator();
+			Iterator<Admin> iterator = adminList.iterator();
 			while (iterator.hasNext()) {
 				Admin admin = iterator.next();
 				for(int i = 0; i < admin.attribs.size(); i++)
-					file.write(admin.attribs.get(i) + "\n");	
+					f.write(admin.attribs.get(i) + "\n");	
 			}
-			file.close();
+			f.close();
 		}catch(IOException e){
 			System.err.println("File Not Found.");
 		}
     }    
 
-    //method for loading client attribs to ArrayList<Strings> attribs
+ /*   //method for loading client attribs to ArrayList<Strings> attribs
     public ArrayList<Client> loadClient() {
         ArrayList<Client> clientList = new ArrayList<Client>();
         ArrayList<String> attribs = new ArrayList<String>();
@@ -55,5 +55,5 @@ public class UserLoader {
     }
     
     //method for saving/appending new client object to clientList
-
+    */
 }
