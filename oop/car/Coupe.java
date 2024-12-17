@@ -6,12 +6,13 @@ public class Coupe extends Car{
     private boolean rear;   //if it has seats at the back
     private int doors;  //specifies door count, typically 2
     private String style;
-    public static int attribCount = 14;
+    public static int attribCount = 15;
 
     public Coupe(ArrayList<String> attribs){
         super(attribs);
         setRear(Boolean.parseBoolean(attribs.get(12)));
         setDoors(Integer.parseInt(attribs.get(13)));
+        setStyle(attribs.get(14));
     }
 
     public boolean getRear(){

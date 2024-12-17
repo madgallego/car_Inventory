@@ -10,6 +10,6 @@ CIVIC RS e:HEV E-CVT
 Electric
 EV
 E-CVT
-490
+340
 Type-1
-99500
+150000

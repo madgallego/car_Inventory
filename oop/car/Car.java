@@ -16,7 +16,7 @@ public class Car{
 	private String type;
 	private double price;
 	private int capacity;	//number of persons it can contain
-	private static int num;
+	private int num;
 	private String fuel; //a gas, b diesel, c biodiesel, d cng, e ethanol, f electric
 	
 	

@@ -1,0 +1,30 @@
+LRW07M3P0030993
+Tesla
+Tesla Model 3 Performance
+4720
+2089
+1441
+Fully Electric/No Engine
+510
+5
+Electric
+EV
+Single Speed AT
+328
+Type-2
+450000
+LRW07MYL0026893
+Tesla
+Tesla Model Y Long Range
+4751
+2129
+1624
+Fully Electric/No Engine
+384
+5
+Electric
+EV
+Single Speed AT
+533
+Type-2
+450000
