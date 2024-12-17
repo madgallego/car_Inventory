@@ -40,6 +40,32 @@ public class CarLoader{
 		}
 		return con;
 	}
+
+	//loads ALL convertibles regardless of brand
+	public static ArrayList<Convertible> loadAllConvertible(){
+		ArrayList<Convertible> all = new ArrayList<Convertible>();	//contains all
+		ArrayList<Convertible> temp;
+		temp = loadConvertible("BMW");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+
+		return all;
+	}
+	//saves all convertibles to their files
+	public static void saveConvertible(ArrayList<Convertible> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+	}
 	public static ArrayList<Coupe> loadCoupe(String brand){
 		
 		File file = PathBuilder.getFile("Coupe", brand);
@@ -62,6 +88,37 @@ public class CarLoader{
 			con.add(c);
 		}
 		return con;
+	}
+	public static ArrayList<Coupe> loadAllCoupe(){
+		ArrayList<Coupe> all = new ArrayList<Coupe>();	//contains all
+		ArrayList<Coupe> temp;
+		temp = loadCoupe("BMW");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadCoupe("Ford");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadCoupe("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Coupes to their files
+	public static void saveCoupe(ArrayList<Coupe> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
 	}
 	public static ArrayList<Crossover> loadCrossover(String brand){
 		
@@ -86,6 +143,31 @@ public class CarLoader{
 		}
 		return con;
 	}
+	public static ArrayList<Crossover> loadAllCrossover(){
+		ArrayList<Crossover> all = new ArrayList<Crossover>();	//contains all
+		ArrayList<Crossover> temp;
+		temp = loadCrossover("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Crossovers to their files
+	public static void saveCrossover(ArrayList<Crossover> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
+	}
 	public static ArrayList<EV> loadEV(String brand){
 		
 		File file = PathBuilder.getFile("EV", brand);
@@ -108,6 +190,37 @@ public class CarLoader{
 			con.add(c);
 		}
 		return con;
+	}
+	public static ArrayList<EV> loadAllEV(){
+		ArrayList<EV> all = new ArrayList<EV>();	//contains all
+		ArrayList<EV> temp;
+		temp = loadEV("BMW");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadEV("Honda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadEV("Tesla");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all EVs to their files
+	public static void saveEV(ArrayList<EV> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
 	}
 	public static ArrayList<Hatchback> loadHatchback(String brand){
 		
@@ -133,6 +246,38 @@ public class CarLoader{
 		return con;
 	}
 
+	public static ArrayList<Hatchback> loadAllHatchback(){
+		ArrayList<Hatchback> all = new ArrayList<Hatchback>();	//contains all
+		ArrayList<Hatchback> temp;
+		temp = loadHatchback("Honda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadHatchback("Mazda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadHatchback("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Hatchbacks to their files
+	public static void saveHatchback(ArrayList<Hatchback> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
+	}
+
 	public static ArrayList<Luxury> loadLuxury(String brand){
 		
 		File file = PathBuilder.getFile("Luxury", brand);
@@ -156,6 +301,35 @@ public class CarLoader{
 		}
 		return con;
 	}
+
+	public static ArrayList<Luxury> loadAllLuxury(){
+		ArrayList<Luxury> all = new ArrayList<Luxury>();	//contains all
+		ArrayList<Luxury> temp;
+		temp = loadLuxury("BMW");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadLuxury("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Luxurys to their files
+	public static void saveLuxury(ArrayList<Luxury> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
+	}
 	public static ArrayList<Minivan> loadMinivan(String brand){
 		
 		File file = PathBuilder.getFile("Minivan", brand);
@@ -178,6 +352,32 @@ public class CarLoader{
 			con.add(c);
 		}
 		return con;
+	}
+
+	public static ArrayList<Minivan> loadAllMinivan(){
+		ArrayList<Minivan> all = new ArrayList<Minivan>();	//contains all
+		ArrayList<Minivan> temp;
+		temp = loadMinivan("Suzuki");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Minivans to their files
+	public static void saveMinivan(ArrayList<Minivan> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
 	}
 
 	public static ArrayList<Sedan> loadSedan(String brand){
@@ -204,6 +404,38 @@ public class CarLoader{
 		return con;
 	}
 
+	public static ArrayList<Sedan> loadAllSedan(){
+		ArrayList<Sedan> all = new ArrayList<Sedan>();	//contains all
+		ArrayList<Sedan> temp;
+		temp = loadSedan("Honda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSedan("Mazda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSedan("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Sedans to their files
+	public static void saveSedan(ArrayList<Sedan> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
+	}
+
 	public static ArrayList<SportsCar> loadSportsCar(String brand){
 		
 		File file = PathBuilder.getFile("SportsCar", brand);
@@ -226,6 +458,38 @@ public class CarLoader{
 			con.add(c);
 		}
 		return con;
+	}
+
+	public static ArrayList<SportsCar> loadAllSportsCar(){
+		ArrayList<SportsCar> all = new ArrayList<SportsCar>();	//contains all
+		ArrayList<SportsCar> temp;
+		temp = loadSportsCar("Ford");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSportsCar("Mazda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSportsCar("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all SportsCars to their files
+	public static void saveSportsCar(ArrayList<SportsCar> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
 	}
 
 	public static ArrayList<SUV> loadSUV(String brand){
@@ -252,6 +516,41 @@ public class CarLoader{
 		return con;
 	}
 
+	public static ArrayList<SUV> loadAllSUV(){
+		ArrayList<SUV> all = new ArrayList<SUV>();	//contains all
+		ArrayList<SUV> temp;
+		temp = loadSUV("Ford");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSUV("Honda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSUV("Mazda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadSUV("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all SUVs to their files
+	public static void saveSUV(ArrayList<SUV> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
+	}
+
 	public static ArrayList<Truck> loadTruck(String brand){
 		
 		File file = PathBuilder.getFile("Truck", brand);
@@ -274,6 +573,38 @@ public class CarLoader{
 			con.add(c);
 		}
 		return con;
+	}
+
+	public static ArrayList<Truck> loadAllTruck(){
+		ArrayList<Truck> all = new ArrayList<Truck>();	//contains all
+		ArrayList<Truck> temp;
+		temp = loadTruck("Ford");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadTruck("Mazda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadTruck("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Trucks to their files
+	public static void saveTruck(ArrayList<Truck> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
 	}
 
 	public static ArrayList<Wagon> loadWagon(String brand){
@@ -300,6 +631,36 @@ public class CarLoader{
 		return con;
 	}
 
+	public static ArrayList<Wagon> loadAllWagon(){
+		ArrayList<Wagon> all = new ArrayList<Wagon>();	//contains all
+		ArrayList<Wagon> temp;
+
+		temp = loadWagon("Mazda");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		temp = loadWagon("Toyota");
+		for(int i = 0; i < temp.size(); i++)
+			all.add(temp.get(i));
+		return all;
+	}
+	//saves all Wagons to their files
+	public static void saveWagon(ArrayList<Wagon> arr){
+		int i = 0;
+		int j = 0;
+		while(j < arr.size()){
+			ArrayList<Car> temp = new ArrayList<Car>();
+			while(j < arr.size() && arr.get(i).getBrand().equals(arr.get(j).getBrand())){
+				
+				temp.add(arr.get(j));
+				j++;
+			}
+			i = j;
+			save(temp);
+		}
+		
+
+	}
+
 
 
 
@@ -313,12 +674,13 @@ public class CarLoader{
 			Iterator<Car> iterator = list.iterator();
 			while (iterator.hasNext()) {
 				Car car = iterator.next();
+				System.out.println(car.getBrand());
 				for(int i = 0; i < car.attribs.size(); i++)
 					file.write(car.attribs.get(i) + "\n");	
 			}
 			file.close();
 		}catch(IOException e){
-			System.err.println("File Not Foundx");
+			System.err.println("File Not Found");
 		}
 	}
 	
