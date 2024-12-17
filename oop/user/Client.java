@@ -1,6 +1,7 @@
 package oop.user;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date; // Import for Date class
 import oop.car.Car; // Import for formatting arrays
 
@@ -9,41 +10,35 @@ public class Client extends Person {
     public static final int attribsCount = 10;
     private static int count = 0;    
     private int clientCount;
-    public ArrayList<String> attribs;
-    private Car bought;
+    private ArrayList<String> product;
     private int payMethod;
-    private String bankCheck = "None";
-    private Date date; // Date of transaction
-    private Admin admin; // Admin responsible for the transaction
+    private String refNum;
+    private String date; // Date of transaction
+    private String admin; // Admin responsible for the transaction
 
     // Constructor
     public Client() {
-        count++; // Increment counter when an object is instantiated
+        count++;
         clientCount = count;
     }
 
-    public Client(ArrayList<String> attribs, Car car, Date date, Admin admin) {
-        if (attribs == null || attribs.size() < 7) {
-            throw new IllegalArgumentException("Attributes list is invalid or incomplete.");
-        }
-        this.attribs = attribs;
-        count++;
-        setClientCount(Integer.parseInt(attribs.get(0)));
-        setName(attribs.get(1));
-        setEmail(attribs.get(2));
-        setAddress(attribs.get(3));
-        setPhone(attribs.get(4).toCharArray());
-        setCarBought(car); //attribs(5) processed sa userLoader.clientList
-        setPaymentMethod(Integer.parseInt(attribs.get(6)));
-        setBankCheck(attribs.get(7).toCharArray());
-        setDate(date); //attribs(8)
-        setAdmin(admin);//attribs(9)
-
+    public Client(ArrayList<String> attribs) { 
+        date = attribs.get(0);       
+        setClientCount(Integer.parseInt(attribs.get(1)));
+        setName(attribs.get(2));
+        setEmail(attribs.get(3));
+        setAddress(attribs.get(4));
+        setPhone(attribs.get(5).toCharArray());
+        String productData = attribs.get(6);
+        product = new ArrayList<>(Arrays.asList(productData.replace("[", "").replace("]", "").split(", ")));
+        setPaymentMethod(Integer.parseInt(attribs.get(7)));
+        setRefNum(attribs.get(8).toCharArray());
+        admin = attribs.get(9);
     }
 
     // Mutator methods
-    public void setCarBought(Car bought) {
-        this.bought = bought;
+    public void setProduct(Car car) {
+        product = car.attribs;
     }
 
     public void setPaymentMethod(int payMethod) {
@@ -53,36 +48,37 @@ public class Client extends Person {
         this.payMethod = payMethod;
     }
 
-    public void setBankCheck(char[] bankCheck) {
-        if (bankCheck != null) {
-            for (int i = 0; i < bankCheck.length; i++) { // Iterate over each character in the array
-                if (!Character.isDigit(bankCheck[i])) { // Ensure each character is a digit
+    public void setRefNum(char[] refNum) {
+        if (refNum != null) {
+            for (int i = 0; i < refNum.length; i++) { // Iterate over each character in the array
+                if (!Character.isDigit(refNum[i])) { // Ensure each character is a digit
                     throw new IllegalArgumentException("Check track number must contain only digits (0-9).");
                 }
             }
-            this.bankCheck = new String(bankCheck); // Convert char[] to String and store
+            this.refNum = new String(refNum); // Convert char[] to String and store
         }
     }
 
     public void setDate() {
-        date = new Date();
-    }
-
-    public void setDate(Date date) {//edit
-        this.date = date;
+        Date now = new Date();
+        date = now.toString();
     }
 
     public void setAdmin(Admin admin) {
-        this.admin = admin;
+        this.admin = admin.toString();
     }
 
     private void setClientCount(int clientCount) {
         this.clientCount = clientCount;
     }
+
+    public static void setCount(int num) {
+        count = num;
+    }
   
     // Accessor Methods
-    public ArrayList<String> getCarAttribs() {
-        return bought.attribs;
+    public ArrayList<String> getProduct() {
+        return product;
     }
 
     public String getPaymentMethod() {
@@ -97,46 +93,42 @@ public class Client extends Person {
         }
     }
 
-    public Car getCarBought() {
-        return bought;
-    }
 
     public int getPayMethod() {
         return payMethod;
     }
 
-    public String getBankCheck() {
-        return bankCheck;
+    public String getRefNum() {
+        return refNum;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public Admin getAdmin() {
+    public String getAdmin() {
         return admin;
-    }
-
-    public static int getCount() {
-        return count;
     }
 
     public int getClientCount() {
         return clientCount;
     }
 
+    public static int getCount() {
+        return count;
+    }
+
     // toString Method
     @Override
     public String toString() {
-        return "Client " + clientCount +
-               "name = " + getName() + "\n" +
-               "email = " + getEmail() + "\n" +
-               "address = " + getAddress() + "\n" +
-               "phone = " + getPhone() + "\n" +
-               "car bought = " + (bought != null ? bought.attribs : "None") + "\n" +
-               "payment method = " + payMethod + "\n" +
-               "bank/check num = " + bankCheck + "\n" +
-               "date = " + (date != null ? date.toString() : "None") + "\n" +
-               "admin = " + (admin != null ? admin.toString() : "None") + "\n";
+        return "name: " + getName() + "\n" +
+               "email: " + getEmail() + "\n" +
+               "address: " + getAddress() + "\n" +
+               "phone: " + getPhone() + "\n" +
+               "car product: " + (product != null ? product : "None") + "\n" +
+               "payment method: " + getPaymentMethod() + "\n" +
+               "bank/check num: " + refNum + "\n" +
+               "date: " + (date != null ? date.toString() : "None") + "\n" +
+               "admin: " + admin + "\n";
     }
 }

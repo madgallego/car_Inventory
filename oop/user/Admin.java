@@ -9,6 +9,7 @@ public class Admin extends Person {
 
     private String adminID;
     private String password;
+    public ArrayList<String> attribs;
 
     // Default Constructor
     public Admin() {}
@@ -22,6 +23,7 @@ public class Admin extends Person {
         setAdminID(attribs.get(4));
         setPassword(attribs.get(5));
         count++;
+        this.attribs = attribs;
     }
 
     // Static Methods for Count Management
@@ -136,12 +138,11 @@ public class Admin extends Person {
     // toString Method
     @Override
     public String toString() {
-        return "Admin " +
-               "\nname = " + getName() +
+        return "Admin " + getName() +
+               ", adminID = " + adminID /* +
                "\nemail = " + getEmail() +
-               "\naddress = " + getAddress() +
-               "\nphone = " + getPhone() +
-               "\nadminID = " + adminID +
-               "\npassword = " + password;
+               "\nphone = " + getPhone()  +
+               "\naddress = " + getAddress() +               
+               "\npassword = " + password*/;
     }
 }
