@@ -48,10 +48,11 @@ public class Client extends Person {
     public void setPaymentMethod(int num) {
         switch(num) {
             case 1: payMethod = "Cash"; break;
-            case 2: payMethod = "Credit/Debit Card"; break;
-            case 3: payMethod = "Bank Transfer"; break;
-            case 4: payMethod = "Cheque"; break;
-            case 5: payMethod = "Digital Wallet"; break;
+            case 2: payMethod = "Cash/Installment"; break;
+            case 3: payMethod = "Card/Debit"; break;
+            case 4: payMethod = "Card/Credit"; break;
+            case 5: payMethod = "Cheque"; break;
+            case 6: payMethod = "Digital Wallet"; break;
             default: break;
         }        
     }
