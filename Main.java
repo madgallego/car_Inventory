@@ -7,7 +7,7 @@ import oop.utils.CarLoader;
 public class Main{
 
 	public static void main(String args[]) throws FileNotFoundException{
-		ArrayList<SUV> c = CarLoader.loadSUV("Toyota");
+		ArrayList<SUV> c = CarLoader.loadSUV("Honda");
         Transaction.restock(c.get(0));
         ArrayList<Car> cars = new ArrayList<Car>();
 
