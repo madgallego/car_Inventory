@@ -11,7 +11,7 @@ public class PathBuilder {
 	public PathBuilder(String carType, String carBrand) {
 		this.carType=carType;
 		this.carBrand=carBrand;
-		path = "././oop/database/";
+		path = "././oop/database/Inventory/";
 		setPath();
 	}
 	

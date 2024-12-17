@@ -12,6 +12,9 @@ public class CarOptionUI extends CarUI {
     private JPanel titlePanel;
     private JLabel title;
     private JLabel subTitle;
+    private CardLayout switchpaneLayout1;
+    private CardLayout switchpaneLayout2;
+
 
     public CarOptionUI(){
         frame = new JFrame();

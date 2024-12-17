@@ -1,7 +1,5 @@
 package oop.user;
 
-import java.io.*;
-import oop.user.*;
 import java.util.*;
 
 public class Admin extends Person {
@@ -70,6 +68,6 @@ public class Admin extends Person {
                "\naddress = " + getAddress() +
                "\nphone = " + getPhone() +
                "\nadminID = " + adminID +
-               "\npassword = " + password
+               "\npassword = " + password;
     }
 }

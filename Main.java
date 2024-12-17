@@ -2,13 +2,17 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import oop.utils.Transaction;
 import oop.car.*;
+import oop.ui.StartUI;
 import oop.utils.CarLoader;
 
 public class Main{
 
 	public static void main(String args[]) throws FileNotFoundException{
+		new StartUI();
+		
+		
 		ArrayList<SUV> c = CarLoader.loadSUV("Honda");
-        Transaction.restock(c.get(0));
+        //Transaction.restock(c.get(0));
         ArrayList<Car> cars = new ArrayList<Car>();
 
         for(int i = 0; i < c.size(); i++){

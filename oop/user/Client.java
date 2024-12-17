@@ -34,7 +34,7 @@ public class Client extends Person {
         setAddress(attribs.get(3));
         setPhone(attribs.get(4).toCharArray());
         setCarBought(car); //attribs(5) processed sa userLoader.clientList
-        setPaymentMethod(attribs.get(6));
+        setPaymentMethod(Integer.parseInt(attribs.get(6)));
         setBankCheck(attribs.get(7).toCharArray());
         setDate(date); //attribs(8)
         setAdmin(admin);//attribs(9)
@@ -87,12 +87,13 @@ public class Client extends Person {
 
     public String getPaymentMethod() {
         switch(payMethod) {
-            case 1: return "Cash"; break;
-            case 2: return "Cash/Installment"; break;
-            case 3: return "Card/Debit"; break;
-            case 4: return "Card/Credit"; break;
-            case 5: return "Cheque"; break;
-            case 6: return "Digital Wallet"; break;
+            case 1: return "Cash"; 
+            case 2: return "Cash/Installment"; 
+            case 3: return "Card/Debit"; 
+            case 4: return "Card/Credit"; 
+            case 5: return "Cheque";
+            case 6: return "Digital Wallet";
+            default: return "Defualt";
         }
     }
 
@@ -136,6 +137,6 @@ public class Client extends Person {
                "payment method = " + payMethod + "\n" +
                "bank/check num = " + bankCheck + "\n" +
                "date = " + (date != null ? date.toString() : "None") + "\n" +
-               "admin = " + (admin != null ? admin.toString() : "None") + "\n"
+               "admin = " + (admin != null ? admin.toString() : "None") + "\n";
     }
 }
