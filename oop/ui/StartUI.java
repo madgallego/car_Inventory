@@ -3,7 +3,10 @@ package oop.ui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.*;
+import oop.user.Admin;
+import oop.utils.*;
 
 public class StartUI implements ActionListener {
     private JFrame frame;
@@ -186,14 +189,21 @@ public class StartUI implements ActionListener {
             switchLayout.show(switchPanel, "3");
         }
         else if(e.getSource() == loginButton){
+            ArrayList<Admin> adminList = UserLoader.loadAdmin("././oop/database/User/Admin.txt");//location of the database for admin
+            String passKey = new String (password.getPassword());//string representation of the password
+
+            //checking the validity of user input
             if(username.getText().isEmpty() || password.getPassword().length == 0){
                 JOptionPane.showMessageDialog(null, "Input on both fields before logging in", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-            else{
+            else if(Admin.verify(adminList, username.getText()) && Admin.verify(adminList, passKey)){
                 System.out.println(username.getText());
                 System.out.println(password.getPassword());
                 frame.dispose();
                 new CarOptionUI();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong username or password. Please try again!", "Security Warning!", JOptionPane.WARNING_MESSAGE);
             }
         }
         else if(e.getSource() == backButton2){
