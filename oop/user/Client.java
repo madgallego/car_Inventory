@@ -10,7 +10,7 @@ public class Client extends Person {
     private int clientCount;
     public ArrayList<String> attribs;
     private Car bought;
-    private String payMethod = "Default";
+    private int payMethod;
     private String bankCheck = "None";
     private Date date; // Date of transaction
     private Admin admin; // Admin responsible for the transaction
@@ -32,11 +32,11 @@ public class Client extends Person {
         setEmail(attribs.get(2));
         setAddress(attribs.get(3));
         setPhone(attribs.get(4).toCharArray());
-        setCarBought(car); //attribs(5)
-        payMethod = attribs.get(6);
-        bankCheck = attribs.get(7);
-        setDate(date);
-        setAdmin(admin);
+        setCarBought(car); //attribs(5) processed sa userLoader.clientList
+        setPaymentMethod(attribs.get(6));
+        setBankCheck(attribs.get(7).toCharArray());
+        setDate(date); //attribs(8)
+        setAdmin(admin);//attribs(9)
 
     }
 
@@ -45,16 +45,11 @@ public class Client extends Person {
         this.bought = bought;
     }
 
-    public void setPaymentMethod(int num) {
-        switch(num) {
-            case 1: payMethod = "Cash"; break;
-            case 2: payMethod = "Cash/Installment"; break;
-            case 3: payMethod = "Card/Debit"; break;
-            case 4: payMethod = "Card/Credit"; break;
-            case 5: payMethod = "Cheque"; break;
-            case 6: payMethod = "Digital Wallet"; break;
-            default: break;
-        }        
+    public void setPaymentMethod(int payMethod) {
+        if (payMethod < 1 || payMethod > 6) {
+            throw new IllegalArgumentException("Payment method must be between 1 and 6.");
+        }
+        this.payMethod = payMethod;
     }
 
     public void setBankCheck(char[] bankCheck) {
@@ -72,7 +67,7 @@ public class Client extends Person {
         date = new Date();
     }
 
-    public void setDate(Date date) {
+    public void setDate(Date date) {//edit
         this.date = date;
     }
 
@@ -85,11 +80,26 @@ public class Client extends Person {
     }
   
     // Accessor Methods
-    public ArrayList<String> getCarBought() {
+    public ArrayList<String> getCarAttribs() {
         return bought.attribs;
     }
 
     public String getPaymentMethod() {
+        switch(payMethod) {
+            case 1: return "Cash"; break;
+            case 2: return "Cash/Installment"; break;
+            case 3: return "Card/Debit"; break;
+            case 4: return "Card/Credit"; break;
+            case 5: return "Cheque"; break;
+            case 6: return "Digital Wallet"; break;
+        }
+    }
+
+    public Car getCarBought() {
+        return bought;
+    }
+
+    public int getPayMethod() {
         return payMethod;
     }
 
@@ -125,7 +135,6 @@ public class Client extends Person {
                "payment method = " + payMethod + "\n" +
                "bank/check num = " + bankCheck + "\n" +
                "date = " + (date != null ? date.toString() : "None") + "\n" +
-               "admin = " + (admin != null ? admin.toString() : "None") + "\n" +
-               "total clients = " + count;
+               "admin = " + (admin != null ? admin.toString() : "None") + "\n"
     }
 }

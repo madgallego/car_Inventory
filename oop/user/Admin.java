@@ -69,7 +69,6 @@ public class Admin extends Person {
                "\naddress = " + getAddress() +
                "\nphone = " + getPhone() +
                "\nadminID = " + adminID +
-               "\npassword = " + password +
-               "\ntotal admins = " + count;
+               "\npassword = " + password
     }
 }
