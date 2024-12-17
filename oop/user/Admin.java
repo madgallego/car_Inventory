@@ -14,10 +14,7 @@ public class Admin extends Person {
     public Admin() {}
 
     // Parameterized Constructor
-    public Admin(ArrayList<String> attribs) {
-        if (attribs.size() != attribsCount) {
-            throw new IllegalArgumentException("Invalid number of attributes for Admin.");
-        }
+    public Admin(ArrayList<String> attribs) {        
         setName(attribs.get(0));
         setEmail(attribs.get(1));
         setAddress(attribs.get(2));

@@ -12,20 +12,22 @@ public class UserLoader {
         ArrayList<Admin> adminList = new ArrayList<>();
         ArrayList<String> attribs;
 
-        try (Scanner scan = new Scanner(f)) {           
+        try (Scanner scan = new Scanner(f)) {
             // first line is the count of Admin objects
             if (scan.hasNextLine()) {
                 Admin.setCount(Integer.parseInt(scan.nextLine().trim()));
             }
 
             // read Admin attributes
-            for(int j = 0; j < Admin.getCount(); j++) {
+            for (int j = 0; j < Admin.getCount(); j++) {
                 attribs = new ArrayList<>();
                 for (int i = 0; i < Admin.attribsCount && scan.hasNextLine(); i++) {
-                    attribs.add(scan.nextLine().trim());
+                    String line = scan.nextLine().trim();
+                    attribs.add(line);
                 }
-                // create new Admin object and add to list
-                adminList.add(new Admin(attribs));
+                if (attribs.size() == Admin.attribsCount) {
+                    adminList.add(new Admin(attribs));                    
+                }
             }
         } catch (FileNotFoundException e) {
             System.err.println("File not found.");
@@ -33,6 +35,7 @@ public class UserLoader {
 
         return adminList;
     }
+
 
     // Method for saving changes (like deleting or adding admin objects) into the file
     public static void saveAdmin(String filePath, ArrayList<Admin> adminList) {
