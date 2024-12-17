@@ -19,6 +19,9 @@ public class Admin extends Person {
     }
 
     public Admin(ArrayList<String> attribs) {
+        if (attribs.size() != attrbsCount) {
+                    throw new IllegalArgumentException("Invalid number of attributes for Admin.");
+        }
         this.attribs = attribs;
         count++;
         setAdminCount(Integer.parseInt(attribs.get(0)));
@@ -32,11 +35,19 @@ public class Admin extends Person {
 
     // Mutator methods
     public void setAdminID(String adminID) {
-        this.adminID = adminID;
+        if (adminID != null && !adminID.isEmpty()) {
+            this.adminID = adminID;
+        } else {
+            throw new IllegalArgumentException("Admin ID cannot be empty.");
+        }
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (password != null && password.length() >= 6) { // Ensure a minimum length
+            this.password = password;
+        } else {
+            throw new IllegalArgumentException("Password must be at least 6 characters long.");
+        }
     }
 
     private void setAdminCount(int adminCount) {
@@ -65,11 +76,7 @@ public class Admin extends Person {
         Iterator<Admin> iterator = adminList.iterator();
         while (iterator.hasNext()) {
             Admin admin = iterator.next();
-			if(admin.getName().equals(input))
-				return true;
-            else if(admin.getPassword().equals(input))
-                return true;
-            else if(admin.getAdminID().equals(input))
+			if(admin.getName().equals(input) || admin.getPassword().equals(input) || admin.getAdminID().equals(input))
                 return true;
 		}
 
