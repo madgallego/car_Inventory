@@ -115,6 +115,23 @@ public class Admin extends Person {
         return false;
     }
 
+    //Returns Admin object after sign-in authentication
+    public static Admin loggedIn(ArrayList<Admin> adminList, String info, String password) {
+        Iterator<Admin> iterator = adminList.iterator();
+        while (iterator.hasNext()) {
+            Admin admin = iterator.next();
+            if ((admin.getName().equals(info) || 
+                admin.getEmail().equals(info) || 
+                admin.getPhone().equals(info) || 
+                admin.getAdminID().equals(info)) && 
+                admin.getPassword().equals(password)) {
+                
+                return admin;
+            }
+        }
+        return null;
+    }
+
 
     // toString Method
     @Override
