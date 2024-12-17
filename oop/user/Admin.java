@@ -5,7 +5,8 @@ import oop.user.*;
 import java.util.*;
 
 public class Admin extends Person {
-	 // Attributes
+	// Attributes
+    public static final int attrbsCount = 7;
     private static int count = 0;
     public ArrayList<String> attribs;
     private String adminID;

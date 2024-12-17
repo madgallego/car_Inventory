@@ -6,6 +6,7 @@ import oop.car.Car; // Import for formatting arrays
 
 public class Client extends Person {
     // Attributes
+    public static final int attribsCount = 10;
     private static int count = 0;    
     private int clientCount;
     public ArrayList<String> attribs;
