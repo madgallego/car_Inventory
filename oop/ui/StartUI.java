@@ -196,9 +196,9 @@ public class StartUI implements ActionListener {
             if(username.getText().isEmpty() || password.getPassword().length == 0){
                 JOptionPane.showMessageDialog(null, "Input on both fields before logging in", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-            else if(Admin.verify(adminList, username.getText()) && Admin.verify(adminList, passKey)){
+            else if(Admin.authName(adminList, username.getText(), passKey) ){
                 System.out.println(username.getText());
-                System.out.println(password.getPassword());
+                System.out.println(passKey);
                 frame.dispose();
                 new CarOptionUI();
             }
