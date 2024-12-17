@@ -36,12 +36,19 @@ public class UserLoader {
 			Iterator<Admin> iterator = adminList.iterator();
 			while (iterator.hasNext()) {
 				Admin admin = iterator.next();
-				for(int i = 0; i < admin.attribs.size(); i++)
-					f.write(admin.attribs.get(i) + "\n");	
+				for(int i = 0; i < Admin.attribsCount; i++) {
+                    f.write(admin.getAdminCount() + "\n");
+                    f.write(admin.getName() + "\n");
+                    f.write(admin.getEmail() + "\n");
+                    f.write(admin.getAddress() + "\n");
+                    f.write(admin.getPhone() + "\n");
+                    f.write(admin.getAdminID() + "\n");
+                    f.write(admin.getPassword() + "\n");
+                }	
 			}
 			f.close();
 		}catch(IOException e){
-			System.err.println("File Not Found.");
+			System.err.println("Error saving to file.");
 		}
     }    
 
