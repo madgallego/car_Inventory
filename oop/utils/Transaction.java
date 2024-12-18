@@ -40,7 +40,7 @@ public class Transaction {
         car.update();
     }
     public static void destock(Car car, int num){
-        if(isEmpty(car) || (car.getNum()-num)<=0){
+        if(isEmpty(car) || (car.getNum()-num)< 0){
             return;
         }
         car.setNum(car.getNum()- num);
