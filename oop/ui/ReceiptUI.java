@@ -120,44 +120,28 @@ public class ReceiptUI extends CarUI{
 
         panel2 = new JPanel();
         panel2.setLayout(null);
-        panel2.setBounds(43, 190, 800, 200);
+        panel2.setBounds(43, 190, 800, 140);
         panel2.setBackground(Color.WHITE);
 
         JLabel vehicle1 = new JLabel("Vehicle Details");
         vehicle1.setFont(new Font("Arial", Font.BOLD, 20));
         vehicle1.setBounds(15,10,150,30);
 
-        JLabel vehicle2 = new JLabel("VIN:");
+        JLabel vehicle2 = new JLabel("Brand:");
         vehicle2.setFont(new Font("Arial", Font.PLAIN, 17));
         vehicle2.setBounds(15,40,150,30);
 
-        JLabel vehicle3 = new JLabel("Make:");
+        JLabel vehicle3 = new JLabel("Model:");
         vehicle3.setFont(new Font("Arial", Font.PLAIN, 17));
         vehicle3.setBounds(15,70,150,30);
 
-        JLabel vehicle4 = new JLabel("Year:");
-        vehicle4.setFont(new Font("Arial", Font.PLAIN, 17));
-        vehicle4.setBounds(15,100,150,30);
-
-        JLabel vehicle5 = new JLabel("Color:");
-        vehicle5.setFont(new Font("Arial", Font.PLAIN, 17));
-        vehicle5.setBounds(15,130,150,30);
-
-        JLabel vehicle6 = new JLabel("Model:");
+        JLabel vehicle6 = new JLabel("Type:");
         vehicle6.setFont(new Font("Arial", Font.PLAIN, 17));
         vehicle6.setBounds(420,40,150,30);
 
-        JLabel vehicle7 = new JLabel("Mileage:");
+        JLabel vehicle7 = new JLabel("Product ID:");
         vehicle7.setFont(new Font("Arial", Font.PLAIN, 17));
         vehicle7.setBounds(420,70,150,30);
-
-        JLabel vehicle8 = new JLabel("License Plate:");
-        vehicle8.setFont(new Font("Arial", Font.PLAIN, 17));
-        vehicle8.setBounds(420,100,150,30);
-
-        JLabel vehicle9 = new JLabel("Add-Ons:");
-        vehicle9.setFont(new Font("Arial", Font.PLAIN, 17));
-        vehicle9.setBounds(420,130,150,30);
 
         vin = new JLabel("holder");
         vin.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -167,14 +151,6 @@ public class ReceiptUI extends CarUI{
         make.setFont(new Font("Arial", Font.PLAIN, 17));
         make.setBounds(170,70,150,30);
 
-        year = new JLabel("holder");
-        year.setFont(new Font("Arial", Font.PLAIN, 17));
-        year.setBounds(170,100,150,30);
-
-        color = new JLabel("holder");
-        color.setFont(new Font("Arial", Font.PLAIN, 17));
-        color.setBounds(170,130,150,30);
-
         model = new JLabel("holder");
         model.setFont(new Font("Arial", Font.PLAIN, 17));
         model.setBounds(570,40,150,30);
@@ -183,17 +159,9 @@ public class ReceiptUI extends CarUI{
         license.setFont(new Font("Arial", Font.PLAIN, 17));
         license.setBounds(570,70,150,30);
 
-        mileage = new JLabel("holder");
-        mileage.setFont(new Font("Arial", Font.PLAIN, 17));
-        mileage.setBounds(570,100,150,30);
-
-        addons = new JLabel("holder");
-        addons.setFont(new Font("Arial", Font.PLAIN, 17));
-        addons.setBounds(570,130,150,30);
-
         confirmButton1 = new JButton("Confirm");
         confirmButton1.setFont(new Font("Arial", Font.BOLD, 17));
-        confirmButton1.setBounds(535,164,120,30);
+        confirmButton1.setBounds(535,100,120,30);
         confirmButton1.setBackground(Color.decode("#5d99bc"));
         confirmButton1.addActionListener(new ActionListener() {
             @Override
@@ -204,7 +172,7 @@ public class ReceiptUI extends CarUI{
 
         cancel1 = new JButton("Cancel");
         cancel1.setFont(new Font("Arial", Font.BOLD, 17));
-        cancel1.setBounds(665,164,120,30);
+        cancel1.setBounds(665,100,120,30);
         cancel1.setBackground(Color.GRAY);
         cancel1.addActionListener(new ActionListener() {
             @Override
@@ -217,20 +185,12 @@ public class ReceiptUI extends CarUI{
         panel2.add(vehicle1);
         panel2.add(vehicle2);
         panel2.add(vehicle3);
-        panel2.add(vehicle4);
-        panel2.add(vehicle5);
         panel2.add(vehicle6);
         panel2.add(vehicle7);
-        panel2.add(vehicle8);
-        panel2.add(vehicle9);
         panel2.add(vin);
         panel2.add(make);
-        panel2.add(year);
-        panel2.add(color);
         panel2.add(model);
         panel2.add(license);
-        panel2.add(mileage);
-        panel2.add(addons);
         panel2.add(confirmButton1);
         panel2.add(cancel1);
 
