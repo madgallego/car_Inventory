@@ -9,3 +9,35 @@ house
 
 Admin Xar, adminID = 55608joy
 -----
+Wed Dec 18 06:10:05 PST 2024
+1
+new1
+new1@gmail.com
+legazpi city
+09876543211
+[JF308GTS0029353, Subaru, Subaru WRX Wagon GT-S EyeSight 2024, 4755, 1795, 1500, 2.4L Gasoline Engine, 271, 5, Gasoline, Wagon, CVT, Full-height rear door]
+1
+
+Admin Xar, adminID = 55608joy
+-----
+Wed Dec 18 09:05:05 PST 2024
+1
+lemon
+lemon@gmail.com
+lemonhouse
+09876523411
+[PE308MD60022503, Mazda, Mazda3 2.5L Sports Wagon, 4805, 1840, 1480, SKYACTIV-G In-line 4-Cylinder, 190, 5, Gasoline, Wagon, 6-Speed AT, Full-height rear door]
+1
+
+Admin Xar, adminID = 55608joy
+-----
+Wed Dec 18 10:05:05 PST 2024
+1
+eq2eq2
+qweq2eq@gmail.com
+feqw
+09876543214
+[JT301GRS0126503, Toyota, FORTUNER GR-S 4X4 2.8 AT, 4795, 1855, 1835, 4-Cylinder, In-line, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler, 224, 7, Diesel, SUV, 6-Speed AT, Mid]
+1
+
+

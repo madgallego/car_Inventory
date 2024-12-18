@@ -11,7 +11,7 @@ Gasoline
 SUV
 8-Speed AT
 Crossover
-PE301CX90027903
+PE301CX90327903
 Mazda
 CX-9
 5075
@@ -24,7 +24,7 @@ Gasoline
 SUV
 6-Speed AT
 Midsize Crossover
-PE301CXS0027903
+PE301CXS0427903
 Mazda
 CX-60
 4745

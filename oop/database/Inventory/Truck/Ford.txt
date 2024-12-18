@@ -1,4 +1,4 @@
-PE106RGW0019403
+PE106RGW0619403
 Ford
 Ranger 2.0L Bi-Turbo Wildtrak 4x4 AT
 5370
@@ -12,7 +12,7 @@ Truck
 10-Speed AT
 Dual Cab
 Midsize
-PE106RPT0023453
+PE106RPT0423453
 Ford
 Ranger Raptor
 5381
@@ -26,7 +26,7 @@ Truck
 10-Speed AT
 Dual Cab
 Midsize
-PE106SPT0015043
+PE106SPT0315043
 Ford
 Ranger 2.0L Turbo Sport 4x2 AT
 5370
