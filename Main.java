@@ -5,9 +5,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import oop.car.Car;
 import oop.car.Convertible;
-import oop.car.SUV;
 import oop.ui.DashboardUI;
-import oop.ui.StartUI;
 import oop.utils.CarLoader;
 
 public class Main{
@@ -28,7 +26,7 @@ public class Main{
                     }
                 }
 
-                new StartUI();
+                new DashboardUI(1, "BMW");
             }
         });
 		

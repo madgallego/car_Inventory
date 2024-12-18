@@ -1,12 +1,15 @@
 package oop.ui;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
+import oop.user.Client;
 
 public class ReceiptUI extends CarUI{
-
+    private int carType;
+    private String carBrand;
+    private Client userClient;
     private JFrame frame;
     private JPanel switchPanel;
     private JPanel transaction1;
@@ -18,7 +21,7 @@ public class ReceiptUI extends CarUI{
     private JLabel title1;
     private JLabel title2;
     private JLabel name;
-    private JLabel email;
+    private JLabel emailAdd;
     private JLabel address;
     private JLabel number;
     private JLabel vin;
@@ -33,13 +36,20 @@ public class ReceiptUI extends CarUI{
     private JLabel price;
     private JLabel signature1;
     private JLabel signature2;
-    private JLabel agentSignDate;
-    private JLabel buyerSignDate;
+    private JTextField emailField;
+    private JPasswordField passwordField;
     private JComboBox method;
     private JTextField reference;
+    private JButton confirmButton1;
+    private JButton confirmButton2;
+    private JButton cancel1;
+    private JButton cancel2;
     private CardLayout switchLayout = new CardLayout();
 
-    public ReceiptUI(){ //pass as parameters the details (?)
+    public ReceiptUI(Client user, int type, String brand){ //pass as parameters the details (?)
+        userClient=user;
+        carType=type;
+        carBrand=brand;
         frame = setFrame();
 
         switchPanel = new JPanel(switchLayout);
@@ -82,13 +92,13 @@ public class ReceiptUI extends CarUI{
         buyer5.setFont(new Font("Arial", Font.PLAIN, 17));
         buyer5.setBounds(420,70,150,30);
 
-        name = new JLabel("holder");
+        name = new JLabel(userClient.getName());
         name.setFont(new Font("Arial", Font.PLAIN, 17));
         name.setBounds(170,40,150,30);
 
-        email = new JLabel("holder");
-        email.setFont(new Font("Arial", Font.PLAIN, 17));
-        email.setBounds(170,70,150,30);
+        emailAdd = new JLabel("holder");
+        emailAdd.setFont(new Font("Arial", Font.PLAIN, 17));
+        emailAdd.setBounds(170,70,150,30);
 
         address = new JLabel("holder");
         address.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -104,7 +114,7 @@ public class ReceiptUI extends CarUI{
         panel1.add(buyer4);
         panel1.add(buyer5);
         panel1.add(name);
-        panel1.add(email);
+        panel1.add(emailAdd);
         panel1.add(address);
         panel1.add(number);
 
@@ -181,15 +191,26 @@ public class ReceiptUI extends CarUI{
         addons.setFont(new Font("Arial", Font.PLAIN, 17));
         addons.setBounds(570,130,150,30);
 
-        JButton button = new JButton("Confirm");
-        button.setFont(new Font("Arial", Font.BOLD, 17));
-        button.setBounds(665,164,120,30);
-        button.setBackground(Color.decode("#5d99bc"));
-        //button.setForeground(Color.WHITE);
-        button.addActionListener(new ActionListener() {
+        confirmButton1 = new JButton("Confirm");
+        confirmButton1.setFont(new Font("Arial", Font.BOLD, 17));
+        confirmButton1.setBounds(535,164,120,30);
+        confirmButton1.setBackground(Color.decode("#5d99bc"));
+        confirmButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 switchLayout.show(switchPanel, "2");
+            }
+        });
+
+        cancel1 = new JButton("Cancel");
+        cancel1.setFont(new Font("Arial", Font.BOLD, 17));
+        cancel1.setBounds(665,164,120,30);
+        cancel1.setBackground(Color.GRAY);
+        cancel1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new DashboardUI(carType, carBrand);
             }
         });
 
@@ -210,7 +231,8 @@ public class ReceiptUI extends CarUI{
         panel2.add(license);
         panel2.add(mileage);
         panel2.add(addons);
-        panel2.add(button);
+        panel2.add(confirmButton1);
+        panel2.add(cancel1);
 
         title1 = new JLabel("Transaction Details");
         title1.setFont(new Font("Arial", Font.BOLD, 45));
@@ -309,50 +331,65 @@ public class ReceiptUI extends CarUI{
         cond4.setFont(new Font("Arial", Font.PLAIN, 15));
         cond4.setBounds(15,70,800,30);
 
-        JLabel sign1 = new JLabel("Signatures");
+        JLabel sign1 = new JLabel("Confirmation of Purchase");
         sign1.setFont(new Font("Arial", Font.BOLD, 20));
         sign1.setBounds(15,95,800,30);
 
-        JLabel sign2 = new JLabel("By signing below, the seller and buyer acknowledges that they have read and " +
-                "agreed to the terms of this ");
+        JLabel sign2 = new JLabel("To confirm your purchase, enter your email and password");
         sign2.setFont(new Font("Arial", Font.PLAIN, 15));
         sign2.setBounds(15,117,800,30);
 
-        JLabel sign3 = new JLabel("Conditions of sale and Purchase and all information above are true and correct. ");
-        sign3.setFont(new Font("Arial", Font.PLAIN, 15));
-        sign3.setBounds(15,137,800,30);
+        confirmButton2 = new JButton("Confirm");
+        confirmButton2.setFont(new Font("Arial", Font.BOLD, 17));
+        confirmButton2.setBounds(535,184,120,30);
+        confirmButton2.setBackground(Color.decode("#5d99bc"));
+        confirmButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(emailField.getText().isEmpty() || passwordField.getPassword().length == 0){
+                    JOptionPane.showMessageDialog(null, "Input on both fields to confirm purchase", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
+                else{
+                    frame.dispose();
+                    new CarOptionUI();
+                }
+                
+            }
+        });
 
-        JLabel sellerSign = new JLabel("Agent Signature:");
-        sellerSign.setFont(new Font("Arial", Font.BOLD, 15));
-        sellerSign.setBounds(15,159,150,30);
+        cancel2 = new JButton("Cancel");
+        cancel2.setFont(new Font("Arial", Font.BOLD, 17));
+        cancel2.setBounds(665,184,120,30);
+        cancel2.setBackground(Color.GRAY);
+        cancel2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int response = JOptionPane.showConfirmDialog(null, 
+                "Cancel Purchase?", "Purchase Confirmation", JOptionPane.YES_NO_OPTION);
 
-        JLabel buyerSign = new JLabel("Buyer Signature:");
-        buyerSign.setFont(new Font("Arial", Font.BOLD, 15));
-        buyerSign.setBounds(15,182,150,30);
+                if(response == JOptionPane.YES_OPTION){
+                    frame.dispose();
+                    new DashboardUI(carType, carBrand);
+                }
+                
+            }
+        });
 
-        JLabel signdate1 = new JLabel("Date:");
-        signdate1.setFont(new Font("Arial", Font.BOLD, 15));
-        signdate1.setBounds(330,159,150,30);
+        JLabel purchase1 = new JLabel("Email Address");
+        purchase1.setFont(new Font("Arial", Font.PLAIN, 12));
+        purchase1.setBounds(72,143,150,30);
 
-        JLabel signdate2 = new JLabel("Date:");
-        signdate2.setFont(new Font("Arial", Font.BOLD, 15));
-        signdate2.setBounds(330,182,250,30);
+        JLabel purchase2 = new JLabel("Password");
+        purchase2.setFont(new Font("Arial", Font.PLAIN, 12));
+        purchase2.setBounds(272,143,150,30);
 
-        signature1 = new JLabel("holder");
-        signature1.setFont(new Font("Arial", Font.PLAIN, 17));
-        signature1.setBounds(170,159,150,30);
+        emailField = new JTextField("Enter Email");
+        emailField.setFont(new Font("Arial", Font.PLAIN, 17));
+        emailField.setBounds(70,165,150,30);
 
-        signature2 = new JLabel("holder");
-        signature2.setFont(new Font("Arial", Font.PLAIN, 17));
-        signature2.setBounds(170,182,150,30);
-
-        agentSignDate = new JLabel("holder");
-        agentSignDate.setFont(new Font("Arial", Font.PLAIN, 17));
-        agentSignDate.setBounds(570,159,150,30);
-
-        buyerSignDate = new JLabel("holder");
-        buyerSignDate.setFont(new Font("Arial", Font.PLAIN, 17));
-        buyerSignDate.setBounds(570,182,150,30);
+        passwordField = new JPasswordField();
+        passwordField.setFont(new Font("Arial", Font.PLAIN, 17));
+        passwordField.setBounds(270,165,150,30);
 
 
         panel4.add(cond1);
@@ -361,22 +398,18 @@ public class ReceiptUI extends CarUI{
         panel4.add(cond4);
         panel4.add(sign1);
         panel4.add(sign2);
-        panel4.add(sign3);
-        panel4.add(signdate1);
-        panel4.add(signdate2);
-        panel4.add(sellerSign);
-        panel4.add(buyerSign);
-        panel4.add(signature1);
-        panel4.add(signature2);
-        panel4.add(agentSignDate);
-        panel4.add(buyerSignDate);
+        panel4.add(confirmButton2);
+        panel4.add(cancel2);
+        panel4.add(purchase1);
+        panel4.add(purchase2);
+        panel4.add(emailField);
+        panel4.add(passwordField);
 
         transaction2.add(panel4);
         transaction2.add(panel3);
 
         transaction1.add(panel1);
         transaction1.add(panel2);
-
 
         frame.add(switchPanel, BorderLayout.CENTER);
 
