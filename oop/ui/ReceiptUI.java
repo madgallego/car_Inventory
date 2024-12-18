@@ -4,9 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import oop.car.Car;
 import oop.user.Client;
 
 public class ReceiptUI extends CarUI{
+    private Car clientCar;
     private int carType;
     private String carBrand;
     private Client userClient;
@@ -46,7 +48,7 @@ public class ReceiptUI extends CarUI{
     private JButton cancel2;
     private CardLayout switchLayout = new CardLayout();
 
-    public ReceiptUI(Client user, int type, String brand){ //pass as parameters the details (?)
+    public ReceiptUI(Client user, int type, String brand, Car selected){ //pass as parameters the details (?)
         userClient=user;
         carType=type;
         carBrand=brand;
@@ -96,15 +98,15 @@ public class ReceiptUI extends CarUI{
         name.setFont(new Font("Arial", Font.PLAIN, 17));
         name.setBounds(170,40,150,30);
 
-        emailAdd = new JLabel("holder");
+        emailAdd = new JLabel("client.email@email.com");
         emailAdd.setFont(new Font("Arial", Font.PLAIN, 17));
         emailAdd.setBounds(170,70,150,30);
 
-        address = new JLabel("holder");
+        address = new JLabel("Legazpi, Albay");
         address.setFont(new Font("Arial", Font.PLAIN, 17));
         address.setBounds(570,40,150,30);
 
-        number = new JLabel("holder");
+        number = new JLabel("+63 912 345 6789");
         number.setFont(new Font("Arial", Font.PLAIN, 17));
         number.setBounds(570,70,150,30);
 
@@ -143,19 +145,19 @@ public class ReceiptUI extends CarUI{
         vehicle7.setFont(new Font("Arial", Font.PLAIN, 17));
         vehicle7.setBounds(420,70,150,30);
 
-        vin = new JLabel("holder");
+        vin = new JLabel(selected.getBrand());
         vin.setFont(new Font("Arial", Font.PLAIN, 17));
         vin.setBounds(170,40,150,30);
 
-        make = new JLabel("holder");
+        make = new JLabel(selected.getModel());
         make.setFont(new Font("Arial", Font.PLAIN, 17));
         make.setBounds(170,70,150,30);
 
-        model = new JLabel("holder");
+        model = new JLabel(selected.getType());
         model.setFont(new Font("Arial", Font.PLAIN, 17));
         model.setBounds(570,40,150,30);
 
-        license = new JLabel("holder");
+        license = new JLabel(selected.getCarID());
         license.setFont(new Font("Arial", Font.PLAIN, 17));
         license.setBounds(570,70,150,30);
 

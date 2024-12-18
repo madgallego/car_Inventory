@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.*;
+import oop.car.Car;
 import oop.car.Convertible;
 import oop.car.Coupe;
 import oop.car.Crossover;
@@ -23,6 +24,7 @@ import oop.user.Client;
 import oop.utils.CarLoader;
 
 public class DashboardUI {
+    private Car selected;
     private int  carType;
     private String carBrand;
     private Client userClient;
@@ -256,10 +258,9 @@ public class DashboardUI {
                 
                 //String name = lastNameField.getText();
                 userClient.setName(lastNameField.getText()+", "+firstNameField.getText()+" "+middleNameField.getText());
-                new ReceiptUI(userClient, carType, carBrand);
+                new ReceiptUI(userClient, carType, carBrand, selected);
                 //productIDField
                 //priceField
-                
                 //firstNameField
                 //middleNameField
                 //ageField
@@ -357,7 +358,7 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo0.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo0.get(row).getPrice()+"0");
-        
+                                selected = ListInfo0.get(row);
                                 chooseButton.setEnabled(true);
                             }
         
@@ -450,7 +451,7 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo1.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo1.get(row).getPrice()+"0");
-        
+                                selected = ListInfo1.get(row);
                                 chooseButton.setEnabled(true);
                             }
         
@@ -538,6 +539,7 @@ public class DashboardUI {
                                 infoLabel[10].setText( "Style: " + ListInfo2.get(row).attribs.get(13));
                                 infoLabel[11].setText("Product ID: " + ListInfo2.get(row).attribs.get(0));
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                                selected = ListInfo2.get(row);
 
                                 productIDField.setText("Product ID: " + ListInfo2.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo2.get(row).getPrice()+"0");
@@ -632,7 +634,8 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo3.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo3.get(row).getPrice()+"0");
-        
+                                selected = ListInfo3.get(row);
+
                                 chooseButton.setEnabled(true);
                             }
         
@@ -720,7 +723,8 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo4.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo4.get(row).getPrice()+"0");
-        
+                                selected = ListInfo4.get(row);
+
                                 chooseButton.setEnabled(true);
                             }
         
@@ -808,7 +812,8 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo5.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo5.get(row).getPrice()+"0");
-        
+                                selected = ListInfo5.get(row);
+
                                 chooseButton.setEnabled(true);
                             }
         
@@ -895,7 +900,7 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo6.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo6.get(row).getPrice()+"0");
-        
+                                selected = ListInfo6.get(row);
                                 chooseButton.setEnabled(true);
                             }
         
@@ -983,7 +988,8 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo7.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo7.get(row).getPrice()+"0");
-        
+                                selected = ListInfo7.get(row);
+
                                 chooseButton.setEnabled(true);
                             }
         
@@ -1071,7 +1077,8 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo8.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo8.get(row).getPrice()+"0");
-        
+                                selected = ListInfo8.get(row);
+
                                 chooseButton.setEnabled(true);
                             }
         
@@ -1159,7 +1166,7 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo9.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo9.get(row).getPrice()+"0");
-        
+                                selected = ListInfo9.get(row);
                                 chooseButton.setEnabled(true);
                             }
         
@@ -1246,7 +1253,7 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo10.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo10.get(row).getPrice()+"0");
-        
+                                selected = ListInfo10.get(row);
                                 chooseButton.setEnabled(true);
                             }
         
@@ -1333,7 +1340,7 @@ public class DashboardUI {
                                 //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
                                 productIDField.setText("Product ID: " + ListInfo11.get(row).attribs.get(0));
                                 priceField.setText("Price:" + "    " + "Php " +ListInfo11.get(row).getPrice()+"0");
-        
+                                selected = ListInfo11.get(row);
                                 chooseButton.setEnabled(true);
                             }
         
