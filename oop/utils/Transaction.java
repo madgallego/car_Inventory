@@ -34,18 +34,16 @@ public class Transaction {
         }
         return false;
     }
-    public static void restock(Car car) {
-        if(isFull(car))
-            return;
-        car.setNum(car.getNum() + 1);
+    public static void restock(Car car, int num) {
+        car.setNum(car.getNum() + num);
         car.setID();
         car.update();
     }
-    public static void destock(Car car){
-        if(isEmpty(car)){
+    public static void destock(Car car, int num){
+        if(isEmpty(car) || (car.getNum()-num)<=0){
             return;
         }
-        car.setNum(car.getNum()- 1);
+        car.setNum(car.getNum()- num);
         car.setID();
         car.update();
     }

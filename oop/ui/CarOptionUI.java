@@ -152,7 +152,7 @@ public class CarOptionUI extends CarUI {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 frame.dispose();
-                                if(adminCheck) new InventoryUI();
+                                if(adminCheck) new InventoryUI(num, brand[push]);
                                 else new DashboardUI(num, brand[push]);
                             }
                         });

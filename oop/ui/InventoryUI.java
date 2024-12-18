@@ -6,9 +6,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-
 import javax.swing.*;
-
+import oop.car.Car;
 import oop.car.Convertible;
 import oop.car.Coupe;
 import oop.car.Crossover;
@@ -22,8 +21,10 @@ import oop.car.SportsCar;
 import oop.car.Truck;
 import oop.car.Wagon;
 import oop.utils.CarLoader;
+import oop.utils.Transaction;
 
 public class InventoryUI {
+    private Car selected;
     private int carType;
     private String carBrand;
     private JFrame frame;
@@ -50,7 +51,9 @@ public class InventoryUI {
     private JTextField identificationNumberField;
     private JTextField addField;
 
-    public InventoryUI(){
+    public InventoryUI(int type, String brand){
+        carType=type;
+        carBrand=brand;
         frame = new JFrame();
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -153,7 +156,7 @@ public class InventoryUI {
 
         infoLabel = new JLabel[5];
 
-        String[] carInfoString = {"Brand: ", "Product ID: " ,"Model: ", "Type: ","Stock: "};
+        String[] carInfoString = {"Brand: ", "Model: " ,"Type: ", "Product ID: ","Stock: "};
 
         for(int i = 0; i < 5; i++){
             infoLabel[i] = new JLabel(carInfoString[i]);
@@ -192,8 +195,12 @@ public class InventoryUI {
                 int response = JOptionPane.showConfirmDialog(null,
                         "Add to Inventory?","Inventory Update",JOptionPane.YES_NO_OPTION);
                 if(response == JOptionPane.YES_OPTION){
-                    frame.dispose();
-                    new CarOptionUI(true);
+                    Transaction.restock(selected, Integer.parseInt(addField.getText()));
+                    //int newNum = selected.getNum() + Integer.parseInt(addField.getText());
+                    //selected.setNum(newNum);
+                    infoLabel[4].setText("Stock: " + selected.getNum());
+                    //frame.dispose();
+                    //new CarOptionUI(true);
                 }
 
             }
@@ -225,6 +232,10 @@ public class InventoryUI {
                 int response = JOptionPane.showConfirmDialog(null,
                         "Remove to Inventory?","Inventory Update",JOptionPane.YES_NO_OPTION);
                 if(response == JOptionPane.YES_OPTION){
+                    Transaction.destock(selected, Integer.parseInt(addField.getText()));
+                    //int newNum = selected.getNum() - Integer.parseInt(addField.getText());
+                    //selected.setNum(newNum);
+                    infoLabel[4].setText("Stock: " + selected.getNum());
                     //frame.dispose();
                     //new CarOptionUI();
                 }
@@ -251,7 +262,7 @@ public class InventoryUI {
         loaderPanel.add(headerPanel, BorderLayout.NORTH);
         loaderPanel.add(tablePanel, BorderLayout.CENTER);
 
-        String[] header = {"Manufacturer","Model","Stock","Price"};
+        String[] header = {"Brand","Model","Product ID","Price"};
 
         for(int i = 0; i < 4; i++){
             JLabel label = new JLabel(header[i], SwingConstants.CENTER);
@@ -279,7 +290,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo0.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo0.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo0.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo0.get(i).getPrice()+"0");
@@ -298,6 +309,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo0.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo0.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo0.get(row).getNum());
+                                selected=ListInfo0.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -361,7 +373,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo1.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo1.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo1.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo1.get(i).getPrice()+"0");
@@ -380,6 +392,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo1.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo1.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo1.get(row).getNum());
+                                selected=ListInfo1.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -441,7 +454,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo2.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo2.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo2.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo2.get(i).getPrice()+"0");
@@ -460,6 +473,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo2.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo2.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo2.get(row).getNum());
+                                selected=ListInfo2.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -520,7 +534,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo3.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo3.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo3.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo3.get(i).getPrice()+"0");
@@ -539,6 +553,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo3.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo3.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo3.get(row).getNum());
+                                selected=ListInfo3.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -599,7 +614,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo4.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo4.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo4.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo4.get(i).getPrice()+"0");
@@ -618,6 +633,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo4.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo4.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo4.get(row).getNum());
+                                selected=ListInfo4.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -678,7 +694,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo5.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo5.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo5.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo5.get(i).getPrice()+"0");
@@ -697,6 +713,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo5.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo5.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo5.get(row).attribs.get(0));
+                                selected=ListInfo5.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -756,7 +773,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo6.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo6.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo6.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo6.get(i).getPrice()+"0");
@@ -775,7 +792,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo6.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo6.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo6.get(row).getNum());
-        
+                                selected=ListInfo6.get(row);
                                 removeButton.setEnabled(true);
                             }
         
@@ -834,7 +851,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo7.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo7.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo7.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo7.get(i).getPrice()+"0");
@@ -853,6 +870,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo7.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo7.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo7.get(row).getNum());
+                                selected=ListInfo7.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -913,7 +931,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo8.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo8.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo8.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo8.get(i).getPrice()+"0");
@@ -932,6 +950,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo8.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo8.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo8.get(row).getNum());
+                                selected=ListInfo8.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -992,7 +1011,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo9.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo9.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo9.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo9.get(i).getPrice()+"0");
@@ -1011,6 +1030,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo9.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo9.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo9.get(row).getNum());
+                                selected=ListInfo9.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -1070,7 +1090,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo10.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo10.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo10.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo10.get(i).getPrice()+"0");
@@ -1089,6 +1109,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo10.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo10.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo10.get(row).getNum());
+                                selected=ListInfo10.get(row);
         
                                 removeButton.setEnabled(true);
                             }
@@ -1148,7 +1169,7 @@ public class InventoryUI {
                                 loaderLabel[i][j] = new JLabel("    " + ListInfo11.get(i).getModel());
                                 break;
                             case 2:
-                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo11.get(i).getNum());
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo11.get(i).getCarID());
                                 break;
                             case 3:
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo11.get(i).getPrice()+"0");
@@ -1167,6 +1188,7 @@ public class InventoryUI {
                                 infoLabel[2].setText(carInfoString[2] + ListInfo11.get(row).attribs.get(10));
                                 infoLabel[3].setText(carInfoString[3] + ListInfo11.get(row).attribs.get(0));
                                 infoLabel[4].setText(carInfoString[4] + ListInfo11.get(row).getNum());
+                                selected=ListInfo11.get(row);
         
                                 removeButton.setEnabled(true);
                             }
