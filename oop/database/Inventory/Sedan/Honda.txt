@@ -4,7 +4,7 @@ CITY 1.5 RS CVT Honda SENSING
 4589
 1748
 1467
-In-Line 4 Cylinder DOHC i-VTEC
+In-Line 4 Cylinder
 89
 5
 Gasoline
@@ -17,7 +17,7 @@ CIVIC RS Turbo CVT
 4681
 1802
 1415
-DOHC VTEC Turbo 4-Cylinder, 16-valve
+DOHC VTEC Turbo 4-Cylinder
 131
 5
 Gasoline
@@ -30,8 +30,7 @@ CIVIC TYPE R 2.0 VTEC Turbo Honda SENSING
 4593
 1890
 1407
-16-Valve, DOHC VTEC, Turbo Charged In-Line 4 Cylinder
-235
+16-Valve, DOHC VTEC
 4
 Gasoline
 Sedan

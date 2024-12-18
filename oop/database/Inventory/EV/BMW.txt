@@ -4,7 +4,7 @@ BNW i7
 5391
 1950
 1544
-Fully Electric, Dual Permanent Magnet Synchronous
+Fully Electric
 544
 4
 Electric
@@ -19,7 +19,7 @@ BMW i5
 4963
 2126
 1497
-Fully Electric, Permanent Magnet Synchronous
+Fully Electric
 340
 5
 Electric
@@ -34,7 +34,7 @@ BMW i4
 4783
 1852
 1448
-Fully Electric, Permanent Magnet Synchronous
+Fully Electric
 286
 5
 Electric

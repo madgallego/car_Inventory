@@ -4,7 +4,7 @@ Explorer 2024
 5049
 2268
 1783
-2.3L Gasoline Engine, 4 Cylinder 16 Valve
+2.3L Gasoline Engine
 299
 7
 Gasoline
@@ -17,7 +17,7 @@ Territory Sport 2024
 4630
 1935
 1706
-1.5L Gasoline Engine, 4 Cylinder 16 Valve
+1.5L Gasoline Engine
 160
 5
 Gasoline
@@ -30,7 +30,7 @@ Everest 2.0L Bi-Turbo Titanium Plus 4x4 AT
 4904
 2201
 1884
-2.0L Diesel Engine, 4 Cylinder 16 Valve
+2.0L Diesel Engine
 207
 7
 Diesel

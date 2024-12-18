@@ -4,7 +4,7 @@ Ranger 2.0L Bi-Turbo Wildtrak 4x4 AT
 5370
 1918
 1884
-2.0L Diesel Engine, 4 Cylinder 16 Valve
+2.0L Diesel Engine
 207
 5
 Diesel
@@ -18,7 +18,7 @@ Ranger Raptor
 5381
 2028
 1922
-2.0L Diesel Engine, 4 Cylinder 16 Valve
+2.0L Diesel Engine
 208
 5
 Diesel
@@ -32,7 +32,7 @@ Ranger 2.0L Turbo Sport 4x2 AT
 5370
 1918
 1884
-2.0L Diesel Engine, 4 Cylinder 16 Valve
+2.0L Diesel Engine
 168
 5
 Diesel

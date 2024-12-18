@@ -4,7 +4,7 @@ FORTUNER GR-S 4X4 2.8 AT
 4795
 1855
 1835
-4-Cylinder, In-line, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler
+4-Cylinder, In-line
 224
 7
 Diesel
@@ -17,7 +17,7 @@ VELOZ 1.5 V CVT
 4475
 1775
 1770
-4-Cylinder, In-line, 16-Valve DOHC with Dual VVT-i
+4-Cylinder, In-line
 106
 7
 Gasoline
@@ -30,7 +30,7 @@ LAND CRUISER ZX
 5130
 1980
 1945
-V6 Direct Injection, 24-Valve DOHC, Twin Turbo Engine
+V6 Direct Injection
 302
 7
 Diesel

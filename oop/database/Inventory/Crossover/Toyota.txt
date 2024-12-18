@@ -4,7 +4,7 @@ RAIZE 1.0 Turbo CVT
 4030
 1710
 1605
-Turbo Charged, 3 cylinders, Inline. 12-valve DOHC with VVT-i
+Turbo Charged, 3 cylinders
 98
 5
 Gasoline
@@ -18,7 +18,7 @@ VELOZ 1.5 V CVT
 4475
 1775
 1770
-4-Cylinder, In-line, 16-Valve DOHC with Dual VVT-i
+4-Cylinder, In-line
 106
 7
 Gasoline
@@ -32,7 +32,7 @@ RAV4 2.5L LTD HEV CVT
 4600
 1855
 1685
-16-Valve DOHC, 4-Cylinder, In-line, VVT-iE (Intake), VVT-I (Exhaust)
+16-Valve DOHC, 4-Cylinder
 178
 5
 Gasoline
