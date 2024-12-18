@@ -4,7 +4,7 @@ BMW 4 Series Coupe 420i Advantage
 4773
 1852
 1392
-2.0L Gasoline Engine, 4 Cylinder 16 Valve
+2.0L Gasoline Engine
 184
 4
 Gasoline
@@ -17,7 +17,7 @@ BMW 5 Series Sedan
 4963
 2126
 1497
-2.0L Gasoline Engine, In-Line 4 Cylinder 16 Valve
+2.0L Gasoline Engine
 208
 5
 Gasoline
@@ -30,7 +30,7 @@ BMW X5 xDrive30d Business
 4922
 2218
 1745
-3.0L Diesel Engine, In-line 6 Cylinder 24 Valve
+3.0L Diesel Engine
 282
 7
 Diesel

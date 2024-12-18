@@ -4,7 +4,7 @@ GR SUPRA 3.0L A/T
 4379
 1854
 1294
-6 cylinders, In-line Type, Twin-Scroll Turbocharged
+6 cylinders, In-line
 335
 2
 Gasoline
@@ -17,7 +17,7 @@ GR 86 2.4 A/T
 4265
 1775
 1310
-4-Cylinders, Horizontally-Opposed, DOHC, 16-Valve
+4-Cylinders, Horizontally-Opposed
 237
 4
 Gasoline
@@ -30,7 +30,7 @@ GR YARIS 1.6L Turbo MT
 3995
 1805
 1455
-3-Cylinder, In-line, DOHC 4-Valve Roller-rocker
+3-Cylinder, In-line
 261
 4
 Gasoline

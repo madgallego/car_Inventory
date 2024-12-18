@@ -18,7 +18,7 @@ HILUX 2.8 GR-S 4x4 A/T
 5320
 2020
 1880
-2.8L Diesel, 4-Cylinder, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler
+2.8L Diesel, 4-Cylinder
 224
 5
 Gasoline
@@ -32,7 +32,7 @@ HILUX FLEET 2.4 J 4x4 M/T
 5285
 1800
 1815
-2.4L Diesel, 4-Cylinder, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler
+2.4L Diesel, 4-Cylinder
 150
 5
 Diesel

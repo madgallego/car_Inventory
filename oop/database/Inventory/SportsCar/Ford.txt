@@ -4,7 +4,7 @@ Mustang 5.0L GT Premium V8
 4811
 2097
 1414
-5.0L Gasoline Engine, 8 Cylinder 32 Valve
+5.0L Gasoline Engine
 486
 4
 Gasoline
@@ -17,7 +17,7 @@ Mustang 2.3L Ecoboost
 4811
 2097
 1407
-2.3L Gasoline Engine, 4 Cylinder 16 Valve
+2.3L Gasoline Engine
 315
 4
 Gasoline

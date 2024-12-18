@@ -4,7 +4,7 @@ BMW 2 Series Coupe M240i xDrive
 4537
 1838
 1390
-3.0L Gasoline Engine, 6 Cylinder 24 Valve
+3.0L Gasoline Engine
 374
 4
 Gasoline
@@ -19,7 +19,7 @@ BMW M2 Coupe Pure
 4580
 1887
 1403
-3.0L Gasoline Engine, In-line 6 Cylinder 24 Valve DOHC
+3.0L Gasoline Engine
 460
 4
 Gasoline
@@ -34,7 +34,7 @@ BMW 4 Series Coupe 420i Advantage
 4773
 1852
 1392
-2.0L Gasoline Engine, 4 Cylinder 16 Valve
+2.0L Gasoline Engine
 184
 4
 Gasoline
