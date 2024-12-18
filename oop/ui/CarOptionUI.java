@@ -11,11 +11,13 @@ public class CarOptionUI extends CarUI {
     private JPanel brandPanel;
     private JPanel mainPanel;
     private JPanel titlePanel;
-    private JPanel switchPanel;
+    private JPanel switchPanel1;
+    private JPanel switchPanel2;
     private JLabel title;
     private JLabel subTitle;
     private JButton[] typeButton;
-    private CardLayout switchLayout = new CardLayout();
+    private CardLayout switchLayout1 = new CardLayout();
+    private CardLayout switchLayout2 = new CardLayout();
 
     private int buttonNum;
 
@@ -24,18 +26,17 @@ public class CarOptionUI extends CarUI {
         frame = setFrame();
         frame.setLayout(new BorderLayout());
 
-        switchPanel = new JPanel(switchLayout);
+        switchPanel1 = new JPanel(switchLayout1);
+        switchPanel2 = new JPanel(switchLayout2);
 
-        //typePanel = new JPanel(new BorderLayout());
-
-        brandPanel = new JPanel(new GridLayout(1,5,5,10));
+        brandPanel = new JPanel(new GridLayout(1,5,5,0));
         brandPanel.setBackground(Color.decode("#c2e5f9"));
 
-        mainPanel = new JPanel(new GridLayout(2,6,5,10));
+        mainPanel = new JPanel(new GridLayout(2,6,5,0));
         mainPanel.setBackground(Color.decode("#c2e5f9"));
 
-        switchPanel.add(mainPanel, "1");
-        switchPanel.add(brandPanel, "2");
+        switchPanel1.add(mainPanel, "1");
+        switchPanel1.add(brandPanel, "2");
 
         titlePanel = new JPanel();
         titlePanel.setLayout(new BorderLayout());
@@ -107,11 +108,10 @@ public class CarOptionUI extends CarUI {
                             brand[0] = "Suzuki";
                             break;
                         case 7:
-                            buttonNum = 4;
+                            buttonNum = 3;
                             brand[0] = "Ford";
-                            brand[1] = "Honda";
-                            brand[2] = "Mazda";
-                            brand[3] = "Toyota";
+                            brand[1] = "Mazda";
+                            brand[2] = "Toyota";
                             break;
                         case 8:
                             buttonNum = 3;
@@ -126,49 +126,87 @@ public class CarOptionUI extends CarUI {
                             brand[2] = "Toyota";
                             break;
                         case 10:
-                            buttonNum = 3;
-                            brand[0] = "Ford";
-                            brand[1] = "Mazda";
-                            brand[2] = "Toyota";
+                            buttonNum = 2;
+                            brand[0] = "Mazda";
+                            brand[1] = "Subaru";
                             break;
                         case 11:
-                            buttonNum = 2;
-                            brand[0] = "BMW";
-                            brand[1] = "Toyota";
+                            buttonNum = 4;
+                            brand[0] = "Ford";
+                            brand[1] = "Honda";
+                            brand[2] = "Mazda";
+                            brand[3] = "Toyota";
                             break;
                     }
+
+                    brandPanel.removeAll();
 
                     for(int i = 0; i < buttonNum; i++){
                         JButton brandButton = new JButton(brand[i]);
                         brandButton.setFocusable(false);
                         brandButton.setBackground(Color.decode("#5d99bc"));
                         brandButton.setFont(new Font("Arial", Font.BOLD, 30));
+                        final int push=i;
                         brandButton.addActionListener(new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 frame.dispose();
-                                new DashboardUI();
+                                new DashboardUI(num, brand[push]);
                             }
                         });
                         brandPanel.add(brandButton);
             
                     }
 
-                    switchLayout.show(switchPanel,"2");
+                    switchLayout1.show(switchPanel1,"2");
+                    switchLayout2.show(switchPanel2,"2");
                     subTitle.setText("Choose a Brand");
                 }
             });
             mainPanel.add(typeButton[i]);
         }
 
+        JPanel buttonPanel1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel1.setBackground(Color.decode("#c2e5f9"));
+        JPanel buttonPanel2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel2.setBackground(Color.decode("#c2e5f9"));
+
+        switchPanel2.add(buttonPanel1, "1");
+        switchPanel2.add(buttonPanel2, "2");
+
+        JButton exitButton = new JButton("Exit");
+        exitButton.setFont(new Font("Arial", Font.BOLD, 15));
+        exitButton.setBackground(Color.GRAY);
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new StartUI();
+                
+            }
+        });
+
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Arial", Font.BOLD, 15));
+        backButton.setBackground(Color.GRAY);
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switchLayout2.show(switchPanel2,"1");
+                switchLayout1.show(switchPanel1,"1");
+            }
+        });
+
+
+        buttonPanel1.add(exitButton);
+        buttonPanel2.add(backButton);
+
         titlePanel.add(title,BorderLayout.NORTH);
         titlePanel.add(subTitle,BorderLayout.SOUTH);
-
-        //typePanel.add(titlePanel, BorderLayout.NORTH);
-        //typePanel.add(mainPanel, BorderLayout.CENTER);
         
         frame.add(titlePanel, BorderLayout.NORTH);
-        frame.add(switchPanel, BorderLayout.CENTER);
+        frame.add(switchPanel1, BorderLayout.CENTER);
+        frame.add(switchPanel2, BorderLayout.SOUTH);
 
     }
 }
