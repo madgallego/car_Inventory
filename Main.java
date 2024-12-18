@@ -7,6 +7,7 @@ import oop.car.Car;
 import oop.car.Convertible;
 import oop.car.SUV;
 import oop.ui.DashboardUI;
+import oop.ui.StartUI;
 import oop.utils.CarLoader;
 
 public class Main{
@@ -27,7 +28,7 @@ public class Main{
                     }
                 }
 
-                new DashboardUI();
+                new StartUI();
             }
         });
 		

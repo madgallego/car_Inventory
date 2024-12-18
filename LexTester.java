@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 import oop.car.Convertible;
 import oop.car.Coupe;
 import oop.car.Crossover;
@@ -16,6 +15,7 @@ import oop.utils.CarLoader;
 
 public class LexTester {
     public static void main(String[] args) {
+        int i = 0;
             int carType=0;
         String carBrand="BMW";
         switch (carType) {

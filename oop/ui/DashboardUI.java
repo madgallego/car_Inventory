@@ -306,11 +306,12 @@ public class DashboardUI {
 
         loaderLabel = new JLabel[10][4];
         carType=0;
+        int i=0;
         switch (carType) {
             case 0:
                 ArrayList<Convertible> ListInfo0 = CarLoader.loadConvertible("BMW");
                 System.out.println("File Read!");
-                int i = 0;
+                 i = 0;
                 while(i<ListInfo0.size()){
                     for(int j = 0; j < 4; j++){
                         switch (j) {
@@ -327,7 +328,7 @@ public class DashboardUI {
                                 loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo0.get(i).getPrice()+"0");
                                 break;
                         }
-                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
                         loaderLabel[i][j].setOpaque(true);
                         loaderLabel[i][j].setBackground(Color.WHITE);
         
@@ -396,33 +397,617 @@ public class DashboardUI {
 
 
             
-            case 1:
+            case 1: //Coupe
                 ArrayList<Coupe> ListInfo1 = CarLoader.loadCoupe(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo1.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo1.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo1.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo1.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo1.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo1.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo1.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo1.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo1.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo1.get(row).attribs.get(3) + "mm. x " + ListInfo1.get(row).attribs.get(4) + "mm. x " + ListInfo1.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo1.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo1.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo1.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo1.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Rear Sit: " + ListInfo1.get(row).attribs.get(12));
+                                infoLabel[10].setText( "Doors: " + ListInfo1.get(row).attribs.get(13));
+                                infoLabel[11].setText( "Style: " + ListInfo1.get(row).attribs.get(14));
+                                infoLabel[12].setText("Product ID: " + ListInfo1.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
                 break;
+
+
             case 2:
                 ArrayList<Crossover> ListInfo2 = CarLoader.loadCrossover(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo2.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo2.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo2.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo2.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo2.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo2.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo2.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo2.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo2.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo2.get(row).attribs.get(3) + "mm. x " + ListInfo2.get(row).attribs.get(4) + "mm. x " + ListInfo2.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo2.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo2.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo2.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo2.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Size: " + ListInfo2.get(row).attribs.get(12));
+                                infoLabel[10].setText( "Style: " + ListInfo2.get(row).attribs.get(13));
+                                infoLabel[11].setText("Product ID: " + ListInfo2.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
                 break;
+
             case 3:
                 ArrayList<EV> ListInfo3 = CarLoader.loadEV(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo3.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo3.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo3.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo3.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo3.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo3.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo3.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo3.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo3.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo3.get(row).attribs.get(3) + "mm. x " + ListInfo3.get(row).attribs.get(4) + "mm. x " + ListInfo3.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo3.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo3.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo3.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo3.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Range: " + ListInfo3.get(row).attribs.get(12) +"mi.");
+                                infoLabel[10].setText( "Connector: " + ListInfo3.get(row).attribs.get(13));
+                                infoLabel[11].setText( "BatterLife: " + ListInfo3.get(row).attribs.get(14)+"mi.");
+                                infoLabel[12].setText("Product ID: " + ListInfo3.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
+
                 break;
             case 4:
                 ArrayList<Hatchback> ListInfo4 = CarLoader.loadHatchback(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo4.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo4.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo4.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo4.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo4.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo4.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo4.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo4.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo4.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo4.get(row).attribs.get(3) + "mm. x " + ListInfo4.get(row).attribs.get(4) + "mm. x " + ListInfo4.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo4.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo4.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo4.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo4.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Box Design: " + ListInfo4.get(row).attribs.get(12));
+                                infoLabel[10].setText("Product ID: " + ListInfo4.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
+
                 break;
             case 5:
                 ArrayList<Luxury> ListInfo5 = CarLoader.loadLuxury(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo5.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo5.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo5.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo5.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo5.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo5.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo5.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo5.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo5.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo5.get(row).attribs.get(3) + "mm. x " + ListInfo5.get(row).attribs.get(4) + "mm. x " + ListInfo5.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo5.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo5.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo5.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo5.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Category: " + ListInfo5.get(row).attribs.get(12));
+                                infoLabel[10].setText("Product ID: " + ListInfo5.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
                 break;
             case 6:
                 ArrayList<Minivan> ListInfo6 = CarLoader.loadMinivan(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo6.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo6.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo6.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo6.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo6.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo6.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo6.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo6.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo6.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo6.get(row).attribs.get(3) + "mm. x " + ListInfo6.get(row).attribs.get(4) + "mm. x " + ListInfo6.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo6.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo6.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo6.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo6.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Mini: " + ListInfo6.get(row).attribs.get(12));
+                                infoLabel[10].setText("Product ID: " + ListInfo6.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
                 break;
             case 7:
                 ArrayList<Truck> ListInfo7 = CarLoader.loadTruck(carBrand);
                 System.out.println("File Read!");
+                i = 0;
+                while(i<ListInfo7.size()){
+                    for(int j = 0; j < 4; j++){
+                        switch (j) {
+                            case 0:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo7.get(i).getBrand());
+                                break;
+                            case 1:
+                                loaderLabel[i][j] = new JLabel("    " + ListInfo7.get(i).getModel());
+                                break;
+                            case 2:
+                                loaderLabel[i][j] = new JLabel("    " + " " + ListInfo7.get(i).getNum());
+                                break;
+                            case 3:
+                                loaderLabel[i][j] = new JLabel("    " + "Php " +ListInfo7.get(i).getPrice()+"0");
+                                break;
+                        }
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 22));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+        
+                        final int row = i;
+                        loaderLabel[i][j].addMouseListener(new MouseListener() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                infoLabel[0].setText(carInfoString[0] + ListInfo7.get(row).attribs.get(1));
+                                infoLabel[1].setText(carInfoString[1] + ListInfo7.get(row).attribs.get(2));
+                                infoLabel[2].setText(carInfoString[2] + ListInfo7.get(row).attribs.get(8));
+                                infoLabel[3].setText(carInfoString[3] + ListInfo7.get(row).attribs.get(6));
+                                infoLabel[4].setText(carInfoString[4] + ListInfo7.get(row).attribs.get(3) + "mm. x " + ListInfo7.get(row).attribs.get(4) + "mm. x " + ListInfo7.get(row).attribs.get(5)+"mm. ");
+                                infoLabel[5].setText(carInfoString[5] + ListInfo7.get(row).attribs.get(11));
+                                infoLabel[6].setText(carInfoString[6] + ListInfo7.get(row).attribs.get(9));
+                                infoLabel[7].setText(carInfoString[7] + ListInfo7.get(row).attribs.get(7));
+                                infoLabel[8].setText(carInfoString[8] + ListInfo7.get(row).attribs.get(10));
+                                infoLabel[9].setText( "Style: " + ListInfo7.get(row).attribs.get(12));
+                                infoLabel[10].setText("Product ID: " + ListInfo7.get(row).attribs.get(0));
+                                //infoLabel[11].setText( + ListInfo0.get(i).attribs.get(1));
+                               
+        
+                                chooseButton.setEnabled(true);
+                            }
+        
+                            @Override
+                            public void mousePressed(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseReleased(MouseEvent e) {
+        
+                            }
+        
+                            @Override
+                            public void mouseEntered(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(chooseColor);
+                            }
+        
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for(int k = 0; k < 4; k++)
+                                    loaderLabel[row][k].setBackground(Color.WHITE);
+                            }
+                        });
+        
+                        tablePanel.add(loaderLabel[i][j]);
+                    
+                    }
+                    i++;
+                     
+                }
+                //filler trays
+                while(i<10){
+                    for(int j = 0; j < 4; j++){
+                        loaderLabel[i][j] = new JLabel(" ");
+                        loaderLabel[i][j].setFont(new Font("Arial", Font.PLAIN, 27));
+                        loaderLabel[i][j].setOpaque(true);
+                        loaderLabel[i][j].setBackground(Color.WHITE);
+                        tablePanel.add(loaderLabel[i][j]);
+                }
+                    i++;
+                }
                 break;
             case 8:
                 ArrayList<Sedan> ListInfo8 = CarLoader.loadSedan(carBrand);

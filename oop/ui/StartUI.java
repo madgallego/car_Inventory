@@ -189,7 +189,7 @@ public class StartUI implements ActionListener {
             switchLayout.show(switchPanel, "3");
         }
         else if(e.getSource() == loginButton){
-            ArrayList<Admin> adminList = UserLoader.loadAdmin("././oop/database/User/Admin.txt");//location of the database for admin
+            ArrayList<Admin> adminList = UserLoader.loadAdmin();//location of the database for admin
             String passKey = new String (password.getPassword());//string representation of the password
 
             //checking the validity of user input
