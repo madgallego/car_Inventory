@@ -240,7 +240,7 @@ public class DashboardUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new CarOptionUI();
+                new CarOptionUI(false);
             }
         });
 
@@ -257,7 +257,6 @@ public class DashboardUI {
                 //String name = lastNameField.getText();
                 userClient.setName(lastNameField.getText()+", "+firstNameField.getText()+" "+middleNameField.getText());
                 new ReceiptUI(userClient, carType, carBrand);
-
                 //productIDField
                 //priceField
                 

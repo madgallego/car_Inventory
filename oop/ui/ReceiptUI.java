@@ -351,7 +351,7 @@ public class ReceiptUI extends CarUI{
                 }
                 else{
                     frame.dispose();
-                    new CarOptionUI();
+                    new CarOptionUI(false);
                 }
                 
             }

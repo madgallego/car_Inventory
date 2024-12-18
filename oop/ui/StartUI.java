@@ -9,6 +9,7 @@ import oop.user.Admin;
 import oop.utils.*;
 
 public class StartUI implements ActionListener {
+    private boolean adminCheck;
     private JFrame frame;
     private JPanel switchPanel;
     private JPanel startPanel;
@@ -181,10 +182,12 @@ public class StartUI implements ActionListener {
             switchLayout.show(switchPanel, "1");
         }
         else if(e.getSource() == agentButton){
-            signInLabel.setText("Good Day, Agent P!");
+            adminCheck=false;
+            signInLabel.setText("Good Day, Agent!");
             switchLayout.show(switchPanel, "3");
         }
         else if(e.getSource() == adminButton){
+            adminCheck=true;
             signInLabel.setText("Good Day, Admin!");
             switchLayout.show(switchPanel, "3");
         }
@@ -199,8 +202,9 @@ public class StartUI implements ActionListener {
             else if(Admin.authName(adminList, username.getText(), passKey) ){
                 System.out.println(username.getText());
                 System.out.println(passKey);
-                frame.dispose();
-                new CarOptionUI();
+                    frame.dispose();
+                    new CarOptionUI(adminCheck);
+                
             }
             else{
                 JOptionPane.showMessageDialog(null, "Wrong username or password. Please try again!", "Security Warning!", JOptionPane.WARNING_MESSAGE);

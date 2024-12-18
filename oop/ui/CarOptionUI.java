@@ -1,12 +1,12 @@
 package oop.ui;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class CarOptionUI extends CarUI {
-
+    private boolean adminCheck;
     private JFrame frame;
     private JPanel brandPanel;
     private JPanel mainPanel;
@@ -21,7 +21,8 @@ public class CarOptionUI extends CarUI {
 
     private int buttonNum;
 
-    public CarOptionUI(){
+    public CarOptionUI(boolean admin){
+        adminCheck=admin;
         frame = new JFrame();
         frame = setFrame();
         frame.setLayout(new BorderLayout());
@@ -151,7 +152,8 @@ public class CarOptionUI extends CarUI {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 frame.dispose();
-                                new DashboardUI(num, brand[push]);
+                                if(adminCheck) new InventoryUI();
+                                else new DashboardUI(num, brand[push]);
                             }
                         });
                         brandPanel.add(brandButton);
