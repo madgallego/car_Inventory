@@ -40,4 +40,13 @@ feqw
 [JT301GRS0126503, Toyota, FORTUNER GR-S 4X4 2.8 AT, 4795, 1855, 1835, 4-Cylinder, In-line, 16-Valve DOHC Variable Nozzle Turbo with Air-cooled Intercooler, 224, 7, Diesel, SUV, 6-Speed AT, Mid]
 1
 
-
+Admin Lex, adminID = 12345lex
+-----
+Wed Dec 19 09:05:05 PST 2024
+1
+lemon
+user.email@email.com
+Legazpi, Albay
+09123456789
+[PE308MD60022503, Mazda, Mazda3 2.5L Sports Wagon, 4805, 1840, 1480, SKYACTIV-G In-line 4-Cylinder, 190, 5, Gasoline, Wagon, 6-Speed AT, Full-height rear door]
+1
