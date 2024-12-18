@@ -6,6 +6,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import oop.car.Car;
 import oop.car.Convertible;
 import oop.ui.DashboardUI;
+import oop.ui.ReceiptUI;
 import oop.ui.StartUI;
 import oop.utils.CarLoader;
 
@@ -31,7 +32,11 @@ public class Main{
             }
         });
 		
-		 
+
+
+    }
+}
+/* 		 
 		ArrayList<Convertible> c = CarLoader.loadConvertible("BMW");
         //Transaction.restock(c.get(0));
         ArrayList<Car> cars = new ArrayList<Car>();
@@ -51,7 +56,7 @@ public class Main{
 
 }
 
-/* 
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import oop.car.*;

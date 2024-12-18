@@ -1,7 +1,6 @@
 package oop.car;
 
 import java.util.ArrayList;
-import oop.car.Car;
 public class Wagon extends Car{
     private String tailgate;
     public static int attribCount = 13;
@@ -10,7 +9,7 @@ public class Wagon extends Car{
     public Wagon(ArrayList<String> attribs){
         super(attribs);
 
-        setTailgate(attribs.get(14));
+        setTailgate(attribs.get(12));
     }
     public void setTailgate(String tailgate){
         this.tailgate = tailgate;
