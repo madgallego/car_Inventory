@@ -42,9 +42,20 @@ feqw
 
 Admin Lex, adminID = 12345lex
 -----
-Wed Dec 19 09:05:05 PST 2024
+Wed Dec 19 07:28:05 PST 2024
 1
-lemon
+Gallego, Mharc Depalac
+user.email@email.com
+Legazpi, Albay
+09123456789
+[PE308MD60022503, Mazda, Mazda3 2.5L Sports Wagon, 4805, 1840, 1480, SKYACTIV-G In-line 4-Cylinder, 190, 5, Gasoline, Wagon, 6-Speed AT, Full-height rear door]
+1
+
+Admin Lex, adminID = 12345lex
+-----
+Wed Dec 19 09:28:05 PST 2024
+1
+Gallego, Mharc Depalac
 user.email@email.com
 Legazpi, Albay
 09123456789
