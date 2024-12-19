@@ -85,13 +85,13 @@ public class StartUI implements ActionListener {
         userLabel.setBounds(290,110,400,70);
         userLabel.setFont(new Font("Times New Roman",Font.BOLD,52));
 
-        agentButton = new JButton("Agent");
+        agentButton = new JButton("Sales");
         agentButton.setBounds(270,200,150,40);
         agentButton.addActionListener(this);
         agentButton.setBackground(Color.decode("#5d99bc"));
         agentButton.setFont(new Font("Times New Roman",Font.BOLD,15));
 
-        adminButton = new JButton("Admin");
+        adminButton = new JButton("Inventory");
         adminButton.setBounds(450,200,150,40);
         adminButton.addActionListener(this);
         adminButton.setBackground(Color.decode("#5d99bc"));
