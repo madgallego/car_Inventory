@@ -1,4 +1,4 @@
-7
+2
 Xar
 xar@gmail.com
 Aster Street, Iriga City
@@ -11,33 +11,3 @@ BU Dorm, Legazpi City
 09445566772
 12345lex
 mharcmharc
-Xaris
-xaris@gmail.com
-iriga
-12345678901
-123456
-12345678
-Boy
-boy@gmail.com
-boy city
-12345678909
-098765
-09876543
-Xaris
-xaris@gmail.com
-fantacy land
-12345678091
-000000
-1234567
-Joy
-joy@gmail.com
-home town
-09876543211
-123456
-12345678
-new
-new@gmail.com
-dito
-12345678901
-1234
-123456
