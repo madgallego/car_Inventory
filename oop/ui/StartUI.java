@@ -21,6 +21,7 @@ public class StartUI implements ActionListener {
     private JLabel signInLabel;
     private JLabel usernameLabel;
     private JLabel passwordLabel;
+    private JLabel imageLabel;
     private JTextField username;
     private JPasswordField password;
     private JButton startButton;
@@ -30,6 +31,7 @@ public class StartUI implements ActionListener {
     private JButton loginButton;
     private JButton backButton1;
     private JButton backButton2;
+    private ImageIcon image;
     private CardLayout switchLayout = new CardLayout();
 
     public StartUI(){
@@ -156,6 +158,9 @@ public class StartUI implements ActionListener {
 
         switchPanel.add(signInPanel, "3");
 
+        imageLabel = new JLabel();
+        imageLabel.setBounds(370,10,450,360);
+
         signInPanel.add(signInLabel);
         signInPanel.add(usernameLabel);
         signInPanel.add(passwordLabel);
@@ -163,6 +168,7 @@ public class StartUI implements ActionListener {
         signInPanel.add(password);
         signInPanel.add(loginButton);
         signInPanel.add(backButton2);
+        signInPanel.add(imageLabel);
 
         startPanel.add(title);
         startPanel.add(subtitle);
@@ -184,11 +190,19 @@ public class StartUI implements ActionListener {
         else if(e.getSource() == agentButton){
             adminCheck=false;
             signInLabel.setText("Good Day, Agent!");
+            image = new ImageIcon("car_image\\Cars/SignUp_Images/agent.jpg");
+            Image img = image.getImage().getScaledInstance(450, 300, Image.SCALE_SMOOTH);
+            image = new ImageIcon(img);
+            imageLabel.setIcon(image);
             switchLayout.show(switchPanel, "3");
         }
         else if(e.getSource() == adminButton){
             adminCheck=true;
             signInLabel.setText("Good Day, Admin!");
+            image = new ImageIcon("car_image\\Cars/SignUp_Images/admin.jpg");
+            Image img = image.getImage().getScaledInstance(450, 300, Image.SCALE_SMOOTH);
+            image = new ImageIcon(img);
+            imageLabel.setIcon(image);
             switchLayout.show(switchPanel, "3");
         }
         else if(e.getSource() == loginButton){
